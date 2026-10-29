@@ -1,0 +1,29 @@
+{
+    "timestamp_utc": "2026-10-28T22:44:16.704057+00:00",
+    "total_objects": 18579,
+    "by_category": {
+        "debris": 2677,
+        "active": 15897,
+        "rocket_body": 5
+    },
+    "by_orbit_regime": {
+        "LEO": 17777,
+        "MEO": 183,
+        "HEO": 38,
+        "GEO": 581
+    },
+    "by_source_group": {
+        "cosmos-2251-debris": 585,
+        "iridium-33-debris": 109,
+        "fengyun-1c-debris": 1980,
+        "cosmos-1408-debris": 3,
+        "active": 15902
+    },
+    "leo_altitude_ shells_km": {
+        "200-400_km": 962,
+        "400-600_km (Starlink_shell)": 11760,
+        "600-800_km": 2181,
+        "800-1000_km (Kessler_critical_zone)": 1438,
+        "1000-2000_km": 1434
+    }
+}
