@@ -6,6 +6,8 @@ from pathlib import Path
 from sgp4.api import Satrec, jday
 
 EARTH_RADIUS_KM = 6371.0
+MIN_ALTITUDE_KM = 80.0
+REFERENCE_FRAME = "TEME"
 
 GROUP_FILES_ORDER = [
     ("cosmos-2251-debris", "cosmos-2251-debris.tle"),
@@ -35,11 +37,12 @@ def classify_orbit_regime(altitude_km: float, eccentricity: float) -> str:
     return "MEO"
 
 
-def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids):
+def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids, stats):
     parsed_objects = []
 
     for i in range(len(lines) - 2):
         if lines[i + 1].startswith("1 ") and lines[i + 2].startswith("2 "):
+            stats["total_tle_records_read"] += 1
             name = lines[i]
             line1 = lines[i + 1]
             line2 = lines[i + 2]
@@ -49,13 +52,16 @@ def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids):
                 norad_id = int(satellite.satnum)
 
                 if norad_id in seen_norad_ids:
+                    stats["skipped_duplicate_norad"] += 1
                     continue
 
                 error_code, r, v = satellite.sgp4(jd, fr)
                 if error_code != 0:
+                    stats["skipped_sgp4_error"] += 1
                     continue
 
                 if any(not math.isfinite(val) for val in (*r, *v)):
+                    stats["skipped_non_finite_state"] += 1
                     continue
 
                 distance_from_center = math.sqrt(
@@ -63,7 +69,8 @@ def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids):
                 )
                 altitude_km = distance_from_center - EARTH_RADIUS_KM
 
-                if altitude_km < 80.0:
+                if altitude_km < MIN_ALTITUDE_KM:
+                    stats["skipped_below_min_altitude"] += 1
                     continue
 
                 speed_kms = math.sqrt(v[0] ** 2 + v[1] ** 2 + v[2] ** 2)
@@ -105,15 +112,13 @@ def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids):
                     "mass_kg": est_mass_kg,
                 })
             except (ValueError, TypeError, OverflowError):
-                # Pomijamy niepoprawny rekord TLE, ale nie ukrywamy
-                # błędów niezwiązanych z parsowaniem danych.
+                stats["skipped_parse_exception"] += 1
                 continue
 
     return parsed_objects
 
 
 def process_tle_to_json():
-    # Plik znajduje się w: <project_root>/src/data_pipeline/
     project_root = Path(__file__).resolve().parents[2]
 
     raw_dir = project_root / "data" / "raw" / "tle"
@@ -137,6 +142,15 @@ def process_tle_to_json():
     all_satellites = []
     seen_norad_ids = set()
 
+    reconciliation_stats = {
+        "total_tle_records_read": 0,
+        "skipped_duplicate_norad": 0,
+        "skipped_sgp4_error": 0,
+        "skipped_non_finite_state": 0,
+        "skipped_below_min_altitude": 0,
+        "skipped_parse_exception": 0,
+    }
+
     if raw_dir.is_dir():
         for group_name, filename in GROUP_FILES_ORDER:
             filepath = raw_dir / filename
@@ -149,7 +163,7 @@ def process_tle_to_json():
                     ]
 
                 group_objs = parse_tle_lines(
-                    lines, group_name, jd, fr, seen_norad_ids
+                    lines, group_name, jd, fr, seen_norad_ids, reconciliation_stats
                 )
                 all_satellites.extend(group_objs)
                 print(
@@ -165,7 +179,7 @@ def process_tle_to_json():
                 if line.strip()
             ]
         all_satellites = parse_tle_lines(
-            lines, "active", jd, fr, seen_norad_ids
+            lines, "active", jd, fr, seen_norad_ids, reconciliation_stats
         )
 
     if not all_satellites:
@@ -178,9 +192,23 @@ def process_tle_to_json():
     with output_file.open("w", encoding="utf-8") as f:
         json.dump(all_satellites, f, indent=4, ensure_ascii=False)
 
+    total_skipped = (
+        reconciliation_stats["skipped_duplicate_norad"]
+        + reconciliation_stats["skipped_sgp4_error"]
+        + reconciliation_stats["skipped_non_finite_state"]
+        + reconciliation_stats["skipped_below_min_altitude"]
+        + reconciliation_stats["skipped_parse_exception"]
+    )
+    reconciliation_stats["total_skipped"] = total_skipped
+    reconciliation_stats["total_exported"] = len(all_satellites)
+
     summary = {
         "timestamp_utc": now.isoformat(),
+        "reference_frame": REFERENCE_FRAME,
+        "propagation_epoch_jd": round(jd + fr, 8),
+        "minimum_altitude_threshold_km": MIN_ALTITUDE_KM,
         "total_objects": len(all_satellites),
+        "record_reconciliation": reconciliation_stats,
         "by_category": {},
         "by_orbit_regime": {},
         "by_source_group": {},
@@ -227,8 +255,12 @@ def process_tle_to_json():
     with summary_file.open("w", encoding="utf-8") as f:
         json.dump(summary, f, indent=4, ensure_ascii=False)
 
-    print(f"\nZapisano {len(all_satellites)} obiektów w: {output_file}")
-    print(f"Podsumowanie zapisano w: {summary_file}")
+    print(f"\n=== PODSUMOWANIE PRZETWARZANIA SGP4 ({REFERENCE_FRAME}) ===")
+    print(f"Wczytane rekordy TLE:     {reconciliation_stats['total_tle_records_read']}")
+    print(f"Wyeksportowane obiekty:   {len(all_satellites)}")
+    print(f"Odrzucone łącznie:        {total_skipped} (błąd SGP4/deorbitacja: {reconciliation_stats['skipped_sgp4_error']}, wys. < 80 km: {reconciliation_stats['skipped_below_min_altitude']})")
+    print(f"Zapisano stany w:         {output_file}")
+    print(f"Podsumowanie zapisano w:  {summary_file}")
     print("Rozkład kategorii:", summary["by_category"])
     print("Rozkład orbit:", summary["by_orbit_regime"])
 
