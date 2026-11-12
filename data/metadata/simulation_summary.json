@@ -1,29 +1,42 @@
 {
-    "timestamp_utc": "2026-11-11T22:51:42.657500+00:00",
-    "total_objects": 18479,
+    "timestamp_utc": "2026-11-12T15:10:38.966425+00:00",
+    "reference_frame": "TEME",
+    "propagation_epoch_jd": 2461357.13238426,
+    "minimum_altitude_threshold_km": 80.0,
+    "total_objects": 18476,
+    "record_reconciliation": {
+        "total_tle_records_read": 18582,
+        "skipped_duplicate_norad": 0,
+        "skipped_sgp4_error": 88,
+        "skipped_non_finite_state": 0,
+        "skipped_below_min_altitude": 18,
+        "skipped_parse_exception": 0,
+        "total_skipped": 106,
+        "total_exported": 18476
+    },
     "by_category": {
-        "debris": 2676,
-        "active": 15798,
+        "debris": 2680,
+        "active": 15791,
         "rocket_body": 5
     },
     "by_orbit_regime": {
-        "LEO": 17677,
-        "MEO": 183,
+        "LEO": 17675,
+        "MEO": 182,
         "HEO": 38,
         "GEO": 581
     },
     "by_source_group": {
-        "cosmos-2251-debris": 585,
+        "cosmos-2251-debris": 582,
         "iridium-33-debris": 109,
-        "fengyun-1c-debris": 1979,
-        "cosmos-1408-debris": 3,
-        "active": 15803
+        "fengyun-1c-debris": 1987,
+        "cosmos-1408-debris": 2,
+        "active": 15796
     },
     "leo_altitude_shells_km": {
-        "200-400_km": 1002,
+        "200-400_km": 1006,
         "400-600_km (Starlink_shell)": 11579,
-        "600-800_km": 2209,
-        "800-1000_km (Kessler_critical_zone)": 1413,
-        "1000-2000_km": 1433
+        "600-800_km": 2215,
+        "800-1000_km (Kessler_critical_zone)": 1381,
+        "1000-2000_km": 1459
     }
 }
