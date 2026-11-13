@@ -12,10 +12,10 @@ EARTH_RADIUS_KM = 6371.0
 
 DEFAULT_SCREENING_THRESHOLD_KM = 10.0
 CRITICAL_CONJUNCTION_KM = 2.0
-CELL_SIZE_KM = 80.0
+CELL_SIZE_KM = 100.0
 
-PROPAGATION_STEP_SECONDS = 30.0
-PROPAGATION_STEPS_COUNT = 20
+PROPAGATION_STEP_SECONDS = 5.0
+PROPAGATION_STEPS_COUNT = 120
 
 MIN_RELATIVE_SPEED_KMS = 0.5
 CATASTROPHIC_ENERGY_RATIO_JG = 40.0  
@@ -338,6 +338,14 @@ def run_catalogue_screening():
                         "potential_kinetic_energy_mj": round(ke_mj, 2),
                         "energy_to_mass_ratio_jg": round(emr_jg, 2),
                         "would_be_catastrophic": catastrophic,
+                        "mass_kg_1": obj_a["mass_kg"],
+                        "mass_kg_2": obj_b["mass_kg"],
+                        "radius_m_1": obj_a["radius_m"],
+                        "radius_m_2": obj_b["radius_m"],
+                        "position_km_1": [round(c, 4) for c in r_a_tca],
+                        "position_km_2": [round(c, 4) for c in r_b_tca],
+                        "velocity_kms_1": [round(c, 5) for c in obj_a["v"]],
+                        "velocity_kms_2": [round(c, 5) for c in obj_b["v"]],
                         "debris_involved": (
                             obj_a["category"] != "active"
                             or obj_b["category"] != "active"
