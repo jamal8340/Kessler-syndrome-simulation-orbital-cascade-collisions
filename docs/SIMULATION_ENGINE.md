@@ -104,6 +104,8 @@ adds Moon and Sun effects; they are outside the project's scope.
 
 ## Known limitations
 
+See also the comparison with real debris in `VALIDATION.md` (fragment kicks too strong; no drag on fragments).
+
 - About 5% of fragments get kicks above ~1 km/s from the tail of the breakup model's velocity
   distribution and end up on very elongated orbits (apogee above 2,000 km).
 - Masses and sizes of catalogue objects are per-category estimates.
