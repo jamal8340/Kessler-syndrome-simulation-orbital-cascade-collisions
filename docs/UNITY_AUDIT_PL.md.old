@@ -1,3 +1,5 @@
+> **NIEAKTUALNE (dokument historyczny).** Ten przegląd opisuje pierwotny prototyp Unity sprzed podłączenia do backendu w Pythonie (krok C). Jego model grawitacji, wykrywanie zderzeń, testowy klawisz `C` i obsługa danych już nie istnieją. Aktualny projekt Unity opisuje `KesslerSimulation/README_PL.md`.
+
 # Audyt dostarczonego projektu Unity
 
 ## Zakres audytu

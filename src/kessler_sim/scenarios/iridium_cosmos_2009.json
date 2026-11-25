@@ -1,0 +1,27 @@
+{
+    "name": "iridium_cosmos_2009",
+    "description": "Replay of the Iridium 33 x Cosmos 2251 collision (2009-02-10 16:56 UTC, ~789 km, 72.5 N, ~11.7 km/s). Idealised: both orbits circular at 789 km with the real inclinations; RAANs chosen so the orbits meet at the collision latitude. The collision is at t = 600 s.",
+    "catalogue": false,
+    "epoch_utc": "2009-02-10T16:46:00Z",
+    "seed": 2009,
+    "l_min_m": 0.1,
+    "max_fragments": 5000,
+    "reentry_altitude_km": 150,
+    "objects": [
+        {
+            "id": 24946, "name": "IRIDIUM 33", "category": "active",
+            "mass_kg": 560.0, "radius_m": 1.2, "t_ref_s": 600,
+            "elements": {"a_km": 7160.0, "e": 0.0, "i_deg": 86.4,
+                         "raan_deg": 348.48994906, "argp_deg": 0.0, "mean_anomaly_deg": 72.86293810}
+        },
+        {
+            "id": 22675, "name": "COSMOS 2251", "category": "active",
+            "mass_kg": 900.0, "radius_m": 1.5, "t_ref_s": 600,
+            "elements": {"a_km": 7160.0, "e": 0.0, "i_deg": 74.04,
+                         "raan_deg": 245.10005333, "argp_deg": 0.0, "mean_anomaly_deg": 97.27360543}
+        }
+    ],
+    "breakups": [
+        {"t_s": 600, "id_a": 24946, "id_b": 22675}
+    ]
+}

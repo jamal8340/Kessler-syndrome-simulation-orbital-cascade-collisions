@@ -1,3 +1,5 @@
+> **OUTDATED (historical document).** This review describes the original Unity prototype as it was before it was connected to the Python backend (step C). Its gravity model, collision check, `C` test key and data handling no longer exist. For the current Unity project see `KesslerSimulation/README.md`.
+
 # Review of the Supplied Unity Project
 
 ## Scope

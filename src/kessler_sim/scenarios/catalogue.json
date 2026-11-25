@@ -1,0 +1,9 @@
+{
+    "name": "catalogue",
+    "description": "The shared catalogue dataset at its epoch, with no scheduled breakups. Playground for 'what if' collisions.",
+    "catalogue": true,
+    "seed": 42,
+    "l_min_m": 0.1,
+    "max_fragments": 5000,
+    "reentry_altitude_km": 150
+}

@@ -1,0 +1,79 @@
+{
+  "scenario": "iridium_cosmos_2009",
+  "title": "Iridium 33 x Cosmos 2251",
+  "collision_utc": "2009-02-10 16:56:00",
+  "simulated_fragments": 1097,
+  "simulated_reentered_immediately": 113,
+  "simulated_fragments_not_compared": {},
+  "parents": {
+    "IRIDIUM 33": {
+      "norad_id": 24946,
+      "simulated": {
+        "count": 536,
+        "epoch": "2009-02-10 16:56 UTC",
+        "inclination_mean_deg": 86.37695666022195,
+        "inclination_std_deg": 0.3425072998537529,
+        "perigee_p5_km": 324.9784167653745,
+        "perigee_median_km": 733.6186080469988,
+        "perigee_p95_km": 788.677607434,
+        "apogee_p5_km": 789.0561202225122,
+        "apogee_median_km": 818.0962834995994,
+        "apogee_p95_km": 2220.5017271204606,
+        "apogee_above_1500km_fraction": 0.10074626865671642
+      },
+      "real": {
+        "count": 109,
+        "epoch": "2026-10-30 .. 2026-11-12",
+        "inclination_mean_deg": 86.32975779816512,
+        "inclination_std_deg": 0.077882348689249,
+        "perigee_p5_km": 526.9271711715126,
+        "perigee_median_km": 704.7826876735471,
+        "perigee_p95_km": 759.7311263294423,
+        "apogee_p5_km": 541.0586287218296,
+        "apogee_median_km": 740.881989000578,
+        "apogee_p95_km": 922.2556692115005,
+        "apogee_above_1500km_fraction": 0.0
+      },
+      "inclination_mean_difference_deg": 0.047198862056831103,
+      "inclination_std_ratio": 4.39775257960387,
+      "apogee_p95_difference_km": 1298.2460579089602
+    },
+    "COSMOS 2251": {
+      "norad_id": 22675,
+      "simulated": {
+        "count": 561,
+        "epoch": "2009-02-10 16:56 UTC",
+        "inclination_mean_deg": 74.0382740717107,
+        "inclination_std_deg": 0.14691544736197545,
+        "perigee_p5_km": 303.21836318145233,
+        "perigee_median_km": 756.3537459923382,
+        "perigee_p95_km": 788.6632836696344,
+        "apogee_p5_km": 789.4789708593407,
+        "apogee_median_km": 836.5500998870993,
+        "apogee_p95_km": 2012.3441559578623,
+        "apogee_above_1500km_fraction": 0.10160427807486631
+      },
+      "real": {
+        "count": 581,
+        "epoch": "2026-10-27 .. 2026-11-12",
+        "inclination_mean_deg": 74.00671239242686,
+        "inclination_std_deg": 0.07483860282590665,
+        "perigee_p5_km": 513.5068884839002,
+        "perigee_median_km": 697.4314442545228,
+        "perigee_p95_km": 769.0125661327947,
+        "apogee_p5_km": 583.702687834726,
+        "apogee_median_km": 770.2930366946739,
+        "apogee_p95_km": 1324.3835331075534,
+        "apogee_above_1500km_fraction": 0.0068846815834767644
+      },
+      "inclination_mean_difference_deg": 0.031561679283839794,
+      "inclination_std_ratio": 1.9630971425767743,
+      "apogee_p95_difference_km": 687.9606228503089
+    }
+  },
+  "notes": [
+    "Real debris is the population still in orbit at the TLE epochs (17-20 years after the event); simulated debris is the population right after the collision.",
+    "Inclination is nearly unaffected by the years since the event: the strongest comparison.",
+    "Perigee, apogee and counts are changed by atmospheric drag, which the simulation does not model for fragments: qualitative comparison only."
+  ]
+}

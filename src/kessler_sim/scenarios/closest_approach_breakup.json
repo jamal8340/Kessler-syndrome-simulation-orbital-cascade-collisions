@@ -1,0 +1,12 @@
+{
+    "name": "closest_approach_breakup",
+    "description": "The shared catalogue dataset; the closest pair found in the first 10 minutes is forced to collide at its time of closest approach.",
+    "catalogue": true,
+    "seed": 42,
+    "l_min_m": 0.1,
+    "max_fragments": 5000,
+    "reentry_altitude_km": 150,
+    "breakups": [
+        {"closest_approach": {"t_start_s": 0, "duration_s": 600}}
+    ]
+}

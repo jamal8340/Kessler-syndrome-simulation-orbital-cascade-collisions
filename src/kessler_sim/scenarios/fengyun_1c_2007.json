@@ -1,0 +1,26 @@
+{
+    "name": "fengyun_1c_2007",
+    "description": "Replay of the Chinese anti-satellite test of 2007-01-11: a kinetic kill vehicle on a suborbital trajectory hits the Fengyun-1C weather satellite (~865 km, 98.6 deg) at ~8 km/s. Idealised: Fengyun-1C on a circular orbit with its real inclination and altitude; the interceptor rises steeply from the ground (launched 277 s before impact); masses approximate (Fengyun-1C ~880 kg, interceptor ~600 kg, a public estimate); time of day approximate. The collision is at t = 600 s.",
+    "catalogue": false,
+    "epoch_utc": "2007-01-11T22:16:00Z",
+    "seed": 2007,
+    "l_min_m": 0.1,
+    "max_fragments": 5000,
+    "reentry_altitude_km": 150,
+    "objects": [
+        {
+            "id": 25730, "name": "FENGYUN 1C", "category": "active",
+            "mass_kg": 880.0, "radius_m": 1.5, "t_ref_s": 600,
+            "elements": {"a_km": 7236.0, "e": 0.0, "i_deg": 98.6,
+                         "raan_deg": 174.99078171, "argp_deg": 0.0, "mean_anomaly_deg": 149.62311625}
+        },
+        {
+            "id": 900001, "name": "ASAT INTERCEPTOR", "category": "rocket_body",
+            "mass_kg": 600.0, "radius_m": 0.5, "t_ref_s": 600, "t_created_s": 324,
+            "state": {"r_km": [6266.559822, 0.0, 3618.0], "v_kms": [1.535055, 0.069067, 1.341207]}
+        }
+    ],
+    "breakups": [
+        {"t_s": 600, "id_a": 25730, "id_b": 900001}
+    ]
+}

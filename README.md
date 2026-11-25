@@ -1,252 +1,126 @@
-# Kessler Syndrome Simulation
+# Kessler Syndrome Simulation – backend
 
-> **Status:** Research prototype under development\
-> **Main technologies:** Python, SGP4, Matplotlib, Unity 6\
-> **Goal:** orbital population analysis, close-approach detection,
-> collision modelling and cascading debris evolution.
+Simulation of collisions between objects in Earth orbit: how two objects break into fragments, what is left of them, where the pieces fly and how the debris cloud spreads over time. It uses the real catalogue of ~18,500 tracked satellites and debris pieces (CelesTrak data) and NASA's standard breakup model.
 
-## 0. What's New in the Current Development Stage
+This repository is the **backend**: all physics runs here. The 3D visualisation is the Unity project `KesslerSimulation` (see its `README.md`), which connects to this backend's server. Without Unity, the backend can be used from the command line.
 
-Recent work: - reorganized the Python project directories; - corrected
-paths in the TLE download and processing pipeline; - added TLE
-validation with JSON/CSV reports; - fixed parsing of CelesTrak files
-containing blank lines; - implemented osculating orbital element
-calculations; - processed 18,479 objects with zero skipped in the latest
-reported run; - generated an orbital population plot; - reviewed the
-existing Unity code and identified the gaps between the visualization
-prototype and a scientific model.
+## What it can do
 
-## 1. Project Goal
+- Show where every catalogued object is at any moment, forwards or backwards in time.
+- Find pairs of objects that will pass close to each other.
+- Collide any two objects; the resulting fragments become new objects on their own orbits (two debris clouds, one per parent); fragments that would re-enter immediately are removed.
+- Rewind and replay: before a collision the original objects are back; replaying gives the same fragments.
+- Replay two real events: the Iridium 33 × Cosmos 2251 collision (2009) and the Fengyun‑1C anti-satellite test (2007), and compare the simulated debris with the real debris.
+- Serve all of this live to the Unity visualisation.
 
-This project aims to develop a scientifically grounded simulation of the
-Kessler Syndrome: a cascading process in which collisions between
-objects in Earth orbit generate debris and increase the likelihood of
-subsequent collisions.
+## Requirements and setup
 
-The intended system combines: - real orbital catalog data from TLE
-sources; - SGP4 orbit propagation; - orbital mechanics calculations; -
-close-approach and potential collision analysis; - collision and
-fragmentation physics; - long-term population evolution; - interactive
-3D visualization.
+- [uv](https://docs.astral.sh/uv/) – it installs the right Python version (3.14) and all dependencies automatically on the first `uv run`.
+- The data needed to run is included in the repository (`data/`).
 
-**Important:** this is currently a prototype. Successful execution and
-agreement with simple analytical tests do not yet establish that the
-complete model is a scientifically validated simulation.
+```bash
+uv sync          # optional: installs everything up front
+```
 
-## 2. Architecture: Python and Unity
+All commands below are run from this repository's folder.
 
-### Python -- scientific computation backend
+## Quick start with Unity
 
-Python is being developed for: - TLE acquisition and storage; - TLE
-syntax and checksum validation; - SGP4 state propagation; - osculating
-orbital element calculations from state vectors; - orbital population
-analysis; - future close-approach screening, TCA and collision
-modelling.
+```bash
+uv run python -m kessler_sim.server --play --speed 600
+```
 
-### Unity -- existing visualization and dynamics prototype
+Then open the Unity project and press Play (see the Unity `README.md`). The server prints `listening on ws://127.0.0.1:8765` when it is ready; it keeps one simulation for everyone who connects. Stop it with Ctrl+C; to switch scenario or start over, restart it.
 
-Unity is not being discarded. The supplied Unity project already
-contains: - a scene with Earth, camera and `SatelliteSpawner`; - an
-Earth texture and satellite prefab; - loading of `satellites_state.json`
-from `StreamingAssets`; - instantiation of catalogued objects; -
-category-based object colouring; - a simplified Earth-centred gravity
-model; - simulation time scaling and pause controls; - preliminary
-spatial collision screening; - a test event triggered by the `C` key; -
-an on-screen simulation statistics panel.
+### Server options
 
-Python and Unity are **not yet integrated into one shared simulation
-engine**. Unity currently loads its own JSON snapshot and propagates
-object motion independently. The target architecture is for Python to
-provide computed states and events, while Unity visualizes them.
+| Option | Default | Meaning |
+|---|---|---|
+| `--scenario NAME` | `catalogue` | Which scenario to load (see below) |
+| `--play` | off | Start with the clock running |
+| `--speed S` | 60 | Simulated seconds per real second |
+| `--port P` | 8765 | Port Unity connects to |
+| `--host H` | 127.0.0.1 | Network address to listen on |
+| `--rate R` | 20 | Position updates per second sent to Unity |
 
-## 3. Completed Python Work
+## Scenarios
 
-### 3.1. Project structure and data pipeline
+| Scenario | What it shows |
+|---|---|
+| `catalogue` | All 18,558 catalogued objects at the dataset's moment (2026‑11‑12 22:50 UTC); no collisions – a playground for your own collisions |
+| `closest_approach_breakup` | Full catalogue; the closest pair passing within the first 10 minutes collides (currently STARLINK‑6135 × SIGI, ~766 fragments) |
+| `iridium_cosmos_2009` | Replay of the 2009 collision of Iridium 33 and Cosmos 2251 (only these two satellites and their debris); collision at t = 600 s |
+| `fengyun_1c_2007` | Replay of the 2007 anti-satellite test: an interceptor rises from the ground and destroys the Fengyun‑1C weather satellite; collision at t = 600 s |
 
--   Organized raw data, processed data, metadata, source code, results
-    and documentation directories.
--   Moved download and processing scripts into `src/data_pipeline/`.
--   Updated paths to resolve from the project root rather than the
-    script directory.
--   Stored raw TLE groups under `data/raw/tle/`.
+`uv run python -m kessler_sim.demo scenarios` lists them. The historical scenarios use idealised orbits with the real inclinations, altitudes and collision geometry; see `docs/VALIDATION.md`.
 
-### 3.2. TLE acquisition and validation
+## Using it without Unity
 
-Implemented: - downloading CelesTrak groups for active objects and
-selected debris populations; - saving groups to separate TLE files; -
-line-length and checksum validation; - NORAD identifier consistency
-checks across TLE line pairs; - parsing through the `sgp4` package; -
-propagation checks at each TLE epoch; - JSON and CSV validation reports.
+**Demo** – what happened in a scenario and how the debris cloud spreads:
+```bash
+uv run python -m kessler_sim.demo run iridium_cosmos_2009 --times 0,10m,1h,1d,30d --plot
+uv run python -m kessler_sim.demo approaches --duration 10m --top 10     # close passes in the catalogue
+```
+`--plot` saves a figure to `results/figures/cloud_<scenario>.png`.
 
-Last reported validation run:
+**Test client** – checks a running server without Unity (in a second terminal):
+```bash
+uv run python -m kessler_sim.client info     # what the server sends on connect
+uv run python -m kessler_sim.client watch    # play for 5 s and count the updates
+uv run python -m kessler_sim.client demo     # closest pass -> collide -> jump before and after
+```
 
-  Metric                               Result
-  ---------------------------------- --------
-  TLE files                                 5
-  Records parsed                       18,582
-  Valid records                        18,582
-  Invalid records                           0
-  Incomplete records                        0
-  Warnings                                  6
-  Duplicate NORAD IDs across files          0
+**Validation** – compares the simulated debris of the two historical events with the real debris still in orbit today:
+```bash
+uv run python -m kessler_sim.validation                              # both events
+uv run python -m kessler_sim.validation --scenario fengyun_1c_2007   # one of them
+```
+It writes figures to `results/figures/validation_*.png` and tables to `results/validation_*.json` / `.md`. The results and their interpretation are in `docs/VALIDATION.md`.
 
-The six warnings were deferred. These results apply to that particular
-data snapshot and validation run; they do not guarantee that the TLE
-data remain current.
+## Updating the data
 
-### 3.3. SGP4 processing
+The catalogue is a snapshot downloaded from CelesTrak (currently 2026‑11‑12). To use newer data, run these steps in order:
 
-`process_TLE_to_json.py` processes TLE records with SGP4 and writes
-object positions and velocities to JSON. The state vectors are expressed
-in the TEME reference frame, in kilometres and kilometres per second.
+| Step | Command | Result |
+|---|---|---|
+| 1. Download | `uv run python src/data_pipeline/TLE_data_download.py` | Active satellites and four debris groups in `data/raw/tle/` (needs internet) |
+| 2. Check | `uv run python src/data_pipeline/validate_tle.py` | Report in `data/metadata/tle_validation_report.json` / `_details.csv` |
+| 3. Process | `uv run python src/data_pipeline/process_TLE_to_json.py --epoch 2026-11-12T22:50:04+00:00` | The shared dataset `data/processed/satellites_state.json` and its summary; the dataset's moment (epoch) is the given time, or now if `--epoch` is left out |
+| 4. Unity snapshot | `uv run python src/data_pipeline/export_to_unity.py` | Copies the dataset into the Unity project for its offline mode (if the previous file differs, it is backed up in `KesslerSimulation/DatasetBackups/`) |
 
-The latest reported orbital-mechanics run loaded 18,479 objects. The
-difference from the 18,582 records in the validation report has not yet
-been reconciled.
+Afterwards restart the server. Rerunning step 3 with the same `--epoch` reproduces the same dataset exactly.
 
-### 3.4. Orbital mechanics
+## Tests
 
-The module under `src/orbital_mechanics/` implements vector operations
-and calculations for: - specific angular momentum; - eccentricity vector
-and eccentricity; - specific orbital energy; - semi-major axis; -
-inclination; - RAAN; - argument of periapsis; - true anomaly; - perigee
-and apogee altitude; - orbital period.
+```bash
+uv run pytest        # ~145 tests, about 12 s
+```
+One test is marked as an expected failure: it documents a known limitation of the breakup model (rare weak impacts).
 
-The elements are **instantaneous two-body osculating elements** derived
-from SGP4 position and velocity vectors. They are not invariant orbital
-parameters and should not be confused with mean TLE elements.
+## Accuracy and limitations
 
-Circular-orbit test: - position: `(7000, 0, 0)` km; - velocity:
-approximately `(0, 7.54605329, 0)` km/s; - semi-major axis:
-approximately 7000 km; - eccentricity: approximately zero; -
-inclination: 0 degrees; - perigee and apogee: approximately 629 km; -
-orbital period: approximately 97.14 minutes.
+- Positions agree with the SGP4 model to about 10 km in low Earth orbit over several days (much worse for a few very elongated deep-space orbits, which are out of scope).
+- Collisions only happen when triggered (by you, by a scenario, or from the close-approach list); nothing collides by itself yet. A long-term cascade with statistically sampled collisions at real sizes is planned.
+- Masses and sizes of catalogue objects are estimates by object type.
+- Compared with the real 2009 and 2007 debris: orbital planes match, but fragment kicks are too strong (clouds spread wider than in reality), fragments have no atmospheric drag, and the Fengyun‑1C test produces too few fragments. Details in `docs/VALIDATION.md`.
 
-An additional inclined elliptical test produced non-zero eccentricity
-and inclination, but its selected initial conditions resulted in a
-perigee below Earth's surface. It was a mathematical test, not a
-physically viable satellite orbit.
+## Older tools
 
-Latest reported population processing:
+These scripts from earlier project stages still work; the first two are superseded by the `kessler_sim` package above:
 
-  Metric                     Result
-  ------------------------ --------
-  Input objects              18,479
-  Successfully processed     18,479
-  Skipped                         0
+| Script | Status |
+|---|---|
+| `src/collision_detection/close_approach.py` (10-minute close-approach scan, writes `data/processed/close_approaches.json`) | superseded by `kessler_sim.demo approaches` and the Unity close-pass panel |
+| `src/collision_physics/run_breakups.py` (breakup statistics for close approaches) | superseded by collisions in `kessler_sim` (demo, server, Unity) |
+| `src/orbital_mechanics/orbital_elements.py` (orbital elements and the altitude/inclination plot `results/figures/orbital_population_map.png`) | not superseded – still the only overview plot of the whole population |
 
-Generated outputs: - `data/processed/orbital_elements.json` -
-`results/figures/orbital_population_map.png`
+## Further documentation
 
-The plot shows semi-major-axis altitude against inclination. It is not a
-plot of instantaneous positions or spatial density.
+| Document | Contents |
+|---|---|
+| `docs/SIMULATION_ENGINE.md` | How the simulation engine works, its model and accuracy |
+| `docs/VALIDATION.md` | Comparison with the real debris of the 2009 and 2007 events |
+| `../KesslerSimulation/README.md` | The Unity visualisation: controls, panels, watching collisions |
+| `docs/UNITY_AUDIT_EN.md.old`, `docs/UNITY_AUDIT_PL.md.old` | Outdated: review of the old Unity prototype, before it was connected to this backend |
 
-## 4. Review of the Supplied Unity Project
-
-See [docs/UNITY_AUDIT_EN.md](docs/UNITY_AUDIT_EN.md) for the detailed
-code review.
-
-Main conclusion: Unity is a useful visualization and simplified
-orbital-dynamics prototype, but its current collision implementation is
-not yet a physically reliable collision model.
-
-Key limitations: - motion is independently propagated in Unity using
-first-order semi-implicit Euler integration; - large time steps can
-introduce significant numerical error; - collision screening checks
-objects in the same spatial hash cell only and does not inspect
-neighbouring cells; - detection checks instantaneous separation rather
-than the minimum separation over the interval; - the 2 km threshold is a
-close-approach/conjunction threshold, not physical contact between
-objects; - collision handling relabels existing objects and applies
-random velocity kicks, but does not create fragments or conserve
-momentum and energy; - the `C` key triggers an artificial test event
-rather than a computed orbital encounter; - the JSON bundled with Unity
-contains 18,579 objects, different from the latest Python count of
-18,479; the datasets need to be synchronized; - there is currently no
-Python--Unity integration.
-
-This does not make Unity useless. Its scene, Earth rendering, camera,
-prefabs, population display, UI and event animation are a useful
-foundation.
-
-## 5. Current Scientific Limitations
-
-1.  SGP4 outputs states in TEME. Reference frame, epoch and
-    transformations must be made explicit before combining states or
-    comparing them with other models.
-2.  Position and velocity vectors used in one calculation must share a
-    common epoch.
-3.  Osculating elements derived from an instantaneous state must not be
-    treated as identical to mean TLE elements.
-4.  The two-body model does not automatically include J2, atmospheric
-    drag, solar radiation pressure, or lunar and solar perturbations.
-5.  Current object masses and radii assigned by category are estimates,
-    not individual measurements.
-6.  Collision probability, state uncertainty and a validated
-    fragmentation model have not yet been implemented.
-
-## 6. Development Roadmap
-
-### Stage 4 -- Data consistency and population analysis
-
--   Reconcile record counts across validation output, Python JSON and
-    Unity JSON.
--   Store data epoch and reference frame in metadata.
--   Inspect the population plot and produce altitude/inclination
-    distributions.
--   Add unit tests for orbital element calculations.
-
-### Stage 5 -- Collision Detection
-
--   Propagate candidate objects to a common epoch and reference frame.
--   Implement efficient candidate screening.
--   Calculate relative position and velocity.
--   Calculate Time of Closest Approach (TCA) and miss distance.
--   Account for motion between discrete steps to avoid missing fast
-    encounters.
--   Distinguish close approaches from physical collisions.
-
-### Stage 6 -- Collision Probability
-
--   Model position and velocity uncertainty.
--   Include object dimensions and encounter geometry.
--   Estimate collision probability only after defining an uncertainty
-    model.
-
-### Stage 7 -- Collision Physics and Fragmentation
-
--   Calculate relative impact velocity and collision energy.
--   Select a documented fragmentation model.
--   Generate fragment mass, size and velocity distributions.
--   Check mass and momentum budgets within the model assumptions.
-
-### Stage 8 -- Debris Propagation
-
--   Propagate generated fragments.
--   Include appropriate perturbations and atmospheric drag.
--   Update the population over time.
-
-### Stage 9 -- Kessler Cascade
-
--   Process subsequent collision events.
--   Track event history and fragment parentage.
--   Compare scenarios and perform sensitivity analysis.
-
-### Stage 10 -- Unity Integration
-
--   Define one data exchange format.
--   Include stable NORAD identifiers and timestamps.
--   Unity should visualize backend-computed states and events rather
-    than running an independent, divergent simulation.
--   Preserve Unity as the interactive 3D layer.
-
-## 7. Immediate Next Objective
-
-The next priorities are: 1. Reconcile and synchronize Python and Unity
-input datasets. 2. Implement and test close-approach detection in
-Python. 3. Validate the results against controlled cases. 4. Only then
-feed computed conjunction and collision events into Unity.
-
-**Progress criterion:** every module must have documented assumptions,
-tests and known limitations. A successful animation or a clean program
-run is not scientific validation.
+A Polish version of this file is `README_PL.md`.
