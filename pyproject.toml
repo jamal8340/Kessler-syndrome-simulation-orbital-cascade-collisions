@@ -12,3 +12,14 @@ dependencies = [
     "scipy>=1.18.1",
     "sgp4>=2.27",
 ]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["kessler_sim", "collision_physics"]
+module-root = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
