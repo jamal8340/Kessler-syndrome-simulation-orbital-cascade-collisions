@@ -1,10 +1,17 @@
-"""Step E: compare the simulated Iridium 33 x Cosmos 2251 debris with the real debris.
+"""Step E: compare simulated debris with the real debris of the same event.
 
-    uv run python -m kessler_sim.validation
+    uv run python -m kessler_sim.validation                         # all validated scenarios
+    uv run python -m kessler_sim.validation --scenario fengyun_1c_2007
 
-Real debris: the CelesTrak TLE groups in ``data/raw/tle/`` (iridium-33-debris,
-cosmos-2251-debris), i.e. the fragments still in orbit when the data was downloaded,
-~17 years after the collision. Simulated debris: the ``iridium_cosmos_2009`` scenario,
+Validated scenarios (see ``VALIDATIONS``):
+* ``iridium_cosmos_2009``: Iridium 33 x Cosmos 2251 collision, real debris from the
+  iridium-33-debris and cosmos-2251-debris TLE groups;
+* ``fengyun_1c_2007``: anti-satellite test, real debris from the fengyun-1c-debris group
+  (only Fengyun-1C's own debris: the interceptor's fragments fall back, in reality and
+  in the simulation).
+
+Real debris: the CelesTrak TLE groups in ``data/raw/tle/``, i.e. the fragments still in
+orbit when the data was downloaded, 17-20 years after the events. Simulated debris:
 right after the collision.
 
 What can and cannot be compared:
@@ -13,12 +20,12 @@ What can and cannot be compared:
   which the simulation does not model for fragments -> qualitative only.
 
 The simulation is not adjusted to the results; differences are documented as
-limitations. Outputs (by default):
-    results/figures/validation_inclination.png
-    results/figures/validation_gabbard.png
-    results/figures/validation_perigee_apogee.png
-    results/validation_iridium_cosmos.json
-    results/validation_iridium_cosmos.md
+limitations. Outputs per scenario, with prefix e.g. ``validation_iridium_cosmos``:
+    results/figures/<prefix>_inclination.png
+    results/figures/<prefix>_gabbard.png
+    results/figures/<prefix>_perigee_apogee.png
+    results/<prefix>.json
+    results/<prefix>.md
 """
 
 from __future__ import annotations
@@ -39,11 +46,21 @@ TLE_DIR = PROJECT_ROOT / "data" / "raw" / "tle"
 FIGURES_DIR = PROJECT_ROOT / "results" / "figures"
 RESULTS_DIR = PROJECT_ROOT / "results"
 
-PARENTS = (
-    # (NORAD ID, name, real-debris TLE file)
-    (24946, "IRIDIUM 33", "iridium-33-debris.tle"),
-    (22675, "COSMOS 2251", "cosmos-2251-debris.tle"),
-)
+VALIDATIONS = {
+    # scenario: title, output prefix, parents compared (NORAD ID, name, real-debris TLE file)
+    "iridium_cosmos_2009": {
+        "title": "Iridium 33 x Cosmos 2251",
+        "prefix": "validation_iridium_cosmos",
+        "parents": ((24946, "IRIDIUM 33", "iridium-33-debris.tle"),
+                    (22675, "COSMOS 2251", "cosmos-2251-debris.tle")),
+    },
+    "fengyun_1c_2007": {
+        "title": "Fengyun-1C anti-satellite test",
+        "prefix": "validation_fengyun_1c",
+        "parents": ((25730, "FENGYUN 1C", "fengyun-1c-debris.tle"),),
+    },
+}
+PARENTS = VALIDATIONS["iridium_cosmos_2009"]["parents"]
 
 # categorical slots 1 and 2 of the reference palette (validated: CVD and normal-vision pass on white)
 SIM_COLOR = "#257de0"
@@ -121,10 +138,11 @@ def describe(p: Population) -> dict:
 
 def compare(tle_dir: Path = TLE_DIR, scenario: str = "iridium_cosmos_2009"):
     """Returns (summary dict, {parent name: (simulated, real)})."""
+    spec = VALIDATIONS[scenario]
     sim = load_scenario(scenario)
     event = sim.events[0]
     populations, parents = {}, {}
-    for pid, name, fname in PARENTS:
+    for pid, name, fname in spec["parents"]:
         simulated = simulated_debris(sim, event, pid)
         real = load_real_debris(Path(tle_dir) / fname)
         populations[name] = (simulated, real)
@@ -135,16 +153,22 @@ def compare(tle_dir: Path = TLE_DIR, scenario: str = "iridium_cosmos_2009"):
             "inclination_std_ratio": s["inclination_std_deg"] / r["inclination_std_deg"],
             "apogee_p95_difference_km": s["apogee_p95_km"] - r["apogee_p95_km"],
         }
+    compared = {pid for pid, _, _ in spec["parents"]}
     summary = {
         "scenario": scenario,
+        "title": spec["title"],
         "collision_utc": f"{sim.utc_at(event.t):%Y-%m-%d %H:%M:%S}",
         "simulated_fragments": int(event.n_fragments),
         "simulated_reentered_immediately": int(event.reentered_count),
+        "simulated_fragments_not_compared": {
+            str(sim.table.names[sim.table.row(pid)]): int(np.sum(event.fragment_origin_ids == pid))
+            for pid in (event.id_a, event.id_b) if pid not in compared
+        },
         "parents": parents,
         "notes": [
-            "Real debris is the population still in orbit at the TLE epochs (~17 years after the collision);"
+            "Real debris is the population still in orbit at the TLE epochs (17-20 years after the event);"
             " simulated debris is the population right after the collision.",
-            "Inclination is nearly unaffected by 17 years of evolution: the strongest comparison.",
+            "Inclination is nearly unaffected by the years since the event: the strongest comparison.",
             "Perigee, apogee and counts are changed by atmospheric drag, which the simulation does not model"
             " for fragments: qualitative comparison only.",
         ],
@@ -182,10 +206,13 @@ def _hist_pair(ax, sim_values, real_values, bins, xlabel, title):
 
 def plot_inclination(populations, path: Path):
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.4))
-    for ax, (name, (s, r)) in zip(axes, populations.items()):
+    n = len(populations)
+    fig, axes = plt.subplots(1, n, figsize=(max(6 * n, 8), 4.4), squeeze=False)
+    for ax, (name, (s, r)) in zip(axes[0], populations.items()):
         centre = r.inclination_deg.mean()
-        bins = np.linspace(centre - 1.5, centre + 1.5, 61)
+        both = np.concatenate([s.inclination_deg, r.inclination_deg]) - centre
+        half = max(1.5, float(np.percentile(np.abs(both), 98)))       # covers 98 % of both, at least ±1.5°
+        bins = np.linspace(centre - half, centre + half, 61)
         _hist_pair(ax, s.inclination_deg, r.inclination_deg, bins, "inclination [deg]",
                    f"{name}: inclination of fragments")
         ax.annotate(f"mean: simulated {s.inclination_deg.mean():.2f}°, real {r.inclination_deg.mean():.2f}°\n"
@@ -198,7 +225,9 @@ def plot_inclination(populations, path: Path):
 
 def plot_gabbard(populations, path: Path):
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharey=True)
+    n = len(populations)
+    fig, axes = plt.subplots(1, n, figsize=(max(6 * n, 9), 5), sharey=True, squeeze=False)
+    axes = axes[0]
     for ax, (name, (s, r)) in zip(axes, populations.items()):
         # simulated first, real on top (fewer points, filled)
         for pop, color, label, filled in ((s, SIM_COLOR, "simulated", False), (r, REAL_COLOR, "real debris", True)):
@@ -214,7 +243,7 @@ def plot_gabbard(populations, path: Path):
         _style(ax)
         ax.legend(frameon=False, fontsize=8, labelcolor=TEXT, loc="upper left")
     axes[0].set_ylabel("altitude [km]")
-    fig.text(0.5, -0.01, "Simulated: right after the collision (2009). Real: still in orbit ~17 years later; "
+    fig.text(0.5, -0.04, "Simulated: right after the collision. Real: still in orbit 17-20 years later;\n"
              "drag has removed low orbits and lowered apogees. Axes cut at 125 min / 3000 km.",
              ha="center", fontsize=9, color=TEXT_SECONDARY)
     fig.tight_layout()
@@ -224,7 +253,7 @@ def plot_gabbard(populations, path: Path):
 
 def plot_perigee_apogee(populations, path: Path):
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+    fig, axes = plt.subplots(len(populations), 2, figsize=(12, 4 * len(populations)), squeeze=False)
     perigee_bins = np.linspace(0, 1200, 49)
     apogee_bins = np.linspace(0, 3000, 61)
     for row, (name, (s, r)) in zip(axes, populations.items()):
@@ -232,7 +261,7 @@ def plot_perigee_apogee(populations, path: Path):
                    "perigee altitude [km]", f"{name}: perigee")
         _hist_pair(row[1], np.clip(s.apogee_km, 0, 3000), np.clip(r.apogee_km, 0, 3000), apogee_bins,
                    "apogee altitude [km]", f"{name}: apogee")
-    fig.text(0.5, -0.01, "Apogees above 3000 km are shown in the last bin. Real debris: ~17 years after the "
+    fig.text(0.5, -0.01, "Apogees above 3000 km are shown in the last bin. Real debris: 17-20 years after the "
              "collision (drag has removed low orbits); simulated: right after it.", ha="center", fontsize=9,
              color=TEXT_SECONDARY)
     fig.tight_layout()
@@ -244,10 +273,15 @@ def plot_perigee_apogee(populations, path: Path):
 
 def markdown_table(summary: dict) -> str:
     lines = [
-        "# Validation: Iridium 33 x Cosmos 2251",
+        f"# Validation: {summary['title']}",
         "",
         f"Simulated collision: {summary['collision_utc']} UTC, {summary['simulated_fragments']} fragments "
         f"(≥ 10 cm) in orbit, {summary['simulated_reentered_immediately']} re-entered immediately.",
+    ]
+    if summary.get("simulated_fragments_not_compared"):
+        lines.append("Not compared (no real data): " + ", ".join(
+            f"{n}: {k} fragments in orbit" for n, k in summary["simulated_fragments_not_compared"].items()) + ".")
+    lines += [
         "",
         "| Quantity | " + " | ".join(f"{n}: simulated | {n}: real" for n in summary["parents"]) + " |",
         "|---|" + "---|---|" * len(summary["parents"]),
@@ -272,18 +306,20 @@ def markdown_table(summary: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def run(tle_dir: Path = TLE_DIR, figures_dir: Path = FIGURES_DIR, results_dir: Path = RESULTS_DIR) -> dict:
+def run(tle_dir: Path = TLE_DIR, figures_dir: Path = FIGURES_DIR, results_dir: Path = RESULTS_DIR,
+        scenario: str = "iridium_cosmos_2009") -> dict:
     import matplotlib
     matplotlib.use("Agg")
-    summary, populations = compare(tle_dir)
+    summary, populations = compare(tle_dir, scenario)
     figures_dir.mkdir(parents=True, exist_ok=True)
     results_dir.mkdir(parents=True, exist_ok=True)
+    prefix = VALIDATIONS[scenario]["prefix"]
     outputs = {
-        "inclination": figures_dir / "validation_inclination.png",
-        "gabbard": figures_dir / "validation_gabbard.png",
-        "perigee_apogee": figures_dir / "validation_perigee_apogee.png",
-        "json": results_dir / "validation_iridium_cosmos.json",
-        "markdown": results_dir / "validation_iridium_cosmos.md",
+        "inclination": figures_dir / f"{prefix}_inclination.png",
+        "gabbard": figures_dir / f"{prefix}_gabbard.png",
+        "perigee_apogee": figures_dir / f"{prefix}_perigee_apogee.png",
+        "json": results_dir / f"{prefix}.json",
+        "markdown": results_dir / f"{prefix}.md",
     }
     plot_inclination(populations, outputs["inclination"])
     plot_gabbard(populations, outputs["gabbard"])
@@ -295,14 +331,17 @@ def run(tle_dir: Path = TLE_DIR, figures_dir: Path = FIGURES_DIR, results_dir: P
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="Compare simulated Iridium 33 x Cosmos 2251 debris with the real debris")
+    ap = argparse.ArgumentParser(description="Compare simulated debris with the real debris of the same event")
+    ap.add_argument("--scenario", choices=[*VALIDATIONS, "all"], default="all")
     ap.add_argument("--figures-dir", type=Path, default=FIGURES_DIR)
     ap.add_argument("--results-dir", type=Path, default=RESULTS_DIR)
     args = ap.parse_args(argv)
-    summary = run(figures_dir=args.figures_dir, results_dir=args.results_dir)
-    print(markdown_table(summary))
-    for path in summary["outputs"].values():
-        print("written:", path)
+    for scenario in (VALIDATIONS if args.scenario == "all" else [args.scenario]):
+        summary = run(figures_dir=args.figures_dir, results_dir=args.results_dir, scenario=scenario)
+        print(markdown_table(summary))
+        for path in summary["outputs"].values():
+            print("written:", path)
+        print()
 
 
 if __name__ == "__main__":

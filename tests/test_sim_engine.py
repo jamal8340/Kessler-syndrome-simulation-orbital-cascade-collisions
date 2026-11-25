@@ -327,3 +327,45 @@ def test_cloud_spreads_along_the_orbit():
     assert spread[-1] > 90.0
     stats = cloud_stats(sim, 0, 600.0 + 30 * 86400)
     assert stats["per_parent"][22675]["raan_std_deg"] > 2.0      # J2 spreads the orbital planes
+
+
+# -- scenario format: state vectors and creation time, and the Fengyun-1C scenario ----
+
+def test_fengyun_scenario_geometry_and_interceptor_lifespan():
+    sim = load_scenario("fengyun_1c_2007")
+    (ev,) = sim.events
+    assert ev.t == 600.0 and ev.separation_km < 1e-6
+    assert ev.v_rel_kms == pytest.approx(8.07, abs=0.05)
+    assert ev.catastrophic
+    # the interceptor exists only from its launch (t = 324 s) and climbs to the impact altitude
+    assert 900001 not in sim.state(323.0).ids and 900001 in sim.state(324.0).ids
+    alt = [sim.object_info(900001, t)["altitude_km"] for t in (324.0, 450.0, 599.0)]
+    assert alt[0] < 10.0 and alt[0] < alt[1] < alt[2] < 866.0
+    # its fragments inherit the suborbital path: none stays in orbit; Fengyun-1C's do
+    counts = ev.summary()["fragments_per_parent"]
+    assert counts[900001] == 0 and counts[25730] > 300
+    assert ev.reentered_count > 300
+
+
+def test_scenario_object_from_state_vector(tmp_path):
+    spec = {
+        "name": "state_test", "catalogue": False, "epoch_utc": "2020-01-01T00:00:00Z",
+        "objects": [{"id": 1, "name": "X", "mass_kg": 10.0, "radius_m": 0.5, "t_ref_s": 100.0, "t_created_s": 50.0,
+                     "state": {"r_km": [7000.0, 0.0, 0.0], "v_kms": [0.0, 7.5, 0.5]}}],
+    }
+    path = tmp_path / "state_test.json"
+    path.write_text(__import__("json").dumps(spec))
+    sim = load_scenario(path)
+    (r,), (v,) = sim.table.states(100.0, [0])
+    assert np.allclose(r, [7000.0, 0.0, 0.0], atol=1e-6) and np.allclose(v, [0.0, 7.5, 0.5], atol=1e-9)
+    assert 1 not in sim.state(49.0).ids and 1 in sim.state(50.0).ids
+
+
+def test_scenario_rejects_unbound_state(tmp_path):
+    spec = {"name": "bad", "catalogue": False, "epoch_utc": "2020-01-01T00:00:00Z",
+            "objects": [{"id": 1, "name": "X", "mass_kg": 1.0, "radius_m": 0.1,
+                         "state": {"r_km": [7000.0, 0.0, 0.0], "v_kms": [0.0, 12.0, 0.0]}}]}
+    path = tmp_path / "bad.json"
+    path.write_text(__import__("json").dumps(spec))
+    with pytest.raises(ValueError):
+        load_scenario(path)

@@ -1,0 +1,49 @@
+{
+  "scenario": "fengyun_1c_2007",
+  "title": "Fengyun-1C anti-satellite test",
+  "collision_utc": "2007-01-11 22:26:00",
+  "simulated_fragments": 562,
+  "simulated_reentered_immediately": 661,
+  "simulated_fragments_not_compared": {
+    "ASAT INTERCEPTOR": 0
+  },
+  "parents": {
+    "FENGYUN 1C": {
+      "norad_id": 25730,
+      "simulated": {
+        "count": 562,
+        "epoch": "2007-01-11 22:26 UTC",
+        "inclination_mean_deg": 98.67694160276653,
+        "inclination_std_deg": 1.6175154737804427,
+        "perigee_p5_km": 408.09648303268324,
+        "perigee_median_km": 808.4370679975623,
+        "perigee_p95_km": 864.5962624318106,
+        "apogee_p5_km": 865.1125666872022,
+        "apogee_median_km": 922.5164620932983,
+        "apogee_p95_km": 2373.0863599003587,
+        "apogee_above_1500km_fraction": 0.13167259786476868
+      },
+      "real": {
+        "count": 1987,
+        "epoch": "2026-10-16 .. 2026-11-12",
+        "inclination_mean_deg": 98.91539265223956,
+        "inclination_std_deg": 0.7250885809213574,
+        "perigee_p5_km": 553.9227877169694,
+        "perigee_median_km": 767.0974399301895,
+        "perigee_p95_km": 850.9915459213331,
+        "apogee_p5_km": 685.9696789878675,
+        "apogee_median_km": 895.3086537684494,
+        "apogee_p95_km": 1300.044840575301,
+        "apogee_above_1500km_fraction": 0.017614494212380472
+      },
+      "inclination_mean_difference_deg": -0.23845104947302787,
+      "inclination_std_ratio": 2.230783267507942,
+      "apogee_p95_difference_km": 1073.0415193250578
+    }
+  },
+  "notes": [
+    "Real debris is the population still in orbit at the TLE epochs (17-20 years after the event); simulated debris is the population right after the collision.",
+    "Inclination is nearly unaffected by the years since the event: the strongest comparison.",
+    "Perigee, apogee and counts are changed by atmospheric drag, which the simulation does not model for fragments: qualitative comparison only."
+  ]
+}

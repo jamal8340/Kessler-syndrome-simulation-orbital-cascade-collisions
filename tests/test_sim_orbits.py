@@ -118,3 +118,19 @@ def test_vectorised_time_argument():
     r, _ = ob.elements_to_state(el, np.array([0.0, ob.period(el)[0] / 4]), with_j2=False)
     assert np.allclose(r[0], [7000.0, 0, 0], atol=1e-6)
     assert np.allclose(r[1], [0, 7000.0, 0], atol=1e-6)
+
+
+def test_suborbital_orbit_has_no_j2_drift():
+    # near-vertical climb at 865 km: perigee deep inside the Earth -> plain two-body motion
+    el, bound = ob.state_to_elements(np.array([[6266.56, 0.0, 3618.0]]), np.array([[1.535, 0.069, 1.341]]))
+    assert bound[0] and ob.perigee_radius(el)[0] < ob.R_EQ
+    for dt in (-300.0, -100.0, 0.0):
+        r_j2, v_j2 = ob.elements_to_state(el, dt)
+        r_2b, v_2b = ob.elements_to_state(el, dt, with_j2=False)
+        assert np.allclose(r_j2, r_2b) and np.allclose(v_j2, v_2b)
+
+
+def test_orbits_above_earth_still_get_j2():
+    el = _elements(7000.0, 0.01, 98.0)
+    raan_dot, _, _ = ob.secular_rates(el)
+    assert abs(raan_dot[0]) > 0

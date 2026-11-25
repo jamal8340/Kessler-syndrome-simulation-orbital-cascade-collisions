@@ -1,8 +1,10 @@
 {
   "scenario": "iridium_cosmos_2009",
+  "title": "Iridium 33 x Cosmos 2251",
   "collision_utc": "2009-02-10 16:56:00",
   "simulated_fragments": 1097,
   "simulated_reentered_immediately": 113,
+  "simulated_fragments_not_compared": {},
   "parents": {
     "IRIDIUM 33": {
       "norad_id": 24946,
@@ -70,8 +72,8 @@
     }
   },
   "notes": [
-    "Real debris is the population still in orbit at the TLE epochs (~17 years after the collision); simulated debris is the population right after the collision.",
-    "Inclination is nearly unaffected by 17 years of evolution: the strongest comparison.",
+    "Real debris is the population still in orbit at the TLE epochs (17-20 years after the event); simulated debris is the population right after the collision.",
+    "Inclination is nearly unaffected by the years since the event: the strongest comparison.",
     "Perigee, apogee and counts are changed by atmospheric drag, which the simulation does not model for fragments: qualitative comparison only."
   ]
 }

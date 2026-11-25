@@ -70,10 +70,17 @@ def _as2d(x):
 
 
 def secular_rates(el: Elements):
-    """First-order J2 secular rates (dRAAN/dt, dargp/dt, dM/dt) in rad/s."""
+    """First-order J2 secular rates (dRAAN/dt, dargp/dt, dM/dt) in rad/s.
+
+    The secular theory only holds for orbits that stay above the Earth. For orbits whose
+    perigee is inside the Earth (suborbital trajectories, e.g. an interceptor, which exist
+    for minutes only) the J2 terms are set to zero: plain two-body motion. Otherwise the
+    tiny semi-latus rectum of such near-radial orbits makes the rates explode.
+    """
     n = np.sqrt(MU / el.a ** 3)
     p = el.a * (1.0 - el.e ** 2)
     k = 1.5 * J2 * (R_EQ / p) ** 2 * n
+    k = np.where(el.a * (1.0 - el.e) < R_EQ, 0.0, k)
     cos_i = np.cos(el.i)
     raan_dot = -k * cos_i
     argp_dot = 0.5 * k * (5.0 * cos_i ** 2 - 1.0)

@@ -19,6 +19,10 @@ A scenario is a JSON file (see ``scenarios/*.json``)::
       ]
     }
 
+Instead of ``elements``, an object may be given by ``"state": {"r_km": [x, y, z], "v_kms": [vx, vy, vz]}``
+at ``t_ref_s`` (any bound orbit, also a suborbital one), and by ``"t_created_s"`` it only exists
+from that time on (e.g. an interceptor's launch).
+
 ``closest_approach`` searches the window and collides the closest pair at its TCA.
 """
 
@@ -54,6 +58,13 @@ def resolve(name_or_path) -> Path:
 
 
 def _elements_from_spec(spec: dict) -> orbits.Elements:
+    if "state" in spec:
+        # position [km] and velocity [km/s] at t_ref_s (e.g. a suborbital interceptor)
+        st = spec["state"]
+        el, bound = orbits.state_to_elements(np.array([st["r_km"]], float), np.array([st["v_kms"]], float))
+        if not bound[0]:
+            raise ValueError(f"object {spec.get('id')}: state is not on a bound orbit")
+        return el
     el = spec["elements"]
     return orbits.Elements(
         np.array([el["a_km"]], float), np.array([el.get("e", 0.0)], float),
@@ -82,9 +93,11 @@ def load_scenario(name_or_path) -> Simulation:
         epoch_jd = datetime_to_jd(epoch)
 
     for obj in spec.get("objects", []):
+        t_created = obj.get("t_created_s")          # e.g. launch time; default: exists from the start
         table.add([obj["id"]], names=obj["name"], category=obj.get("category", "active"),
                   mass_kg=obj["mass_kg"], radius_m=obj["radius_m"],
-                  elements=_elements_from_spec(obj), t_ref=float(obj.get("t_ref_s", 0.0)))
+                  elements=_elements_from_spec(obj), t_ref=float(obj.get("t_ref_s", 0.0)),
+                  t_created=-np.inf if t_created is None else float(t_created))
 
     sim = Simulation(table, epoch_jd, config, name=spec.get("name", path.stem))
     sim.description = spec.get("description", "")

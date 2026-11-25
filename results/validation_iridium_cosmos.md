@@ -14,6 +14,6 @@ Simulated collision: 2009-02-10 16:56:00 UTC, 1097 fragments (≥ 10 cm) in orbi
 Real data epochs: IRIDIUM 33: 2026-10-30 .. 2026-11-12, COSMOS 2251: 2026-10-27 .. 2026-11-12
 
 Notes:
-- Real debris is the population still in orbit at the TLE epochs (~17 years after the collision); simulated debris is the population right after the collision.
-- Inclination is nearly unaffected by 17 years of evolution: the strongest comparison.
+- Real debris is the population still in orbit at the TLE epochs (17-20 years after the event); simulated debris is the population right after the collision.
+- Inclination is nearly unaffected by the years since the event: the strongest comparison.
 - Perigee, apogee and counts are changed by atmospheric drag, which the simulation does not model for fragments: qualitative comparison only.

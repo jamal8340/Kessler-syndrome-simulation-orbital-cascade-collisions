@@ -16,7 +16,10 @@ def _records_in(path):
     return sum(1 for k in range(len(lines) - 2) if lines[k + 1].startswith("1 ") and lines[k + 2].startswith("2 "))
 
 
-@pytest.mark.parametrize("pid,name,fname", val.PARENTS)
+ALL_PARENTS = [p for spec in val.VALIDATIONS.values() for p in spec["parents"]]
+
+
+@pytest.mark.parametrize("pid,name,fname", ALL_PARENTS)
 def test_real_debris_matches_tle_file(pid, name, fname):
     path = val.TLE_DIR / fname
     pop = val.load_real_debris(path)
@@ -56,12 +59,22 @@ def test_documented_limitation_wider_spread(comparison):
         assert p["simulated"]["apogee_p95_km"] > p["real"]["apogee_p95_km"]
 
 
-def test_run_writes_all_outputs(tmp_path):
-    summary = val.run(figures_dir=tmp_path, results_dir=tmp_path)
+@pytest.mark.parametrize("scenario", list(val.VALIDATIONS))
+def test_run_writes_all_outputs(tmp_path, scenario):
+    summary = val.run(figures_dir=tmp_path, results_dir=tmp_path, scenario=scenario)
+    prefix = val.VALIDATIONS[scenario]["prefix"]
     for key in ("inclination", "gabbard", "perigee_apogee", "json", "markdown"):
         path = tmp_path / summary["outputs"][key].split("/")[-1]
+        assert path.name.startswith(prefix)
         assert path.is_file() and path.stat().st_size > 0
-    data = json.loads((tmp_path / "validation_iridium_cosmos.json").read_text())
-    assert set(data["parents"]) == {"IRIDIUM 33", "COSMOS 2251"}
-    table = (tmp_path / "validation_iridium_cosmos.md").read_text()
-    assert "| Inclination mean [deg] |" in table
+    data = json.loads((tmp_path / f"{prefix}.json").read_text())
+    assert set(data["parents"]) == {name for _, name, _ in val.VALIDATIONS[scenario]["parents"]}
+    assert "| Inclination mean [deg] |" in (tmp_path / f"{prefix}.md").read_text()
+
+
+def test_fengyun_comparison():
+    summary, _ = val.compare(scenario="fengyun_1c_2007")
+    fy = summary["parents"]["FENGYUN 1C"]
+    assert abs(fy["inclination_mean_difference_deg"]) < 0.5        # looser than Iridium x Cosmos (see VALIDATION.md)
+    assert fy["inclination_std_ratio"] > 1.0                       # same accepted limitation: kicks too strong
+    assert summary["simulated_fragments_not_compared"] == {"ASAT INTERCEPTOR": 0}   # all fell back

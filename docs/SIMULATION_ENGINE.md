@@ -6,11 +6,13 @@ The backend's physics engine. It has no networking; the Unity server (step C) is
 
 ```bash
 uv sync                                            # installs the engine as a package
-uv run pytest                                      # all tests (~5 s)
+uv run pytest                                      # all tests (~12 s)
 uv run python -m kessler_sim.demo scenarios        # list scenarios
 uv run python -m kessler_sim.demo run iridium_cosmos_2009 --times 0,1h,1d,30d --plot
 uv run python -m kessler_sim.demo run closest_approach_breakup
+uv run python -m kessler_sim.demo run fengyun_1c_2007
 uv run python -m kessler_sim.demo approaches --duration 10m --top 10
+uv run python -m kessler_sim.validation             # compare with real debris (docs/VALIDATION.md)
 ```
 
 `--plot` saves a figure to `results/figures/cloud_<scenario>.png` (or the given path).
@@ -20,6 +22,7 @@ uv run python -m kessler_sim.demo approaches --duration 10m --top 10
 ```bash
 uv run python -m kessler_sim.server --scenario catalogue          # ws://127.0.0.1:8765
 uv run python -m kessler_sim.server --scenario iridium_cosmos_2009 --play --speed 600
+# further options: --port 8765, --host 127.0.0.1, --rate 20 (state messages per second)
 
 # test client (another terminal), no Unity needed:
 uv run python -m kessler_sim.client info          # session info and first state message
@@ -72,6 +75,7 @@ sim.state(event.t - 1)                            # before the breakup: parents 
 - **Catalogue orbits** are SGP4's mean elements at the dataset epoch, plus a per-object decay rate
   fitted from SGP4 over one day (the only drag effect).
 - **Fragment orbits** come from their position and velocity at the breakup.
+- **Suborbital trajectories** (orbits whose perigee is inside the Earth, e.g. an anti-satellite interceptor) use plain two-body motion: the J2 drift formula is not valid for them.
 - **Lifespans.** Each object exists in `[t_created, t_destroyed)`. A breakup destroys both parents
   and creates fragments at the same instant. Seeking to before a breakup shows the parents again.
 - **Rewriting history.** Triggering a breakup at time t discards all later breakups. Fragment IDs

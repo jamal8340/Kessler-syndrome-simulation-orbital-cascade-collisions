@@ -1,243 +1,126 @@
-# Kessler Syndrome Simulation -- dokumentacja projektu
+# Kessler Syndrome Simulation – backend
 
-> **Status:** prototyp badawczy w rozwoju\
-> **Główne technologie:** Python, SGP4, NumPy (planowane), Matplotlib,
-> Unity 6\
-> **Cel:** analiza populacji obiektów orbitalnych, bliskich podejść,
-> kolizji i kaskadowego powstawania odłamków.
+Symulacja zderzeń obiektów na orbicie okołoziemskiej: jak dwa obiekty rozpadają się na fragmenty, co z nich zostaje, dokąd lecą odłamki i jak chmura odłamków rozprzestrzenia się w czasie. Wykorzystuje prawdziwy katalog ok. 18 500 śledzonych satelitów i odłamków (dane CelesTrak) oraz standardowy model rozpadu NASA.
 
-## 0. Co nowego w obecnym etapie
+To repozytorium to **backend**: cała fizyka działa tutaj. Wizualizacja 3D to projekt Unity `KesslerSimulation` (patrz jego `README_PL.md`), który łączy się z serwerem tego backendu. Bez Unity z backendu można korzystać z wiersza poleceń.
 
-W ostatnim etapie rozwoju: - zakończono reorganizację katalogów projektu
-Python; - poprawiono ścieżki w pipeline pobierania i przetwarzania
-TLE; - dodano walidator TLE z raportami JSON/CSV; - poprawiono parser,
-aby pomijał puste linie w plikach CelesTrak; - zaimplementowano
-obliczanie elementów oskulacyjnych; - przetworzono 18 479 obiektów bez
-pominięć w ostatnim uruchomieniu; - wygenerowano mapę populacji
-orbitalnej; - przeprowadzono przegląd istniejącego kodu Unity i
-zidentyfikowano różnice między prototypem wizualnym a modelem naukowym.
+## Możliwości
 
-## 1. Cel projektu
+- Pokazuje, gdzie znajduje się każdy obiekt z katalogu w dowolnej chwili, w przód i wstecz w czasie.
+- Znajduje pary obiektów, które miną się blisko siebie.
+- Zderza dowolne dwa obiekty; powstałe fragmenty stają się nowymi obiektami na własnych orbitach (dwie chmury odłamków, po jednej na rodzica); fragmenty, które od razu wpadłyby w atmosferę, są usuwane.
+- Cofanie i odtwarzanie: przed zderzeniem pierwotne obiekty wracają; ponowne odtworzenie daje te same fragmenty.
+- Odtwarza dwa prawdziwe zdarzenia: zderzenie Iridium 33 × Cosmos 2251 (2009) i test broni antysatelitarnej na Fengyun‑1C (2007), oraz porównuje symulowane odłamki z prawdziwymi.
+- Udostępnia to wszystko na żywo wizualizacji w Unity.
 
-Projekt ma rozwijać symulację zjawiska zespołu Kesslera: wzrostu liczby
-obiektów orbitalnych i ryzyka kolejnych zderzeń wskutek generowania
-odłamków podczas kolizji.
+## Wymagania i instalacja
 
-Docelowo projekt łączy: - rzeczywiste dane orbitalne z katalogów TLE; -
-propagację orbit modelem SGP4; - obliczenia mechaniki orbitalnej; -
-analizę bliskich podejść i wykrywanie potencjalnych kolizji; - model
-fizyki zderzeń i fragmentacji; - długoterminową ewolucję populacji; -
-wizualizację 3D w Unity.
+- [uv](https://docs.astral.sh/uv/) – przy pierwszym `uv run` samo instaluje właściwą wersję Pythona (3.14) i wszystkie zależności.
+- Dane potrzebne do działania są w repozytorium (`data/`).
 
-**Ważne:** aktualny projekt jest prototypem. Poprawne uruchomienie kodu
-i zgodność prostych testów nie oznaczają jeszcze, że cały model jest
-zwalidowaną symulacją naukową.
+```bash
+uv sync          # opcjonalnie: instaluje wszystko z góry
+```
 
-## 2. Architektura: Python i Unity
+Wszystkie poniższe polecenia uruchamia się w folderze tego repozytorium.
 
-### Python -- zaplecze obliczeniowe
+## Szybki start z Unity
 
-Python jest rozwijany jako warstwa obliczeniowa odpowiedzialna za: -
-pobieranie i przechowywanie danych TLE; - walidację składni i sum
-kontrolnych TLE; - propagację stanów orbitalnych SGP4; - wyznaczanie
-elementów oskulacyjnych z wektorów stanu; - analizę populacji; -
-przyszłe wykrywanie bliskich podejść, obliczanie TCA i modelowanie
-kolizji.
+```bash
+uv run python -m kessler_sim.server --play --speed 600
+```
 
-### Unity -- istniejąca wizualizacja i prototyp dynamiki
+Następnie otwórz projekt Unity i naciśnij Play (patrz `README_PL.md` w Unity). Gdy serwer jest gotowy, wypisuje `listening on ws://127.0.0.1:8765`; prowadzi jedną symulację wspólną dla wszystkich podłączonych. Zatrzymuje go Ctrl+C; aby zmienić scenariusz albo zacząć od nowa, uruchom go ponownie.
 
-Unity nie jest wyrzucane ani zastępowane. Dostarczony projekt Unity
-zawiera już: - scenę z Ziemią, kamerą i obiektem `SatelliteSpawner`; -
-teksturę Ziemi i prefab satelity; - wczytywanie `satellites_state.json`
-z `StreamingAssets`; - tworzenie obiektów dla katalogu satelitów; -
-kolorowanie obiektów według kategorii; - prosty model ruchu w polu
-grawitacyjnym Ziemi; - przyspieszanie i pauzowanie czasu; - wstępny
-mechanizm wyszukiwania bliskich obiektów; - testowe wywołanie zdarzenia
-klawiszem `C`; - prosty interfejs ekranowy ze statystykami.
+### Opcje serwera
 
-Obecnie Python i Unity **nie są jeszcze zintegrowane jako jeden wspólny
-silnik**. Unity korzysta z własnego pliku JSON i samodzielnie propaguje
-ruch obiektów. Docelowo Python ma dostarczać zweryfikowane stany i
-zdarzenia, a Unity ma je wizualizować.
+| Opcja | Domyślnie | Znaczenie |
+|---|---|---|
+| `--scenario NAZWA` | `catalogue` | Który scenariusz wczytać (patrz niżej) |
+| `--play` | wyłączone | Start z uruchomionym zegarem |
+| `--speed S` | 60 | Sekundy symulacji na sekundę rzeczywistą |
+| `--port P` | 8765 | Port, z którym łączy się Unity |
+| `--host H` | 127.0.0.1 | Adres sieciowy, na którym serwer nasłuchuje |
+| `--rate R` | 20 | Liczba aktualizacji pozycji na sekundę wysyłanych do Unity |
 
-## 3. Co zostało wykonane w Pythonie
+## Scenariusze
 
-### 3.1. Struktura i pipeline danych
+| Scenariusz | Co pokazuje |
+|---|---|
+| `catalogue` | Wszystkie 18 558 obiektów katalogu w chwili z zestawu danych (2026‑11‑12 22:50 UTC); bez zderzeń – pole do własnych zderzeń |
+| `closest_approach_breakup` | Pełny katalog; najbliższa para przelatująca w ciągu pierwszych 10 minut zderza się (obecnie STARLINK‑6135 × SIGI, ok. 766 fragmentów) |
+| `iridium_cosmos_2009` | Odtworzenie zderzenia Iridium 33 i Cosmos 2251 z 2009 r. (tylko te dwa satelity i ich odłamki); zderzenie w t = 600 s |
+| `fengyun_1c_2007` | Odtworzenie testu broni antysatelitarnej z 2007 r.: pocisk przechwytujący wznosi się z Ziemi i niszczy satelitę meteorologicznego Fengyun‑1C; zderzenie w t = 600 s |
 
--   Uporządkowano katalogi na dane surowe, przetworzone, metadane, kod,
-    wyniki i dokumentację.
--   Skrypty pobierania i przetwarzania TLE przeniesiono do
-    `src/data_pipeline/`.
--   Poprawiono ścieżki tak, aby były wyznaczane względem katalogu
-    głównego projektu, a nie położenia skryptu.
--   Dane wejściowe są przechowywane w `data/raw/tle/`.
+`uv run python -m kessler_sim.demo scenarios` wypisuje ich listę. Scenariusze historyczne używają wyidealizowanych orbit z prawdziwymi nachyleniami, wysokościami i geometrią zderzenia; patrz `docs/VALIDATION.md`.
 
-### 3.2. Pobieranie i walidacja TLE
+## Korzystanie bez Unity
 
-Zaimplementowano: - pobieranie grup CelesTrak: aktywne obiekty oraz
-wybrane grupy odłamków; - zapisywanie grup do oddzielnych plików TLE; -
-walidację długości linii i sum kontrolnych; - sprawdzanie zgodności
-identyfikatorów NORAD w parach linii; - parsowanie przez bibliotekę
-`sgp4`; - test propagacji na epoce TLE; - raport JSON i CSV.
+**Demo** – co wydarzyło się w scenariuszu i jak rozprzestrzenia się chmura odłamków:
+```bash
+uv run python -m kessler_sim.demo run iridium_cosmos_2009 --times 0,10m,1h,1d,30d --plot
+uv run python -m kessler_sim.demo approaches --duration 10m --top 10     # bliskie przeloty w katalogu
+```
+`--plot` zapisuje wykres w `results/figures/cloud_<scenariusz>.png`.
 
-Ostatni przekazany wynik walidacji: \| Metryka \| Wynik \| \|---\|---:\|
-\| Pliki TLE \| 5 \| \| Rozpoznane rekordy \| 18 582 \| \| Poprawne
-rekordy \| 18 582 \| \| Niepoprawne rekordy \| 0 \| \| Niekompletne
-rekordy \| 0 \| \| Ostrzeżenia \| 6 \| \| Duplikaty NORAD między plikami
-\| 0 \|
+**Klient testowy** – sprawdza działający serwer bez Unity (w drugim terminalu):
+```bash
+uv run python -m kessler_sim.client info     # co serwer wysyła po połączeniu
+uv run python -m kessler_sim.client watch    # 5 s działania i liczba aktualizacji
+uv run python -m kessler_sim.client demo     # najbliższy przelot -> zderzenie -> skok przed i po
+```
 
-Sześć ostrzeżeń pozostawiono na później. Wynik dotyczy konkretnego
-zestawu danych i czasu wykonania walidacji, a nie gwarantuje aktualności
-TLE w przyszłości.
+**Walidacja** – porównuje symulowane odłamki obu zdarzeń historycznych z prawdziwymi odłamkami, które są dziś nadal na orbicie:
+```bash
+uv run python -m kessler_sim.validation                              # oba zdarzenia
+uv run python -m kessler_sim.validation --scenario fengyun_1c_2007   # jedno z nich
+```
+Zapisuje wykresy w `results/figures/validation_*.png` i tabele w `results/validation_*.json` / `.md`. Wyniki i ich interpretacja są w `docs/VALIDATION.md`.
 
-### 3.3. Przetwarzanie SGP4
+## Aktualizacja danych
 
-Skrypt `process_TLE_to_json.py` przetwarza rekordy TLE przez SGP4 i
-zapisuje pozycję oraz prędkość obiektów w JSON. Są to wektory stanu w
-układzie TEME, w kilometrach i kilometrach na sekundę.
+Katalog to zdjęcie pobrane z CelesTrak (obecnie 2026‑11‑12). Aby użyć nowszych danych, wykonaj kolejno:
 
-Ostatnie raportowane uruchomienie modułu mechaniki orbitalnej wczytało
-18 479 obiektów. Rozbieżność względem 18 582 rekordów z raportu
-walidacji nie została jeszcze wyjaśniona.
+| Krok | Polecenie | Wynik |
+|---|---|---|
+| 1. Pobranie | `uv run python src/data_pipeline/TLE_data_download.py` | Aktywne satelity i cztery grupy odłamków w `data/raw/tle/` (wymaga internetu) |
+| 2. Sprawdzenie | `uv run python src/data_pipeline/validate_tle.py` | Raport w `data/metadata/tle_validation_report.json` / `_details.csv` |
+| 3. Przetworzenie | `uv run python src/data_pipeline/process_TLE_to_json.py --epoch 2026-11-12T22:50:04+00:00` | Wspólny zestaw danych `data/processed/satellites_state.json` z podsumowaniem; chwila zestawu danych (epoka) to podany czas albo bieżąca chwila, jeśli pominie się `--epoch` |
+| 4. Zdjęcie dla Unity | `uv run python src/data_pipeline/export_to_unity.py` | Kopiuje zestaw danych do projektu Unity na potrzeby trybu offline (jeśli poprzedni plik się różni, trafia do kopii w `KesslerSimulation/DatasetBackups/`) |
 
-### 3.4. Mechanika orbitalna
+Następnie uruchom serwer ponownie. Ponowne wykonanie kroku 3 z tym samym `--epoch` odtwarza dokładnie ten sam zestaw danych.
 
-W `src/orbital_mechanics/` zaimplementowano operacje wektorowe i
-obliczenia: - momentu pędu właściwego; - wektora mimośrodu i
-mimośrodu; - energii właściwej; - półosi wielkiej; - inklinacji; -
-RAAN; - argumentu perygeum; - anomalii prawdziwej; - wysokości perygeum
-i apogeum; - okresu orbitalnego.
+## Testy
 
-Elementy są wyznaczane jako **chwilowe elementy oskulacyjne modelu
-dwuciałowego**, obliczone z pozycji i prędkości uzyskanych przez SGP4.
-Nie są to niezmienne elementy orbity ani bezpośrednio średnie elementy
-TLE.
+```bash
+uv run pytest        # ok. 145 testów, ok. 12 s
+```
+Jeden test jest oznaczony jako oczekiwana porażka: dokumentuje znane ograniczenie modelu rozpadu (rzadkie słabe zderzenia).
 
-Test idealnej orbity kołowej: - pozycja: `(7000, 0, 0)` km; - prędkość:
-około `(0, 7.54605329, 0)` km/s; - półoś wielka: około 7000 km; -
-mimośród: praktycznie 0; - inklinacja: 0°; - perygeum i apogeum: około
-629 km; - okres: około 97.14 min.
+## Dokładność i ograniczenia
 
-Test dodatkowej orbity nachylonej i eliptycznej wykazał niezerowy
-mimośród i inklinację, ale wybrane warunki początkowe dały perygeum
-poniżej powierzchni Ziemi. Był to test matematyczny, a nie fizycznie
-dopuszczalna orbita satelity.
+- Pozycje zgadzają się z modelem SGP4 z dokładnością ok. 10 km na niskiej orbicie przez kilka dni (znacznie gorzej dla kilku bardzo wydłużonych orbit dalekiego kosmosu, które są poza zakresem projektu).
+- Zderzenia zachodzą tylko na żądanie (Twoje, scenariusza albo z listy bliskich przelotów); nic nie zderza się samo. Planowana jest długoterminowa kaskada ze statystycznie losowanymi zderzeniami przy prawdziwych rozmiarach obiektów.
+- Masy i rozmiary obiektów katalogu są szacunkami zależnymi od typu obiektu.
+- W porównaniu z prawdziwymi odłamkami z 2009 i 2007 r.: płaszczyzny orbit się zgadzają, ale odrzuty fragmentów są za silne (chmury rozchodzą się szerzej niż w rzeczywistości), fragmenty nie podlegają oporowi atmosfery, a test na Fengyun‑1C daje za mało fragmentów. Szczegóły w `docs/VALIDATION.md`.
 
-Ostatnie raportowane przetwarzanie: \| Metryka \| Wynik \| \|---\|---:\|
-\| Obiekty wejściowe \| 18 479 \| \| Przetworzone \| 18 479 \| \|
-Pominięte \| 0 \|
+## Starsze narzędzia
 
-Wygenerowane wyniki: - `data/processed/orbital_elements.json` -
-`results/figures/orbital_population_map.png`
+Te skrypty z wcześniejszych etapów projektu nadal działają; dwa pierwsze zastępuje pakiet `kessler_sim` opisany wyżej:
 
-Wykres pokazuje rozkład wysokości półosi wielkiej względem inklinacji.
-Nie jest mapą chwilowych pozycji ani gęstości przestrzennej.
+| Skrypt | Status |
+|---|---|
+| `src/collision_detection/close_approach.py` (10-minutowe wyszukiwanie bliskich przelotów, zapisuje `data/processed/close_approaches.json`) | zastąpiony przez `kessler_sim.demo approaches` i panel bliskich przelotów w Unity |
+| `src/collision_physics/run_breakups.py` (statystyki rozpadu dla bliskich przelotów) | zastąpiony przez zderzenia w `kessler_sim` (demo, serwer, Unity) |
+| `src/orbital_mechanics/orbital_elements.py` (elementy orbitalne i wykres wysokość/nachylenie `results/figures/orbital_population_map.png`) | nie zastąpiony – nadal jedyny wykres przeglądowy całej populacji |
 
-## 4. Audyt dostarczonego projektu Unity
+## Dalsza dokumentacja
 
-Szczegółowe omówienie znajduje się w
-[docs/UNITY_AUDIT_PL.md](docs/UNITY_AUDIT_PL.md).
+| Dokument | Zawartość |
+|---|---|
+| `docs/SIMULATION_ENGINE.md` | Jak działa silnik symulacji, jego model i dokładność |
+| `docs/VALIDATION.md` | Porównanie z prawdziwymi odłamkami zdarzeń z 2009 i 2007 r. |
+| `../KesslerSimulation/README_PL.md` | Wizualizacja w Unity: sterowanie, panele, obserwacja zderzeń |
+| `docs/UNITY_AUDIT_EN.md.old`, `docs/UNITY_AUDIT_PL.md.old` | Nieaktualne: przegląd starego prototypu Unity sprzed podłączenia do tego backendu |
 
-Najważniejszy wniosek: Unity jest wartościowym prototypem wizualizacji i
-uproszczonej dynamiki orbitalnej, ale obecna implementacja kolizji nie
-jest jeszcze wiarygodnym modelem fizycznym.
-
-Główne ograniczenia: - ruch jest propagowany niezależnie w Unity metodą
-symplektycznego Eulera pierwszego rzędu; - duży krok czasu może
-powodować znaczne błędy; - wyszukiwanie kolizji sprawdza tylko obiekty w
-tej samej komórce siatki przestrzennej, bez sąsiednich komórek; -
-wykrywanie sprawdza chwilową odległość, a nie minimum odległości między
-kolejnymi krokami; - próg 2 km oznacza bliskie podejście/koniunkcję, a
-nie fizyczny kontakt dwóch obiektów; - obsługa zdarzenia zmienia
-etykiety i dodaje losowy impuls prędkości, ale nie generuje nowych
-fragmentów i nie zachowuje pędu ani energii; - test klawiszem `C` jest
-sztucznym zdarzeniem testowym, a nie wynikiem obliczenia spotkania
-orbitalnego; - plik JSON dołączony do Unity zawiera 18 579 obiektów, co
-różni się od bieżącego wyniku Pythona 18 479; dane należy
-zsynchronizować; - obecnie nie ma integracji Python--Unity.
-
-Nie oznacza to, że Unity jest bezużyteczne. Scena, prefabrykaty, kamera,
-prezentacja populacji, interfejs i mechanizm animacji są dobrym
-fundamentem.
-
-## 5. Ograniczenia naukowe obecnego modelu
-
-1.  SGP4 zwraca stany w układzie TEME. Przed porównywaniem z innymi
-    danymi lub użyciem w modelu Ziemi należy jawnie ustalić układ
-    odniesienia, epokę i transformacje.
-2.  Pozycje i prędkości w pliku JSON muszą mieć wspólny czas
-    odniesienia.
-3.  Elementy oskulacyjne wyliczane z chwilowego stanu nie powinny być
-    utożsamiane ze średnimi elementami TLE.
-4.  Model dwuciałowy nie uwzględnia automatycznie J2, oporu
-    atmosferycznego, ciśnienia promieniowania ani perturbacji od
-    Księżyca i Słońca.
-5.  Obecne masy i promienie przypisywane kategoriom obiektów są
-    wartościami szacunkowymi, nie pomiarami poszczególnych satelitów.
-6.  Nie ma jeszcze obliczeń prawdopodobieństwa kolizji, modelu
-    niepewności ani zwalidowanej fragmentacji.
-
-## 6. Plan dalszych prac
-
-### Etap 4 -- spójność danych i analiza populacji
-
--   Uzgodnić liczbę rekordów w walidacji, JSON Pythona i JSON Unity.
--   Zapisywać czas/epokę danych i układ odniesienia w metadanych.
--   Sprawdzić wykres populacji i rozkłady wysokości oraz inklinacji.
--   Dodać testy jednostkowe dla obliczeń elementów orbitalnych.
-
-### Etap 5 -- Collision Detection
-
--   Propagować pary obiektów do wspólnego czasu i układu odniesienia.
--   Wprowadzić wydajne filtrowanie kandydatów.
--   Obliczać względną pozycję i prędkość.
--   Wyznaczać czas najbliższego podejścia (TCA) i miss distance.
--   Uwzględnić ciągłość ruchu między krokami, aby nie pomijać szybkich
-    spotkań.
--   Rozróżniać bliskie podejście od fizycznego zderzenia.
-
-### Etap 6 -- prawdopodobieństwo kolizji
-
--   Modelować niepewność pozycji i prędkości.
--   Wprowadzić rozmiary obiektów i geometrię spotkania.
--   Obliczać prawdopodobieństwo kolizji dopiero po zdefiniowaniu modelu
-    niepewności.
-
-### Etap 7 -- fizyka zderzeń i fragmentacja
-
--   Obliczać energię i prędkość względną zderzenia.
--   Wybrać udokumentowany model fragmentacji.
--   Generować rozkład mas, rozmiarów i prędkości odłamków.
--   Kontrolować bilanse masy i pędu w granicach założeń modelu.
-
-### Etap 8 -- propagacja odłamków
-
--   Propagować nowe fragmenty.
--   Uwzględniać odpowiednie perturbacje i opór atmosferyczny.
--   Aktualizować populację w czasie.
-
-### Etap 9 -- kaskada Kesslera
-
--   Uruchamiać kolejne zdarzenia kolizyjne.
--   Rejestrować zdarzenia i pochodzenie fragmentów.
--   Porównywać scenariusze i analizować wrażliwość wyników.
-
-### Etap 10 -- integracja z Unity
-
--   Ustalić jeden format wymiany danych.
--   Dodać stabilne identyfikatory NORAD i znaczniki czasu.
--   Unity powinno wizualizować stany i zdarzenia obliczone przez
-    backend, zamiast prowadzić niezależną, rozbieżną symulację.
--   Zachować Unity jako interaktywną warstwę 3D.
-
-## 7. Najbliższy konkretny cel
-
-Najpierw należy: 1. Uzgodnić i zsynchronizować dane wejściowe
-Python/Unity. 2. Poprawić i przetestować wykrywanie bliskich podejść w
-Pythonie. 3. Zweryfikować wyniki na kontrolowanych przypadkach. 4.
-Dopiero potem zasilać Unity rzeczywistymi zdarzeniami koniunkcji i
-kolizji.
-
-**Kryterium postępu:** każdy moduł ma mieć opisane założenia, testy i
-znane ograniczenia. Sama animacja lub brak błędów wykonania nie stanowią
-walidacji naukowej.
+Wersja angielska tego pliku to `README.md`.
