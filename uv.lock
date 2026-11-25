@@ -249,6 +249,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "matplotlib" },
+    { name = "numpy" },
     { name = "pytest" },
     { name = "requests" },
     { name = "scipy" },
@@ -258,6 +259,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "matplotlib", specifier = ">=3.11.2" },
+    { name = "numpy", specifier = ">=2.5.4" },
     { name = "pytest", specifier = ">=9.2.0" },
     { name = "requests", specifier = ">=2.34.2" },
     { name = "scipy", specifier = ">=1.18.1" },

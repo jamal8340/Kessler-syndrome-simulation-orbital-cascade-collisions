@@ -89,11 +89,23 @@ def compute_collision_energetics(mass_a_kg, mass_b_kg, rel_speed_kms):
     kinetic_energy_joules = 0.5 * reduced_mass * (rel_speed_ms ** 2)
     kinetic_energy_mj = kinetic_energy_joules / 1e6
 
+    # EMR wg NASA Standard Breakup Model (spójnie z collision_physics/fragmentation.py):
+    # energia kinetyczna lżejszego ciała (pocisku) / masa cięższego ciała (celu) [J/g]
+    projectile_mass_kg = min(mass_a_kg, mass_b_kg)
     target_mass_kg = max(mass_a_kg, mass_b_kg)
-    emr_joules_per_gram = kinetic_energy_joules / (target_mass_kg * 1000.0)
+    projectile_energy_joules = 0.5 * projectile_mass_kg * (rel_speed_ms ** 2)
+    emr_joules_per_gram = projectile_energy_joules / (target_mass_kg * 1000.0)
     is_catastrophic = emr_joules_per_gram >= CATASTROPHIC_ENERGY_RATIO_JG
 
     return kinetic_energy_mj, emr_joules_per_gram, is_catastrophic
+
+
+def classify_event(miss_distance_km, hard_body_radius_km):
+    if miss_distance_km <= hard_body_radius_km:
+        return "PHYSICAL_COLLISION"
+    if miss_distance_km <= CRITICAL_CONJUNCTION_KM:
+        return "CRITICAL_CONJUNCTION"
+    return "CLOSE_APPROACH"
 
 
 def is_same_constellation_formation(obj_a, obj_b):
@@ -305,12 +317,7 @@ def run_catalogue_screening():
                         obj_a["radius_m"] + obj_b["radius_m"]
                     ) / 1000.0
 
-                    if d_min <= hard_body_radius_km:
-                        event_type = "PHYSICAL_COLLISION"
-                    elif d_min <= CRITICAL_CONJUNCTION_KM:
-                        event_type = "CRITICAL_CONJUNCTION"
-                    else:
-                        event_type = "CLOSE_APPROACH"
+                    event_type = classify_event(d_min, hard_body_radius_km)
 
                     ke_mj, emr_jg, catastrophic = compute_collision_energetics(
                         obj_a["mass_kg"], obj_b["mass_kg"], rel_speed

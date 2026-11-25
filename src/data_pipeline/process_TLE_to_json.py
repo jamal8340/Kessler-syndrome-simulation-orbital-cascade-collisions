@@ -1,3 +1,4 @@
+import argparse
 import json
 import math
 from datetime import datetime, timezone
@@ -118,8 +119,10 @@ def parse_tle_lines(lines, source_group, jd, fr, seen_norad_ids, stats):
     return parsed_objects
 
 
-def process_tle_to_json():
-    project_root = Path(__file__).resolve().parents[2]
+def process_tle_to_json(epoch=None, project_root=None):
+    """Propaguje TLE do wspólnej epoki `epoch` (datetime UTC). Domyślnie: chwila uruchomienia."""
+    if project_root is None:
+        project_root = Path(__file__).resolve().parents[2]
 
     raw_dir = project_root / "data" / "raw" / "tle"
     legacy_input = project_root / "data" / "raw" / "active_satellites.txt"
@@ -133,10 +136,13 @@ def process_tle_to_json():
     output_file = processed_dir / "satellites_state.json"
     summary_file = metadata_dir / "simulation_summary.json"
 
-    now = datetime.now(timezone.utc)
+    now = epoch if epoch is not None else datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    now = now.astimezone(timezone.utc)
     jd, fr = jday(
         now.year, now.month, now.day,
-        now.hour, now.minute, now.second
+        now.hour, now.minute, now.second + now.microsecond * 1e-6
     )
 
     all_satellites = []
@@ -266,4 +272,12 @@ def process_tle_to_json():
 
 
 if __name__ == "__main__":
-    process_tle_to_json()
+    parser = argparse.ArgumentParser(description="Propagacja TLE (SGP4) do wspólnej epoki i zapis stanów do JSON.")
+    parser.add_argument(
+        "--epoch",
+        type=datetime.fromisoformat,
+        default=None,
+        help="Epoka propagacji w ISO 8601 (UTC), np. 2026-11-12T22:50:04+00:00. Domyślnie: teraz.",
+    )
+    args = parser.parse_args()
+    process_tle_to_json(epoch=args.epoch)

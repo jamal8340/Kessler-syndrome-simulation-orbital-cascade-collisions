@@ -1,10 +1,10 @@
 
 ### THIS IS KINDA TEMPORARY FILE. IT CAN BE USED TO CHECK THE FRAGMENTATION DIRECTLY FROM CLI. WILL PROBABLY DUMP IT WHEN THE LOGIC WILL BE INTEGRATED WITH UNITY
 
+import argparse
 import json
 import sys
 from pathlib import Path
-import os
 
 CURRENT_FILE = Path(__file__).resolve()
 
@@ -12,7 +12,7 @@ PROJECT_ROOT = CURRENT_FILE.parents[2]
 
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-import fragmentation as fr  # noqa: E402
+from collision_physics import fragmentation as fr  # noqa: E402
 
 DEFAULT_INPUT = PROJECT_ROOT / "data" / "processed" / "close_approaches.json"
 DEFAULT_OUTPUT = PROJECT_ROOT / "data" / "processed" / "breakup_summary.json"

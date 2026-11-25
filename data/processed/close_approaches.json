@@ -19,7 +19,7 @@
             "z": -696.653
         },
         "potential_kinetic_energy_mj": 6106.94,
-        "energy_to_mass_ratio_jg": 12213.88,
+        "energy_to_mass_ratio_jg": 24427.76,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -67,7 +67,7 @@
             "z": -6775.668
         },
         "potential_kinetic_energy_mj": 159.65,
-        "energy_to_mass_ratio_jg": 319.3,
+        "energy_to_mass_ratio_jg": 320.26,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 1.5,
@@ -115,7 +115,7 @@
             "z": -6486.813
         },
         "potential_kinetic_energy_mj": 160.95,
-        "energy_to_mass_ratio_jg": 321.89,
+        "energy_to_mass_ratio_jg": 322.86,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -163,7 +163,7 @@
             "z": 4561.297
         },
         "potential_kinetic_energy_mj": 3424.6,
-        "energy_to_mass_ratio_jg": 6849.2,
+        "energy_to_mass_ratio_jg": 13698.4,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -211,7 +211,7 @@
             "z": 2232.432
         },
         "potential_kinetic_energy_mj": 24165.88,
-        "energy_to_mass_ratio_jg": 48331.77,
+        "energy_to_mass_ratio_jg": 96663.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -259,7 +259,7 @@
             "z": 2248.808
         },
         "potential_kinetic_energy_mj": 341.79,
-        "energy_to_mass_ratio_jg": 683.57,
+        "energy_to_mass_ratio_jg": 1367.14,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -307,7 +307,7 @@
             "z": 1498.876
         },
         "potential_kinetic_energy_mj": 28050.1,
-        "energy_to_mass_ratio_jg": 56100.21,
+        "energy_to_mass_ratio_jg": 112200.42,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -355,7 +355,7 @@
             "z": -1952.084
         },
         "potential_kinetic_energy_mj": 27061.14,
-        "energy_to_mass_ratio_jg": 54122.28,
+        "energy_to_mass_ratio_jg": 108244.55,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -403,7 +403,7 @@
             "z": 3307.933
         },
         "potential_kinetic_energy_mj": 24243.76,
-        "energy_to_mass_ratio_jg": 48487.52,
+        "energy_to_mass_ratio_jg": 96975.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -451,7 +451,7 @@
             "z": -5107.453
         },
         "potential_kinetic_energy_mj": 10902.35,
-        "energy_to_mass_ratio_jg": 21804.71,
+        "energy_to_mass_ratio_jg": 43609.42,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -499,7 +499,7 @@
             "z": -2488.948
         },
         "potential_kinetic_energy_mj": 3399.13,
-        "energy_to_mass_ratio_jg": 6798.26,
+        "energy_to_mass_ratio_jg": 13596.52,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -547,7 +547,7 @@
             "z": 4671.48
         },
         "potential_kinetic_energy_mj": 17442.05,
-        "energy_to_mass_ratio_jg": 34884.1,
+        "energy_to_mass_ratio_jg": 69768.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -595,7 +595,7 @@
             "z": -403.059
         },
         "potential_kinetic_energy_mj": 25737.47,
-        "energy_to_mass_ratio_jg": 51474.94,
+        "energy_to_mass_ratio_jg": 102949.88,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -643,7 +643,7 @@
             "z": 7435.027
         },
         "potential_kinetic_energy_mj": 3264.35,
-        "energy_to_mass_ratio_jg": 6528.69,
+        "energy_to_mass_ratio_jg": 13057.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -691,7 +691,7 @@
             "z": -7190.765
         },
         "potential_kinetic_energy_mj": 122.25,
-        "energy_to_mass_ratio_jg": 244.49,
+        "energy_to_mass_ratio_jg": 245.23,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -739,7 +739,7 @@
             "z": -4412.772
         },
         "potential_kinetic_energy_mj": 22426.75,
-        "energy_to_mass_ratio_jg": 44853.49,
+        "energy_to_mass_ratio_jg": 89706.98,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -787,7 +787,7 @@
             "z": -6402.936
         },
         "potential_kinetic_energy_mj": 15804.47,
-        "energy_to_mass_ratio_jg": 31608.93,
+        "energy_to_mass_ratio_jg": 63217.86,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -835,7 +835,7 @@
             "z": 7436.333
         },
         "potential_kinetic_energy_mj": 3301.9,
-        "energy_to_mass_ratio_jg": 6603.81,
+        "energy_to_mass_ratio_jg": 13207.61,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -883,7 +883,7 @@
             "z": 1427.562
         },
         "potential_kinetic_energy_mj": 26470.37,
-        "energy_to_mass_ratio_jg": 52940.75,
+        "energy_to_mass_ratio_jg": 105881.5,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -931,7 +931,7 @@
             "z": 4742.995
         },
         "potential_kinetic_energy_mj": 24647.49,
-        "energy_to_mass_ratio_jg": 49294.98,
+        "energy_to_mass_ratio_jg": 98589.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -979,7 +979,7 @@
             "z": 4669.461
         },
         "potential_kinetic_energy_mj": 17701.82,
-        "energy_to_mass_ratio_jg": 35403.64,
+        "energy_to_mass_ratio_jg": 70807.29,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1027,7 +1027,7 @@
             "z": 5430.251
         },
         "potential_kinetic_energy_mj": 3980.29,
-        "energy_to_mass_ratio_jg": 7960.58,
+        "energy_to_mass_ratio_jg": 15921.17,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1075,7 +1075,7 @@
             "z": -2572.233
         },
         "potential_kinetic_energy_mj": 21002.72,
-        "energy_to_mass_ratio_jg": 42005.44,
+        "energy_to_mass_ratio_jg": 84010.87,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1123,7 +1123,7 @@
             "z": 2833.383
         },
         "potential_kinetic_energy_mj": 5074.48,
-        "energy_to_mass_ratio_jg": 10148.96,
+        "energy_to_mass_ratio_jg": 20297.92,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1171,7 +1171,7 @@
             "z": 742.627
         },
         "potential_kinetic_energy_mj": 24745.64,
-        "energy_to_mass_ratio_jg": 49491.28,
+        "energy_to_mass_ratio_jg": 98982.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1219,7 +1219,7 @@
             "z": -7452.659
         },
         "potential_kinetic_energy_mj": 3301.5,
-        "energy_to_mass_ratio_jg": 6603.0,
+        "energy_to_mass_ratio_jg": 13205.99,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1267,7 +1267,7 @@
             "z": -4580.559
         },
         "potential_kinetic_energy_mj": 19667.28,
-        "energy_to_mass_ratio_jg": 39334.56,
+        "energy_to_mass_ratio_jg": 78669.11,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1315,7 +1315,7 @@
             "z": 6847.924
         },
         "potential_kinetic_energy_mj": 10705.66,
-        "energy_to_mass_ratio_jg": 21411.32,
+        "energy_to_mass_ratio_jg": 42822.64,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1363,7 +1363,7 @@
             "z": -1991.236
         },
         "potential_kinetic_energy_mj": 27043.03,
-        "energy_to_mass_ratio_jg": 54086.05,
+        "energy_to_mass_ratio_jg": 108172.11,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1411,7 +1411,7 @@
             "z": -4411.97
         },
         "potential_kinetic_energy_mj": 28250.06,
-        "energy_to_mass_ratio_jg": 56500.13,
+        "energy_to_mass_ratio_jg": 113000.26,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1459,7 +1459,7 @@
             "z": -2434.644
         },
         "potential_kinetic_energy_mj": 26764.54,
-        "energy_to_mass_ratio_jg": 53529.07,
+        "energy_to_mass_ratio_jg": 107058.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1507,7 +1507,7 @@
             "z": 1160.96
         },
         "potential_kinetic_energy_mj": 28477.78,
-        "energy_to_mass_ratio_jg": 56955.56,
+        "energy_to_mass_ratio_jg": 113911.12,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1555,7 +1555,7 @@
             "z": -3697.805
         },
         "potential_kinetic_energy_mj": 24288.91,
-        "energy_to_mass_ratio_jg": 48577.82,
+        "energy_to_mass_ratio_jg": 97155.65,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1603,7 +1603,7 @@
             "z": 4178.931
         },
         "potential_kinetic_energy_mj": 9996.19,
-        "energy_to_mass_ratio_jg": 19992.37,
+        "energy_to_mass_ratio_jg": 39984.74,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1651,7 +1651,7 @@
             "z": 5327.342
         },
         "potential_kinetic_energy_mj": 21573.36,
-        "energy_to_mass_ratio_jg": 43146.73,
+        "energy_to_mass_ratio_jg": 86293.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1699,7 +1699,7 @@
             "z": -4214.42
         },
         "potential_kinetic_energy_mj": 11318.18,
-        "energy_to_mass_ratio_jg": 22636.36,
+        "energy_to_mass_ratio_jg": 45272.71,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1747,7 +1747,7 @@
             "z": 2703.925
         },
         "potential_kinetic_energy_mj": 7463.03,
-        "energy_to_mass_ratio_jg": 14926.05,
+        "energy_to_mass_ratio_jg": 29852.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1795,7 +1795,7 @@
             "z": 6750.745
         },
         "potential_kinetic_energy_mj": 9596.1,
-        "energy_to_mass_ratio_jg": 19192.2,
+        "energy_to_mass_ratio_jg": 38384.4,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1843,7 +1843,7 @@
             "z": -4676.655
         },
         "potential_kinetic_energy_mj": 17465.78,
-        "energy_to_mass_ratio_jg": 34931.55,
+        "energy_to_mass_ratio_jg": 69863.11,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1891,7 +1891,7 @@
             "z": -1304.185
         },
         "potential_kinetic_energy_mj": 25556.88,
-        "energy_to_mass_ratio_jg": 51113.76,
+        "energy_to_mass_ratio_jg": 102227.53,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1939,7 +1939,7 @@
             "z": -4621.758
         },
         "potential_kinetic_energy_mj": 19204.0,
-        "energy_to_mass_ratio_jg": 38408.0,
+        "energy_to_mass_ratio_jg": 76816.0,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -1987,7 +1987,7 @@
             "z": 5458.464
         },
         "potential_kinetic_energy_mj": 19022.92,
-        "energy_to_mass_ratio_jg": 38045.85,
+        "energy_to_mass_ratio_jg": 76091.7,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2035,7 +2035,7 @@
             "z": -6798.885
         },
         "potential_kinetic_energy_mj": 64.99,
-        "energy_to_mass_ratio_jg": 43327.03,
+        "energy_to_mass_ratio_jg": 86654.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -2083,7 +2083,7 @@
             "z": -5272.414
         },
         "potential_kinetic_energy_mj": 12449.73,
-        "energy_to_mass_ratio_jg": 24899.46,
+        "energy_to_mass_ratio_jg": 49798.92,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2131,7 +2131,7 @@
             "z": -5372.232
         },
         "potential_kinetic_energy_mj": 20979.43,
-        "energy_to_mass_ratio_jg": 41958.86,
+        "energy_to_mass_ratio_jg": 83917.71,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2179,7 +2179,7 @@
             "z": 4523.062
         },
         "potential_kinetic_energy_mj": 1209.89,
-        "energy_to_mass_ratio_jg": 2419.78,
+        "energy_to_mass_ratio_jg": 4839.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2227,7 +2227,7 @@
             "z": -1555.803
         },
         "potential_kinetic_energy_mj": 1174.76,
-        "energy_to_mass_ratio_jg": 2349.52,
+        "energy_to_mass_ratio_jg": 4699.04,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2275,7 +2275,7 @@
             "z": 5428.171
         },
         "potential_kinetic_energy_mj": 15246.69,
-        "energy_to_mass_ratio_jg": 30493.37,
+        "energy_to_mass_ratio_jg": 60986.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2323,7 +2323,7 @@
             "z": -2738.559
         },
         "potential_kinetic_energy_mj": 239.89,
-        "energy_to_mass_ratio_jg": 479.77,
+        "energy_to_mass_ratio_jg": 959.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2371,7 +2371,7 @@
             "z": -4591.545
         },
         "potential_kinetic_energy_mj": 14479.35,
-        "energy_to_mass_ratio_jg": 28958.7,
+        "energy_to_mass_ratio_jg": 57917.4,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2419,7 +2419,7 @@
             "z": 2794.445
         },
         "potential_kinetic_energy_mj": 26839.33,
-        "energy_to_mass_ratio_jg": 53678.66,
+        "energy_to_mass_ratio_jg": 107357.31,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2467,7 +2467,7 @@
             "z": -6188.537
         },
         "potential_kinetic_energy_mj": 57.08,
-        "energy_to_mass_ratio_jg": 38052.03,
+        "energy_to_mass_ratio_jg": 76104.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -2515,7 +2515,7 @@
             "z": -6772.757
         },
         "potential_kinetic_energy_mj": 8492.27,
-        "energy_to_mass_ratio_jg": 16984.55,
+        "energy_to_mass_ratio_jg": 33969.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2563,7 +2563,7 @@
             "z": -6122.358
         },
         "potential_kinetic_energy_mj": 26672.2,
-        "energy_to_mass_ratio_jg": 53344.4,
+        "energy_to_mass_ratio_jg": 106688.79,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2611,7 +2611,7 @@
             "z": -4794.035
         },
         "potential_kinetic_energy_mj": 28145.35,
-        "energy_to_mass_ratio_jg": 56290.7,
+        "energy_to_mass_ratio_jg": 112581.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2659,7 +2659,7 @@
             "z": 1742.003
         },
         "potential_kinetic_energy_mj": 28473.69,
-        "energy_to_mass_ratio_jg": 56947.38,
+        "energy_to_mass_ratio_jg": 113894.76,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2707,7 +2707,7 @@
             "z": 6710.752
         },
         "potential_kinetic_energy_mj": 307.44,
-        "energy_to_mass_ratio_jg": 614.89,
+        "energy_to_mass_ratio_jg": 1229.77,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2755,7 +2755,7 @@
             "z": -3502.042
         },
         "potential_kinetic_energy_mj": 12227.25,
-        "energy_to_mass_ratio_jg": 24454.5,
+        "energy_to_mass_ratio_jg": 48909.01,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2803,7 +2803,7 @@
             "z": -122.107
         },
         "potential_kinetic_energy_mj": 25755.15,
-        "energy_to_mass_ratio_jg": 51510.29,
+        "energy_to_mass_ratio_jg": 103020.59,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2851,7 +2851,7 @@
             "z": 4424.1
         },
         "potential_kinetic_energy_mj": 7677.43,
-        "energy_to_mass_ratio_jg": 15354.87,
+        "energy_to_mass_ratio_jg": 30709.74,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2899,7 +2899,7 @@
             "z": 6536.739
         },
         "potential_kinetic_energy_mj": 23452.14,
-        "energy_to_mass_ratio_jg": 46904.28,
+        "energy_to_mass_ratio_jg": 93808.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -2947,7 +2947,7 @@
             "z": -1400.241
         },
         "potential_kinetic_energy_mj": 80.93,
-        "energy_to_mass_ratio_jg": 53953.05,
+        "energy_to_mass_ratio_jg": 107906.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -2995,7 +2995,7 @@
             "z": -2247.528
         },
         "potential_kinetic_energy_mj": 6957.99,
-        "energy_to_mass_ratio_jg": 13915.98,
+        "energy_to_mass_ratio_jg": 27831.96,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3043,7 +3043,7 @@
             "z": -6205.894
         },
         "potential_kinetic_energy_mj": 26315.94,
-        "energy_to_mass_ratio_jg": 52631.89,
+        "energy_to_mass_ratio_jg": 105263.77,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3091,7 +3091,7 @@
             "z": 7078.01
         },
         "potential_kinetic_energy_mj": 48.12,
-        "energy_to_mass_ratio_jg": 32080.82,
+        "energy_to_mass_ratio_jg": 64161.64,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -3139,7 +3139,7 @@
             "z": -6772.223
         },
         "potential_kinetic_energy_mj": 7841.71,
-        "energy_to_mass_ratio_jg": 15683.43,
+        "energy_to_mass_ratio_jg": 31366.85,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3187,7 +3187,7 @@
             "z": -3369.627
         },
         "potential_kinetic_energy_mj": 24114.01,
-        "energy_to_mass_ratio_jg": 48228.03,
+        "energy_to_mass_ratio_jg": 96456.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3235,7 +3235,7 @@
             "z": 7312.86
         },
         "potential_kinetic_energy_mj": 147.32,
-        "energy_to_mass_ratio_jg": 294.64,
+        "energy_to_mass_ratio_jg": 295.52,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -3283,7 +3283,7 @@
             "z": -6521.869
         },
         "potential_kinetic_energy_mj": 23936.06,
-        "energy_to_mass_ratio_jg": 47872.11,
+        "energy_to_mass_ratio_jg": 95744.22,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3331,7 +3331,7 @@
             "z": 4795.449
         },
         "potential_kinetic_energy_mj": 3176.51,
-        "energy_to_mass_ratio_jg": 6353.03,
+        "energy_to_mass_ratio_jg": 12706.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3379,7 +3379,7 @@
             "z": 6760.238
         },
         "potential_kinetic_energy_mj": 6626.37,
-        "energy_to_mass_ratio_jg": 13252.74,
+        "energy_to_mass_ratio_jg": 26505.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3427,7 +3427,7 @@
             "z": 5022.598
         },
         "potential_kinetic_energy_mj": 23709.4,
-        "energy_to_mass_ratio_jg": 47418.8,
+        "energy_to_mass_ratio_jg": 94837.6,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3475,7 +3475,7 @@
             "z": 5322.038
         },
         "potential_kinetic_energy_mj": 13234.99,
-        "energy_to_mass_ratio_jg": 26469.98,
+        "energy_to_mass_ratio_jg": 52939.96,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3523,7 +3523,7 @@
             "z": -4855.774
         },
         "potential_kinetic_energy_mj": 7744.63,
-        "energy_to_mass_ratio_jg": 15489.27,
+        "energy_to_mass_ratio_jg": 30978.53,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3571,7 +3571,7 @@
             "z": -4189.462
         },
         "potential_kinetic_energy_mj": 22209.72,
-        "energy_to_mass_ratio_jg": 44419.44,
+        "energy_to_mass_ratio_jg": 88838.88,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3619,7 +3619,7 @@
             "z": 3006.636
         },
         "potential_kinetic_energy_mj": 26802.37,
-        "energy_to_mass_ratio_jg": 53604.73,
+        "energy_to_mass_ratio_jg": 107209.47,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3667,7 +3667,7 @@
             "z": 2760.512
         },
         "potential_kinetic_energy_mj": 7534.77,
-        "energy_to_mass_ratio_jg": 15069.54,
+        "energy_to_mass_ratio_jg": 30139.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3715,7 +3715,7 @@
             "z": 6655.731
         },
         "potential_kinetic_energy_mj": 117.21,
-        "energy_to_mass_ratio_jg": 234.43,
+        "energy_to_mass_ratio_jg": 235.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -3763,7 +3763,7 @@
             "z": 2589.277
         },
         "potential_kinetic_energy_mj": 26893.37,
-        "energy_to_mass_ratio_jg": 53786.74,
+        "energy_to_mass_ratio_jg": 107573.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3811,7 +3811,7 @@
             "z": 5450.21
         },
         "potential_kinetic_energy_mj": 19129.97,
-        "energy_to_mass_ratio_jg": 38259.93,
+        "energy_to_mass_ratio_jg": 76519.87,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3859,7 +3859,7 @@
             "z": 5005.631
         },
         "potential_kinetic_energy_mj": 10193.12,
-        "energy_to_mass_ratio_jg": 20386.24,
+        "energy_to_mass_ratio_jg": 40772.48,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3907,7 +3907,7 @@
             "z": 5260.541
         },
         "potential_kinetic_energy_mj": 12514.64,
-        "energy_to_mass_ratio_jg": 25029.29,
+        "energy_to_mass_ratio_jg": 50058.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -3955,7 +3955,7 @@
             "z": -1221.702
         },
         "potential_kinetic_energy_mj": 25561.93,
-        "energy_to_mass_ratio_jg": 51123.86,
+        "energy_to_mass_ratio_jg": 102247.72,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4003,7 +4003,7 @@
             "z": -3452.332
         },
         "potential_kinetic_energy_mj": 8033.39,
-        "energy_to_mass_ratio_jg": 16066.77,
+        "energy_to_mass_ratio_jg": 32133.55,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4051,7 +4051,7 @@
             "z": -1746.781
         },
         "potential_kinetic_energy_mj": 84.43,
-        "energy_to_mass_ratio_jg": 56284.6,
+        "energy_to_mass_ratio_jg": 112569.2,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -4099,7 +4099,7 @@
             "z": 5007.903
         },
         "potential_kinetic_energy_mj": 23788.58,
-        "energy_to_mass_ratio_jg": 47577.17,
+        "energy_to_mass_ratio_jg": 95154.33,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4147,7 +4147,7 @@
             "z": -4694.789
         },
         "potential_kinetic_energy_mj": 8452.09,
-        "energy_to_mass_ratio_jg": 16904.18,
+        "energy_to_mass_ratio_jg": 33808.36,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4195,7 +4195,7 @@
             "z": -6266.775
         },
         "potential_kinetic_energy_mj": 70.57,
-        "energy_to_mass_ratio_jg": 141.13,
+        "energy_to_mass_ratio_jg": 141.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -4243,7 +4243,7 @@
             "z": -6609.2
         },
         "potential_kinetic_energy_mj": 150.86,
-        "energy_to_mass_ratio_jg": 301.72,
+        "energy_to_mass_ratio_jg": 302.63,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -4291,7 +4291,7 @@
             "z": -2382.789
         },
         "potential_kinetic_energy_mj": 1938.15,
-        "energy_to_mass_ratio_jg": 3876.31,
+        "energy_to_mass_ratio_jg": 7752.61,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4339,7 +4339,7 @@
             "z": 4900.263
         },
         "potential_kinetic_energy_mj": 19422.22,
-        "energy_to_mass_ratio_jg": 38844.43,
+        "energy_to_mass_ratio_jg": 77688.87,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4387,7 +4387,7 @@
             "z": -4036.531
         },
         "potential_kinetic_energy_mj": 10228.24,
-        "energy_to_mass_ratio_jg": 20456.48,
+        "energy_to_mass_ratio_jg": 40912.96,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4435,7 +4435,7 @@
             "z": 179.25
         },
         "potential_kinetic_energy_mj": 25723.87,
-        "energy_to_mass_ratio_jg": 51447.75,
+        "energy_to_mass_ratio_jg": 102895.5,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4483,7 +4483,7 @@
             "z": -4259.802
         },
         "potential_kinetic_energy_mj": 14253.49,
-        "energy_to_mass_ratio_jg": 28506.97,
+        "energy_to_mass_ratio_jg": 57013.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4531,7 +4531,7 @@
             "z": 4393.672
         },
         "potential_kinetic_energy_mj": 21211.3,
-        "energy_to_mass_ratio_jg": 42422.59,
+        "energy_to_mass_ratio_jg": 84845.19,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4579,7 +4579,7 @@
             "z": -3787.939
         },
         "potential_kinetic_energy_mj": 26097.97,
-        "energy_to_mass_ratio_jg": 52195.94,
+        "energy_to_mass_ratio_jg": 104391.88,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4627,7 +4627,7 @@
             "z": -4196.785
         },
         "potential_kinetic_energy_mj": 25684.26,
-        "energy_to_mass_ratio_jg": 51368.51,
+        "energy_to_mass_ratio_jg": 102737.02,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4675,7 +4675,7 @@
             "z": -2261.605
         },
         "potential_kinetic_energy_mj": 9333.41,
-        "energy_to_mass_ratio_jg": 18666.83,
+        "energy_to_mass_ratio_jg": 37333.66,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4723,7 +4723,7 @@
             "z": -6779.182
         },
         "potential_kinetic_energy_mj": 6123.56,
-        "energy_to_mass_ratio_jg": 12247.13,
+        "energy_to_mass_ratio_jg": 24494.26,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4771,7 +4771,7 @@
             "z": -3642.592
         },
         "potential_kinetic_energy_mj": 11589.93,
-        "energy_to_mass_ratio_jg": 23179.87,
+        "energy_to_mass_ratio_jg": 46359.73,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4819,7 +4819,7 @@
             "z": 387.062
         },
         "potential_kinetic_energy_mj": 27232.25,
-        "energy_to_mass_ratio_jg": 54464.5,
+        "energy_to_mass_ratio_jg": 108929.0,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4867,7 +4867,7 @@
             "z": -1375.484
         },
         "potential_kinetic_energy_mj": 27177.92,
-        "energy_to_mass_ratio_jg": 54355.85,
+        "energy_to_mass_ratio_jg": 108711.7,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4915,7 +4915,7 @@
             "z": -5117.496
         },
         "potential_kinetic_energy_mj": 22940.3,
-        "energy_to_mass_ratio_jg": 45880.6,
+        "energy_to_mass_ratio_jg": 91761.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -4963,7 +4963,7 @@
             "z": -6776.27
         },
         "potential_kinetic_energy_mj": 13012.11,
-        "energy_to_mass_ratio_jg": 26024.22,
+        "energy_to_mass_ratio_jg": 52048.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5011,7 +5011,7 @@
             "z": 912.049
         },
         "potential_kinetic_energy_mj": 27245.27,
-        "energy_to_mass_ratio_jg": 54490.54,
+        "energy_to_mass_ratio_jg": 108981.08,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5059,7 +5059,7 @@
             "z": 4632.692
         },
         "potential_kinetic_energy_mj": 12692.17,
-        "energy_to_mass_ratio_jg": 25384.35,
+        "energy_to_mass_ratio_jg": 50768.7,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5107,7 +5107,7 @@
             "z": 6434.775
         },
         "potential_kinetic_energy_mj": 19968.76,
-        "energy_to_mass_ratio_jg": 39937.51,
+        "energy_to_mass_ratio_jg": 79875.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5155,7 +5155,7 @@
             "z": -2448.798
         },
         "potential_kinetic_energy_mj": 143.59,
-        "energy_to_mass_ratio_jg": 287.19,
+        "energy_to_mass_ratio_jg": 574.38,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5203,7 +5203,7 @@
             "z": -4657.263
         },
         "potential_kinetic_energy_mj": 1203.66,
-        "energy_to_mass_ratio_jg": 2407.33,
+        "energy_to_mass_ratio_jg": 4814.65,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5251,7 +5251,7 @@
             "z": -4303.331
         },
         "potential_kinetic_energy_mj": 21719.89,
-        "energy_to_mass_ratio_jg": 43439.78,
+        "energy_to_mass_ratio_jg": 86879.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5299,7 +5299,7 @@
             "z": 4671.628
         },
         "potential_kinetic_energy_mj": 17433.51,
-        "energy_to_mass_ratio_jg": 34867.01,
+        "energy_to_mass_ratio_jg": 69734.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5347,7 +5347,7 @@
             "z": -3469.884
         },
         "potential_kinetic_energy_mj": 21043.36,
-        "energy_to_mass_ratio_jg": 42086.72,
+        "energy_to_mass_ratio_jg": 84173.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5395,7 +5395,7 @@
             "z": -3005.666
         },
         "potential_kinetic_energy_mj": 24524.24,
-        "energy_to_mass_ratio_jg": 49048.48,
+        "energy_to_mass_ratio_jg": 98096.96,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5443,7 +5443,7 @@
             "z": -7075.394
         },
         "potential_kinetic_energy_mj": 19.19,
-        "energy_to_mass_ratio_jg": 12795.72,
+        "energy_to_mass_ratio_jg": 25591.43,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -5491,7 +5491,7 @@
             "z": -1757.195
         },
         "potential_kinetic_energy_mj": 4459.13,
-        "energy_to_mass_ratio_jg": 8918.26,
+        "energy_to_mass_ratio_jg": 17836.51,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5539,7 +5539,7 @@
             "z": 5427.529
         },
         "potential_kinetic_energy_mj": 27843.53,
-        "energy_to_mass_ratio_jg": 55687.07,
+        "energy_to_mass_ratio_jg": 111374.14,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5587,7 +5587,7 @@
             "z": -4375.184
         },
         "potential_kinetic_energy_mj": 538.17,
-        "energy_to_mass_ratio_jg": 1076.33,
+        "energy_to_mass_ratio_jg": 2152.66,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5635,7 +5635,7 @@
             "z": 4439.625
         },
         "potential_kinetic_energy_mj": 7707.71,
-        "energy_to_mass_ratio_jg": 15415.41,
+        "energy_to_mass_ratio_jg": 30830.83,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5683,7 +5683,7 @@
             "z": 3262.716
         },
         "potential_kinetic_energy_mj": 148.21,
-        "energy_to_mass_ratio_jg": 296.41,
+        "energy_to_mass_ratio_jg": 297.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -5731,7 +5731,7 @@
             "z": 4463.307
         },
         "potential_kinetic_energy_mj": 154.58,
-        "energy_to_mass_ratio_jg": 309.17,
+        "energy_to_mass_ratio_jg": 310.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -5779,7 +5779,7 @@
             "z": -6828.096
         },
         "potential_kinetic_energy_mj": 49.85,
-        "energy_to_mass_ratio_jg": 99.7,
+        "energy_to_mass_ratio_jg": 199.4,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5827,7 +5827,7 @@
             "z": -5292.04
         },
         "potential_kinetic_energy_mj": 21820.95,
-        "energy_to_mass_ratio_jg": 43641.91,
+        "energy_to_mass_ratio_jg": 87283.81,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5875,7 +5875,7 @@
             "z": 1691.076
         },
         "potential_kinetic_energy_mj": 28483.12,
-        "energy_to_mass_ratio_jg": 56966.24,
+        "energy_to_mass_ratio_jg": 113932.48,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5923,7 +5923,7 @@
             "z": -4794.758
         },
         "potential_kinetic_energy_mj": 28137.24,
-        "energy_to_mass_ratio_jg": 56274.48,
+        "energy_to_mass_ratio_jg": 112548.97,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -5971,7 +5971,7 @@
             "z": 5092.217
         },
         "potential_kinetic_energy_mj": 23381.54,
-        "energy_to_mass_ratio_jg": 46763.08,
+        "energy_to_mass_ratio_jg": 93526.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6019,7 +6019,7 @@
             "z": -1652.884
         },
         "potential_kinetic_energy_mj": 25448.27,
-        "energy_to_mass_ratio_jg": 50896.55,
+        "energy_to_mass_ratio_jg": 101793.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6067,7 +6067,7 @@
             "z": 240.315
         },
         "potential_kinetic_energy_mj": 25731.79,
-        "energy_to_mass_ratio_jg": 51463.59,
+        "energy_to_mass_ratio_jg": 102927.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6115,7 +6115,7 @@
             "z": 773.317
         },
         "potential_kinetic_energy_mj": 25670.08,
-        "energy_to_mass_ratio_jg": 51340.17,
+        "energy_to_mass_ratio_jg": 102680.33,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6163,7 +6163,7 @@
             "z": -1413.631
         },
         "potential_kinetic_energy_mj": 4341.92,
-        "energy_to_mass_ratio_jg": 8683.84,
+        "energy_to_mass_ratio_jg": 17367.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6211,7 +6211,7 @@
             "z": 3762.851
         },
         "potential_kinetic_energy_mj": 6173.86,
-        "energy_to_mass_ratio_jg": 12347.72,
+        "energy_to_mass_ratio_jg": 24695.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6259,7 +6259,7 @@
             "z": -4388.1
         },
         "potential_kinetic_energy_mj": 24737.45,
-        "energy_to_mass_ratio_jg": 49474.89,
+        "energy_to_mass_ratio_jg": 98949.79,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6307,7 +6307,7 @@
             "z": -6356.902
         },
         "potential_kinetic_energy_mj": 13391.92,
-        "energy_to_mass_ratio_jg": 26783.84,
+        "energy_to_mass_ratio_jg": 53567.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6355,7 +6355,7 @@
             "z": -4054.862
         },
         "potential_kinetic_energy_mj": 6670.8,
-        "energy_to_mass_ratio_jg": 13341.59,
+        "energy_to_mass_ratio_jg": 26683.19,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6403,7 +6403,7 @@
             "z": -1490.485
         },
         "potential_kinetic_energy_mj": 27209.54,
-        "energy_to_mass_ratio_jg": 54419.08,
+        "energy_to_mass_ratio_jg": 108838.16,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6451,7 +6451,7 @@
             "z": 4610.006
         },
         "potential_kinetic_energy_mj": 8281.88,
-        "energy_to_mass_ratio_jg": 16563.76,
+        "energy_to_mass_ratio_jg": 33127.52,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6499,7 +6499,7 @@
             "z": 4496.623
         },
         "potential_kinetic_energy_mj": 6.47,
-        "energy_to_mass_ratio_jg": 4310.04,
+        "energy_to_mass_ratio_jg": 8620.08,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -6547,7 +6547,7 @@
             "z": -5058.099
         },
         "potential_kinetic_energy_mj": 10523.15,
-        "energy_to_mass_ratio_jg": 21046.3,
+        "energy_to_mass_ratio_jg": 42092.59,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6595,7 +6595,7 @@
             "z": -3583.102
         },
         "potential_kinetic_energy_mj": 26336.32,
-        "energy_to_mass_ratio_jg": 52672.64,
+        "energy_to_mass_ratio_jg": 105345.27,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6643,7 +6643,7 @@
             "z": 3004.773
         },
         "potential_kinetic_energy_mj": 26737.14,
-        "energy_to_mass_ratio_jg": 53474.27,
+        "energy_to_mass_ratio_jg": 106948.55,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6691,7 +6691,7 @@
             "z": 6737.896
         },
         "potential_kinetic_energy_mj": 1673.71,
-        "energy_to_mass_ratio_jg": 3347.43,
+        "energy_to_mass_ratio_jg": 6694.86,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6739,7 +6739,7 @@
             "z": 2006.178
         },
         "potential_kinetic_energy_mj": 8764.5,
-        "energy_to_mass_ratio_jg": 17529.0,
+        "energy_to_mass_ratio_jg": 35058.01,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6787,7 +6787,7 @@
             "z": -2296.801
         },
         "potential_kinetic_energy_mj": 25094.12,
-        "energy_to_mass_ratio_jg": 50188.23,
+        "energy_to_mass_ratio_jg": 100376.47,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6835,7 +6835,7 @@
             "z": -6402.229
         },
         "potential_kinetic_energy_mj": 81.47,
-        "energy_to_mass_ratio_jg": 54311.62,
+        "energy_to_mass_ratio_jg": 108623.23,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -6883,7 +6883,7 @@
             "z": 5429.969
         },
         "potential_kinetic_energy_mj": 19668.74,
-        "energy_to_mass_ratio_jg": 39337.48,
+        "energy_to_mass_ratio_jg": 78674.96,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6931,7 +6931,7 @@
             "z": 4674.296
         },
         "potential_kinetic_energy_mj": 16643.84,
-        "energy_to_mass_ratio_jg": 33287.67,
+        "energy_to_mass_ratio_jg": 66575.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -6979,7 +6979,7 @@
             "z": 6644.075
         },
         "potential_kinetic_energy_mj": 115.18,
-        "energy_to_mass_ratio_jg": 230.37,
+        "energy_to_mass_ratio_jg": 231.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 1.5,
@@ -7027,7 +7027,7 @@
             "z": 5443.032
         },
         "potential_kinetic_energy_mj": 5212.52,
-        "energy_to_mass_ratio_jg": 10425.05,
+        "energy_to_mass_ratio_jg": 20850.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7075,7 +7075,7 @@
             "z": 6141.632
         },
         "potential_kinetic_energy_mj": 26598.77,
-        "energy_to_mass_ratio_jg": 53197.53,
+        "energy_to_mass_ratio_jg": 106395.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7123,7 +7123,7 @@
             "z": 4672.247
         },
         "potential_kinetic_energy_mj": 17704.44,
-        "energy_to_mass_ratio_jg": 35408.87,
+        "energy_to_mass_ratio_jg": 70817.74,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7171,7 +7171,7 @@
             "z": 7027.812
         },
         "potential_kinetic_energy_mj": 109.27,
-        "energy_to_mass_ratio_jg": 218.54,
+        "energy_to_mass_ratio_jg": 219.19,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -7219,7 +7219,7 @@
             "z": 7171.515
         },
         "potential_kinetic_energy_mj": 85.39,
-        "energy_to_mass_ratio_jg": 170.79,
+        "energy_to_mass_ratio_jg": 171.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -7267,7 +7267,7 @@
             "z": -6258.384
         },
         "potential_kinetic_energy_mj": 75.58,
-        "energy_to_mass_ratio_jg": 50385.97,
+        "energy_to_mass_ratio_jg": 100771.93,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -7315,7 +7315,7 @@
             "z": -6127.87
         },
         "potential_kinetic_energy_mj": 26678.69,
-        "energy_to_mass_ratio_jg": 53357.39,
+        "energy_to_mass_ratio_jg": 106714.78,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7363,7 +7363,7 @@
             "z": 3798.863
         },
         "potential_kinetic_energy_mj": 26211.71,
-        "energy_to_mass_ratio_jg": 52423.42,
+        "energy_to_mass_ratio_jg": 104846.84,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7411,7 +7411,7 @@
             "z": -6503.505
         },
         "potential_kinetic_energy_mj": 81.78,
-        "energy_to_mass_ratio_jg": 54523.11,
+        "energy_to_mass_ratio_jg": 109046.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -7459,7 +7459,7 @@
             "z": -5397.821
         },
         "potential_kinetic_energy_mj": 14530.92,
-        "energy_to_mass_ratio_jg": 29061.84,
+        "energy_to_mass_ratio_jg": 58123.69,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7507,7 +7507,7 @@
             "z": 6806.384
         },
         "potential_kinetic_energy_mj": 1613.52,
-        "energy_to_mass_ratio_jg": 3227.03,
+        "energy_to_mass_ratio_jg": 6454.07,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7555,7 +7555,7 @@
             "z": 6701.314
         },
         "potential_kinetic_energy_mj": 16467.33,
-        "energy_to_mass_ratio_jg": 32934.66,
+        "energy_to_mass_ratio_jg": 65869.32,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7603,7 +7603,7 @@
             "z": -1849.956
         },
         "potential_kinetic_energy_mj": 25363.19,
-        "energy_to_mass_ratio_jg": 50726.37,
+        "energy_to_mass_ratio_jg": 101452.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7651,7 +7651,7 @@
             "z": 1868.302
         },
         "potential_kinetic_energy_mj": 4547.73,
-        "energy_to_mass_ratio_jg": 9095.45,
+        "energy_to_mass_ratio_jg": 18190.9,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7699,7 +7699,7 @@
             "z": 6806.927
         },
         "potential_kinetic_energy_mj": 1340.06,
-        "energy_to_mass_ratio_jg": 2680.13,
+        "energy_to_mass_ratio_jg": 5360.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7747,7 +7747,7 @@
             "z": 2148.483
         },
         "potential_kinetic_energy_mj": 25267.68,
-        "energy_to_mass_ratio_jg": 50535.37,
+        "energy_to_mass_ratio_jg": 101070.73,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7795,7 +7795,7 @@
             "z": 6231.928
         },
         "potential_kinetic_energy_mj": 20.9,
-        "energy_to_mass_ratio_jg": 13936.16,
+        "energy_to_mass_ratio_jg": 27872.32,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -7843,7 +7843,7 @@
             "z": 4110.439
         },
         "potential_kinetic_energy_mj": 25846.02,
-        "energy_to_mass_ratio_jg": 51692.03,
+        "energy_to_mass_ratio_jg": 103384.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7891,7 +7891,7 @@
             "z": 3493.422
         },
         "potential_kinetic_energy_mj": 8043.79,
-        "energy_to_mass_ratio_jg": 16087.59,
+        "energy_to_mass_ratio_jg": 32175.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7939,7 +7939,7 @@
             "z": 4651.87
         },
         "potential_kinetic_energy_mj": 18389.19,
-        "energy_to_mass_ratio_jg": 36778.39,
+        "energy_to_mass_ratio_jg": 73556.78,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -7987,7 +7987,7 @@
             "z": 5276.449
         },
         "potential_kinetic_energy_mj": 12196.28,
-        "energy_to_mass_ratio_jg": 24392.56,
+        "energy_to_mass_ratio_jg": 48785.11,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8035,7 +8035,7 @@
             "z": 4792.287
         },
         "potential_kinetic_energy_mj": 174.1,
-        "energy_to_mass_ratio_jg": 348.2,
+        "energy_to_mass_ratio_jg": 349.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -8083,7 +8083,7 @@
             "z": 7125.948
         },
         "potential_kinetic_energy_mj": 5.15,
-        "energy_to_mass_ratio_jg": 3431.33,
+        "energy_to_mass_ratio_jg": 6862.66,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -8131,7 +8131,7 @@
             "z": -3139.108
         },
         "potential_kinetic_energy_mj": 22169.07,
-        "energy_to_mass_ratio_jg": 44338.13,
+        "energy_to_mass_ratio_jg": 88676.27,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8179,7 +8179,7 @@
             "z": 5298.911
         },
         "potential_kinetic_energy_mj": 21875.27,
-        "energy_to_mass_ratio_jg": 43750.55,
+        "energy_to_mass_ratio_jg": 87501.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8227,7 +8227,7 @@
             "z": -5965.963
         },
         "potential_kinetic_energy_mj": 18543.86,
-        "energy_to_mass_ratio_jg": 37087.73,
+        "energy_to_mass_ratio_jg": 74175.46,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8275,7 +8275,7 @@
             "z": 5294.16
         },
         "potential_kinetic_energy_mj": 12943.3,
-        "energy_to_mass_ratio_jg": 25886.59,
+        "energy_to_mass_ratio_jg": 51773.19,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8323,7 +8323,7 @@
             "z": 406.725
         },
         "potential_kinetic_energy_mj": 27250.78,
-        "energy_to_mass_ratio_jg": 54501.56,
+        "energy_to_mass_ratio_jg": 109003.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8371,7 +8371,7 @@
             "z": 3392.5
         },
         "potential_kinetic_energy_mj": 26532.56,
-        "energy_to_mass_ratio_jg": 53065.12,
+        "energy_to_mass_ratio_jg": 106130.24,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8419,7 +8419,7 @@
             "z": -5436.12
         },
         "potential_kinetic_energy_mj": 15139.46,
-        "energy_to_mass_ratio_jg": 30278.92,
+        "energy_to_mass_ratio_jg": 60557.83,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8467,7 +8467,7 @@
             "z": 6522.905
         },
         "potential_kinetic_energy_mj": 23820.49,
-        "energy_to_mass_ratio_jg": 47640.98,
+        "energy_to_mass_ratio_jg": 95281.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8515,7 +8515,7 @@
             "z": 6808.608
         },
         "potential_kinetic_energy_mj": 28695.35,
-        "energy_to_mass_ratio_jg": 57390.69,
+        "energy_to_mass_ratio_jg": 114781.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8563,7 +8563,7 @@
             "z": -4958.016
         },
         "potential_kinetic_energy_mj": 28057.84,
-        "energy_to_mass_ratio_jg": 56115.67,
+        "energy_to_mass_ratio_jg": 112231.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8611,7 +8611,7 @@
             "z": -1010.294
         },
         "potential_kinetic_energy_mj": 4744.64,
-        "energy_to_mass_ratio_jg": 9489.28,
+        "energy_to_mass_ratio_jg": 18978.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8659,7 +8659,7 @@
             "z": 2992.648
         },
         "potential_kinetic_energy_mj": 24599.73,
-        "energy_to_mass_ratio_jg": 49199.46,
+        "energy_to_mass_ratio_jg": 98398.92,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8707,7 +8707,7 @@
             "z": 3224.725
         },
         "potential_kinetic_energy_mj": 28636.81,
-        "energy_to_mass_ratio_jg": 57273.61,
+        "energy_to_mass_ratio_jg": 114547.22,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8755,7 +8755,7 @@
             "z": -6766.062
         },
         "potential_kinetic_energy_mj": 15678.36,
-        "energy_to_mass_ratio_jg": 31356.72,
+        "energy_to_mass_ratio_jg": 62713.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8803,7 +8803,7 @@
             "z": -4170.104
         },
         "potential_kinetic_energy_mj": 25852.3,
-        "energy_to_mass_ratio_jg": 51704.61,
+        "energy_to_mass_ratio_jg": 103409.22,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8851,7 +8851,7 @@
             "z": 6520.692
         },
         "potential_kinetic_energy_mj": 23913.0,
-        "energy_to_mass_ratio_jg": 47825.99,
+        "energy_to_mass_ratio_jg": 95651.99,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8899,7 +8899,7 @@
             "z": 6674.081
         },
         "potential_kinetic_energy_mj": 20150.2,
-        "energy_to_mass_ratio_jg": 40300.39,
+        "energy_to_mass_ratio_jg": 80600.78,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8947,7 +8947,7 @@
             "z": 3844.435
         },
         "potential_kinetic_energy_mj": 5438.74,
-        "energy_to_mass_ratio_jg": 10877.47,
+        "energy_to_mass_ratio_jg": 21754.94,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -8995,7 +8995,7 @@
             "z": 6731.106
         },
         "potential_kinetic_energy_mj": 13766.92,
-        "energy_to_mass_ratio_jg": 27533.85,
+        "energy_to_mass_ratio_jg": 55067.69,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9043,7 +9043,7 @@
             "z": -4598.586
         },
         "potential_kinetic_energy_mj": 19386.82,
-        "energy_to_mass_ratio_jg": 38773.63,
+        "energy_to_mass_ratio_jg": 77547.27,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9091,7 +9091,7 @@
             "z": -3295.512
         },
         "potential_kinetic_energy_mj": 24216.72,
-        "energy_to_mass_ratio_jg": 48433.44,
+        "energy_to_mass_ratio_jg": 96866.88,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9139,7 +9139,7 @@
             "z": -6806.959
         },
         "potential_kinetic_energy_mj": 8830.68,
-        "energy_to_mass_ratio_jg": 17661.36,
+        "energy_to_mass_ratio_jg": 35322.73,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9187,7 +9187,7 @@
             "z": 7046.335
         },
         "potential_kinetic_energy_mj": 15.35,
-        "energy_to_mass_ratio_jg": 10233.81,
+        "energy_to_mass_ratio_jg": 20467.63,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -9235,7 +9235,7 @@
             "z": 4452.385
         },
         "potential_kinetic_energy_mj": 12963.75,
-        "energy_to_mass_ratio_jg": 25927.51,
+        "energy_to_mass_ratio_jg": 51855.01,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9283,7 +9283,7 @@
             "z": 5327.973
         },
         "potential_kinetic_energy_mj": 21566.44,
-        "energy_to_mass_ratio_jg": 43132.89,
+        "energy_to_mass_ratio_jg": 86265.78,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9331,7 +9331,7 @@
             "z": 3917.295
         },
         "potential_kinetic_energy_mj": 2007.86,
-        "energy_to_mass_ratio_jg": 4015.72,
+        "energy_to_mass_ratio_jg": 8031.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9379,7 +9379,7 @@
             "z": 813.364
         },
         "potential_kinetic_energy_mj": 7911.38,
-        "energy_to_mass_ratio_jg": 15822.77,
+        "energy_to_mass_ratio_jg": 31645.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9427,7 +9427,7 @@
             "z": 4077.415
         },
         "potential_kinetic_energy_mj": 6755.45,
-        "energy_to_mass_ratio_jg": 13510.91,
+        "energy_to_mass_ratio_jg": 27021.81,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9475,7 +9475,7 @@
             "z": -4053.726
         },
         "potential_kinetic_energy_mj": 22645.08,
-        "energy_to_mass_ratio_jg": 45290.16,
+        "energy_to_mass_ratio_jg": 90580.32,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9523,7 +9523,7 @@
             "z": -219.888
         },
         "potential_kinetic_energy_mj": 27271.36,
-        "energy_to_mass_ratio_jg": 54542.72,
+        "energy_to_mass_ratio_jg": 109085.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9571,7 +9571,7 @@
             "z": -1362.24
         },
         "potential_kinetic_energy_mj": 28726.74,
-        "energy_to_mass_ratio_jg": 57453.49,
+        "energy_to_mass_ratio_jg": 114906.98,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9619,7 +9619,7 @@
             "z": 6427.349
         },
         "potential_kinetic_energy_mj": 50.31,
-        "energy_to_mass_ratio_jg": 100.62,
+        "energy_to_mass_ratio_jg": 100.92,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -9667,7 +9667,7 @@
             "z": -4082.477
         },
         "potential_kinetic_energy_mj": 10630.18,
-        "energy_to_mass_ratio_jg": 21260.36,
+        "energy_to_mass_ratio_jg": 42520.72,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9715,7 +9715,7 @@
             "z": -2863.257
         },
         "potential_kinetic_energy_mj": 24528.94,
-        "energy_to_mass_ratio_jg": 49057.87,
+        "energy_to_mass_ratio_jg": 98115.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9763,7 +9763,7 @@
             "z": -2278.123
         },
         "potential_kinetic_energy_mj": 12184.96,
-        "energy_to_mass_ratio_jg": 24369.93,
+        "energy_to_mass_ratio_jg": 48739.86,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9811,7 +9811,7 @@
             "z": 6806.905
         },
         "potential_kinetic_energy_mj": 36.94,
-        "energy_to_mass_ratio_jg": 24623.64,
+        "energy_to_mass_ratio_jg": 49247.28,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -9859,7 +9859,7 @@
             "z": -2472.963
         },
         "potential_kinetic_energy_mj": 9400.77,
-        "energy_to_mass_ratio_jg": 18801.54,
+        "energy_to_mass_ratio_jg": 37603.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9907,7 +9907,7 @@
             "z": 6485.558
         },
         "potential_kinetic_energy_mj": 24367.1,
-        "energy_to_mass_ratio_jg": 48734.2,
+        "energy_to_mass_ratio_jg": 97468.41,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -9955,7 +9955,7 @@
             "z": 4966.073
         },
         "potential_kinetic_energy_mj": 158.09,
-        "energy_to_mass_ratio_jg": 316.17,
+        "energy_to_mass_ratio_jg": 317.12,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -10003,7 +10003,7 @@
             "z": -1400.457
         },
         "potential_kinetic_energy_mj": 27114.76,
-        "energy_to_mass_ratio_jg": 54229.53,
+        "energy_to_mass_ratio_jg": 108459.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10051,7 +10051,7 @@
             "z": 1194.894
         },
         "potential_kinetic_energy_mj": 27225.55,
-        "energy_to_mass_ratio_jg": 54451.1,
+        "energy_to_mass_ratio_jg": 108902.2,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10099,7 +10099,7 @@
             "z": 858.76
         },
         "potential_kinetic_energy_mj": 6161.32,
-        "energy_to_mass_ratio_jg": 12322.64,
+        "energy_to_mass_ratio_jg": 24645.28,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10147,7 +10147,7 @@
             "z": -5471.233
         },
         "potential_kinetic_energy_mj": 17260.69,
-        "energy_to_mass_ratio_jg": 34521.38,
+        "energy_to_mass_ratio_jg": 69042.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10195,7 +10195,7 @@
             "z": -6002.173
         },
         "potential_kinetic_energy_mj": 27033.13,
-        "energy_to_mass_ratio_jg": 54066.26,
+        "energy_to_mass_ratio_jg": 108132.52,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10243,7 +10243,7 @@
             "z": -2944.034
         },
         "potential_kinetic_energy_mj": 26660.72,
-        "energy_to_mass_ratio_jg": 53321.43,
+        "energy_to_mass_ratio_jg": 106642.87,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10291,7 +10291,7 @@
             "z": 3009.31
         },
         "potential_kinetic_energy_mj": 156.14,
-        "energy_to_mass_ratio_jg": 312.29,
+        "energy_to_mass_ratio_jg": 313.23,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 1.5,
@@ -10339,7 +10339,7 @@
             "z": -3118.834
         },
         "potential_kinetic_energy_mj": 24443.38,
-        "energy_to_mass_ratio_jg": 48886.77,
+        "energy_to_mass_ratio_jg": 97773.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10387,7 +10387,7 @@
             "z": 4146.722
         },
         "potential_kinetic_energy_mj": 25828.04,
-        "energy_to_mass_ratio_jg": 51656.07,
+        "energy_to_mass_ratio_jg": 103312.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10435,7 +10435,7 @@
             "z": 3471.17
         },
         "potential_kinetic_energy_mj": 5714.61,
-        "energy_to_mass_ratio_jg": 11429.22,
+        "energy_to_mass_ratio_jg": 22858.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10483,7 +10483,7 @@
             "z": 4381.37
         },
         "potential_kinetic_energy_mj": 511.94,
-        "energy_to_mass_ratio_jg": 1023.89,
+        "energy_to_mass_ratio_jg": 2047.78,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10531,7 +10531,7 @@
             "z": -1127.395
         },
         "potential_kinetic_energy_mj": 164.02,
-        "energy_to_mass_ratio_jg": 328.04,
+        "energy_to_mass_ratio_jg": 329.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -10579,7 +10579,7 @@
             "z": -7220.316
         },
         "potential_kinetic_energy_mj": 145.75,
-        "energy_to_mass_ratio_jg": 291.49,
+        "energy_to_mass_ratio_jg": 292.37,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -10627,7 +10627,7 @@
             "z": 7126.056
         },
         "potential_kinetic_energy_mj": 40.7,
-        "energy_to_mass_ratio_jg": 81.4,
+        "energy_to_mass_ratio_jg": 81.64,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -10675,7 +10675,7 @@
             "z": 6770.565
         },
         "potential_kinetic_energy_mj": 8779.64,
-        "energy_to_mass_ratio_jg": 17559.28,
+        "energy_to_mass_ratio_jg": 35118.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10723,7 +10723,7 @@
             "z": 4448.04
         },
         "potential_kinetic_energy_mj": 12954.55,
-        "energy_to_mass_ratio_jg": 25909.1,
+        "energy_to_mass_ratio_jg": 51818.19,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10771,7 +10771,7 @@
             "z": -3861.346
         },
         "potential_kinetic_energy_mj": 23853.36,
-        "energy_to_mass_ratio_jg": 47706.73,
+        "energy_to_mass_ratio_jg": 95413.46,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10819,7 +10819,7 @@
             "z": -502.868
         },
         "potential_kinetic_energy_mj": 163.87,
-        "energy_to_mass_ratio_jg": 327.74,
+        "energy_to_mass_ratio_jg": 328.72,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -10867,7 +10867,7 @@
             "z": 6740.373
         },
         "potential_kinetic_energy_mj": 12057.35,
-        "energy_to_mass_ratio_jg": 24114.71,
+        "energy_to_mass_ratio_jg": 48229.41,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10915,7 +10915,7 @@
             "z": 4671.21
         },
         "potential_kinetic_energy_mj": 17180.67,
-        "energy_to_mass_ratio_jg": 34361.35,
+        "energy_to_mass_ratio_jg": 68722.7,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -10963,7 +10963,7 @@
             "z": -576.711
         },
         "potential_kinetic_energy_mj": 27235.66,
-        "energy_to_mass_ratio_jg": 54471.32,
+        "energy_to_mass_ratio_jg": 108942.63,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11011,7 +11011,7 @@
             "z": -3569.017
         },
         "potential_kinetic_energy_mj": 23776.29,
-        "energy_to_mass_ratio_jg": 47552.59,
+        "energy_to_mass_ratio_jg": 95105.17,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11059,7 +11059,7 @@
             "z": -3808.468
         },
         "potential_kinetic_energy_mj": 28373.51,
-        "energy_to_mass_ratio_jg": 56747.02,
+        "energy_to_mass_ratio_jg": 113494.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11107,7 +11107,7 @@
             "z": 1188.396
         },
         "potential_kinetic_energy_mj": 25616.53,
-        "energy_to_mass_ratio_jg": 51233.06,
+        "energy_to_mass_ratio_jg": 102466.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11155,7 +11155,7 @@
             "z": -6356.07
         },
         "potential_kinetic_energy_mj": 13623.07,
-        "energy_to_mass_ratio_jg": 27246.15,
+        "energy_to_mass_ratio_jg": 54492.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11203,7 +11203,7 @@
             "z": 4666.827
         },
         "potential_kinetic_energy_mj": 8149.29,
-        "energy_to_mass_ratio_jg": 16298.59,
+        "energy_to_mass_ratio_jg": 32597.17,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11251,7 +11251,7 @@
             "z": -3119.364
         },
         "potential_kinetic_energy_mj": 8034.67,
-        "energy_to_mass_ratio_jg": 16069.33,
+        "energy_to_mass_ratio_jg": 32138.67,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11299,7 +11299,7 @@
             "z": -4705.665
         },
         "potential_kinetic_energy_mj": 8633.24,
-        "energy_to_mass_ratio_jg": 17266.49,
+        "energy_to_mass_ratio_jg": 34532.98,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11347,7 +11347,7 @@
             "z": 6669.051
         },
         "potential_kinetic_energy_mj": 33.47,
-        "energy_to_mass_ratio_jg": 22314.88,
+        "energy_to_mass_ratio_jg": 44629.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -11395,7 +11395,7 @@
             "z": 5455.971
         },
         "potential_kinetic_energy_mj": 16378.72,
-        "energy_to_mass_ratio_jg": 32757.45,
+        "energy_to_mass_ratio_jg": 65514.89,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11443,7 +11443,7 @@
             "z": -5475.885
         },
         "potential_kinetic_energy_mj": 17210.84,
-        "energy_to_mass_ratio_jg": 34421.68,
+        "energy_to_mass_ratio_jg": 68843.37,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11491,7 +11491,7 @@
             "z": -1816.861
         },
         "potential_kinetic_energy_mj": 80.91,
-        "energy_to_mass_ratio_jg": 53941.9,
+        "energy_to_mass_ratio_jg": 107883.8,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -11539,7 +11539,7 @@
             "z": 3774.232
         },
         "potential_kinetic_energy_mj": 23627.54,
-        "energy_to_mass_ratio_jg": 47255.08,
+        "energy_to_mass_ratio_jg": 94510.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11587,7 +11587,7 @@
             "z": 6216.398
         },
         "potential_kinetic_energy_mj": 26330.12,
-        "energy_to_mass_ratio_jg": 52660.25,
+        "energy_to_mass_ratio_jg": 105320.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11635,7 +11635,7 @@
             "z": 6364.671
         },
         "potential_kinetic_energy_mj": 25387.44,
-        "energy_to_mass_ratio_jg": 50774.88,
+        "energy_to_mass_ratio_jg": 101549.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11683,7 +11683,7 @@
             "z": -1086.877
         },
         "potential_kinetic_energy_mj": 154.42,
-        "energy_to_mass_ratio_jg": 308.84,
+        "energy_to_mass_ratio_jg": 309.77,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -11731,7 +11731,7 @@
             "z": -1384.976
         },
         "potential_kinetic_energy_mj": 27131.8,
-        "energy_to_mass_ratio_jg": 54263.61,
+        "energy_to_mass_ratio_jg": 108527.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11779,7 +11779,7 @@
             "z": -6761.723
         },
         "potential_kinetic_energy_mj": 73.79,
-        "energy_to_mass_ratio_jg": 49192.67,
+        "energy_to_mass_ratio_jg": 98385.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -11827,7 +11827,7 @@
             "z": -7451.958
         },
         "potential_kinetic_energy_mj": 11515.39,
-        "energy_to_mass_ratio_jg": 23030.78,
+        "energy_to_mass_ratio_jg": 46061.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11875,7 +11875,7 @@
             "z": 4061.367
         },
         "potential_kinetic_energy_mj": 15425.3,
-        "energy_to_mass_ratio_jg": 30850.6,
+        "energy_to_mass_ratio_jg": 61701.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11923,7 +11923,7 @@
             "z": 6648.277
         },
         "potential_kinetic_energy_mj": 21102.41,
-        "energy_to_mass_ratio_jg": 42204.82,
+        "energy_to_mass_ratio_jg": 84409.64,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -11971,7 +11971,7 @@
             "z": -7453.376
         },
         "potential_kinetic_energy_mj": 18533.95,
-        "energy_to_mass_ratio_jg": 37067.9,
+        "energy_to_mass_ratio_jg": 74135.8,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12019,7 +12019,7 @@
             "z": 4267.321
         },
         "potential_kinetic_energy_mj": 28400.98,
-        "energy_to_mass_ratio_jg": 56801.97,
+        "energy_to_mass_ratio_jg": 113603.93,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12067,7 +12067,7 @@
             "z": -4962.046
         },
         "potential_kinetic_energy_mj": 9791.84,
-        "energy_to_mass_ratio_jg": 19583.67,
+        "energy_to_mass_ratio_jg": 39167.34,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12115,7 +12115,7 @@
             "z": 5475.089
         },
         "potential_kinetic_energy_mj": 18340.78,
-        "energy_to_mass_ratio_jg": 36681.57,
+        "energy_to_mass_ratio_jg": 73363.14,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12163,7 +12163,7 @@
             "z": -5378.851
         },
         "potential_kinetic_energy_mj": 21157.26,
-        "energy_to_mass_ratio_jg": 42314.53,
+        "energy_to_mass_ratio_jg": 84629.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12211,7 +12211,7 @@
             "z": 4257.717
         },
         "potential_kinetic_energy_mj": 25683.66,
-        "energy_to_mass_ratio_jg": 51367.33,
+        "energy_to_mass_ratio_jg": 102734.65,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12259,7 +12259,7 @@
             "z": 5215.437
         },
         "potential_kinetic_energy_mj": 22570.71,
-        "energy_to_mass_ratio_jg": 45141.41,
+        "energy_to_mass_ratio_jg": 90282.82,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12307,7 +12307,7 @@
             "z": -588.068
         },
         "potential_kinetic_energy_mj": 5490.95,
-        "energy_to_mass_ratio_jg": 10981.89,
+        "energy_to_mass_ratio_jg": 21963.79,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12355,7 +12355,7 @@
             "z": 2867.631
         },
         "potential_kinetic_energy_mj": 28362.46,
-        "energy_to_mass_ratio_jg": 56724.92,
+        "energy_to_mass_ratio_jg": 113449.84,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12403,7 +12403,7 @@
             "z": -4687.657
         },
         "potential_kinetic_energy_mj": 8437.67,
-        "energy_to_mass_ratio_jg": 16875.34,
+        "energy_to_mass_ratio_jg": 33750.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12451,7 +12451,7 @@
             "z": -5462.769
         },
         "potential_kinetic_energy_mj": 14965.11,
-        "energy_to_mass_ratio_jg": 29930.23,
+        "energy_to_mass_ratio_jg": 59860.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12499,7 +12499,7 @@
             "z": 903.38
         },
         "potential_kinetic_energy_mj": 169.18,
-        "energy_to_mass_ratio_jg": 338.36,
+        "energy_to_mass_ratio_jg": 339.38,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 1.5,
@@ -12547,7 +12547,7 @@
             "z": 608.154
         },
         "potential_kinetic_energy_mj": 25708.01,
-        "energy_to_mass_ratio_jg": 51416.02,
+        "energy_to_mass_ratio_jg": 102832.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12595,7 +12595,7 @@
             "z": -6208.464
         },
         "potential_kinetic_energy_mj": 26428.61,
-        "energy_to_mass_ratio_jg": 52857.22,
+        "energy_to_mass_ratio_jg": 105714.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12643,7 +12643,7 @@
             "z": 3785.685
         },
         "potential_kinetic_energy_mj": 23398.28,
-        "energy_to_mass_ratio_jg": 46796.56,
+        "energy_to_mass_ratio_jg": 93593.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12691,7 +12691,7 @@
             "z": -2850.395
         },
         "potential_kinetic_energy_mj": 24725.79,
-        "energy_to_mass_ratio_jg": 49451.59,
+        "energy_to_mass_ratio_jg": 98903.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12739,7 +12739,7 @@
             "z": -2631.034
         },
         "potential_kinetic_energy_mj": 9068.34,
-        "energy_to_mass_ratio_jg": 18136.68,
+        "energy_to_mass_ratio_jg": 36273.36,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12787,7 +12787,7 @@
             "z": 5398.188
         },
         "potential_kinetic_energy_mj": 20487.35,
-        "energy_to_mass_ratio_jg": 40974.7,
+        "energy_to_mass_ratio_jg": 81949.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12835,7 +12835,7 @@
             "z": 5315.144
         },
         "potential_kinetic_energy_mj": 27957.64,
-        "energy_to_mass_ratio_jg": 55915.28,
+        "energy_to_mass_ratio_jg": 111830.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12883,7 +12883,7 @@
             "z": 4285.512
         },
         "potential_kinetic_energy_mj": 8513.46,
-        "energy_to_mass_ratio_jg": 17026.91,
+        "energy_to_mass_ratio_jg": 34053.82,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12931,7 +12931,7 @@
             "z": -5203.028
         },
         "potential_kinetic_energy_mj": 22627.15,
-        "energy_to_mass_ratio_jg": 45254.29,
+        "energy_to_mass_ratio_jg": 90508.59,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -12979,7 +12979,7 @@
             "z": 5254.412
         },
         "potential_kinetic_energy_mj": 12383.64,
-        "energy_to_mass_ratio_jg": 24767.29,
+        "energy_to_mass_ratio_jg": 49534.58,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13027,7 +13027,7 @@
             "z": 2707.531
         },
         "potential_kinetic_energy_mj": 25569.26,
-        "energy_to_mass_ratio_jg": 51138.52,
+        "energy_to_mass_ratio_jg": 102277.04,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13075,7 +13075,7 @@
             "z": 4362.235
         },
         "potential_kinetic_energy_mj": 7480.59,
-        "energy_to_mass_ratio_jg": 14961.18,
+        "energy_to_mass_ratio_jg": 29922.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13123,7 +13123,7 @@
             "z": -1502.079
         },
         "potential_kinetic_energy_mj": 82.47,
-        "energy_to_mass_ratio_jg": 54981.57,
+        "energy_to_mass_ratio_jg": 109963.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -13171,7 +13171,7 @@
             "z": 5467.249
         },
         "potential_kinetic_energy_mj": 17803.73,
-        "energy_to_mass_ratio_jg": 35607.46,
+        "energy_to_mass_ratio_jg": 71214.93,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13219,7 +13219,7 @@
             "z": 6671.69
         },
         "potential_kinetic_energy_mj": 18798.39,
-        "energy_to_mass_ratio_jg": 37596.78,
+        "energy_to_mass_ratio_jg": 75193.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13267,7 +13267,7 @@
             "z": 4129.238
         },
         "potential_kinetic_energy_mj": 10933.01,
-        "energy_to_mass_ratio_jg": 21866.02,
+        "energy_to_mass_ratio_jg": 43732.04,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13315,7 +13315,7 @@
             "z": 2303.491
         },
         "potential_kinetic_energy_mj": 25164.31,
-        "energy_to_mass_ratio_jg": 50328.63,
+        "energy_to_mass_ratio_jg": 100657.26,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13363,7 +13363,7 @@
             "z": 5412.857
         },
         "potential_kinetic_energy_mj": 14895.11,
-        "energy_to_mass_ratio_jg": 29790.22,
+        "energy_to_mass_ratio_jg": 59580.43,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13411,7 +13411,7 @@
             "z": -4469.27
         },
         "potential_kinetic_energy_mj": 13061.56,
-        "energy_to_mass_ratio_jg": 26123.13,
+        "energy_to_mass_ratio_jg": 52246.26,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13459,7 +13459,7 @@
             "z": 3228.101
         },
         "potential_kinetic_energy_mj": 7045.82,
-        "energy_to_mass_ratio_jg": 14091.65,
+        "energy_to_mass_ratio_jg": 28183.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13507,7 +13507,7 @@
             "z": 6764.691
         },
         "potential_kinetic_energy_mj": 5863.72,
-        "energy_to_mass_ratio_jg": 11727.44,
+        "energy_to_mass_ratio_jg": 23454.88,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13555,7 +13555,7 @@
             "z": -5225.177
         },
         "potential_kinetic_energy_mj": 27895.69,
-        "energy_to_mass_ratio_jg": 55791.38,
+        "energy_to_mass_ratio_jg": 111582.76,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13603,7 +13603,7 @@
             "z": 1978.959
         },
         "potential_kinetic_energy_mj": 25336.79,
-        "energy_to_mass_ratio_jg": 50673.58,
+        "energy_to_mass_ratio_jg": 101347.16,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13651,7 +13651,7 @@
             "z": -2865.471
         },
         "potential_kinetic_energy_mj": 25165.62,
-        "energy_to_mass_ratio_jg": 50331.23,
+        "energy_to_mass_ratio_jg": 100662.47,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13699,7 +13699,7 @@
             "z": 6057.961
         },
         "potential_kinetic_energy_mj": 166.77,
-        "energy_to_mass_ratio_jg": 333.54,
+        "energy_to_mass_ratio_jg": 334.55,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -13747,7 +13747,7 @@
             "z": 4664.445
         },
         "potential_kinetic_energy_mj": 50.0,
-        "energy_to_mass_ratio_jg": 100.0,
+        "energy_to_mass_ratio_jg": 100.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -13795,7 +13795,7 @@
             "z": 3962.008
         },
         "potential_kinetic_energy_mj": 170.85,
-        "energy_to_mass_ratio_jg": 341.69,
+        "energy_to_mass_ratio_jg": 342.72,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -13843,7 +13843,7 @@
             "z": -5744.741
         },
         "potential_kinetic_energy_mj": 27607.73,
-        "energy_to_mass_ratio_jg": 55215.45,
+        "energy_to_mass_ratio_jg": 110430.91,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13891,7 +13891,7 @@
             "z": -1709.273
         },
         "potential_kinetic_energy_mj": 27157.81,
-        "energy_to_mass_ratio_jg": 54315.62,
+        "energy_to_mass_ratio_jg": 108631.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13939,7 +13939,7 @@
             "z": -3298.873
         },
         "potential_kinetic_energy_mj": 28594.3,
-        "energy_to_mass_ratio_jg": 57188.6,
+        "energy_to_mass_ratio_jg": 114377.2,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -13987,7 +13987,7 @@
             "z": -999.557
         },
         "potential_kinetic_energy_mj": 25111.8,
-        "energy_to_mass_ratio_jg": 50223.61,
+        "energy_to_mass_ratio_jg": 100447.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14035,7 +14035,7 @@
             "z": -4670.907
         },
         "potential_kinetic_energy_mj": 16341.69,
-        "energy_to_mass_ratio_jg": 32683.38,
+        "energy_to_mass_ratio_jg": 65366.76,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14083,7 +14083,7 @@
             "z": -6818.16
         },
         "potential_kinetic_energy_mj": 13.3,
-        "energy_to_mass_ratio_jg": 26.6,
+        "energy_to_mass_ratio_jg": 26.68,
         "would_be_catastrophic": false,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -14131,7 +14131,7 @@
             "z": -4751.333
         },
         "potential_kinetic_energy_mj": 8777.92,
-        "energy_to_mass_ratio_jg": 17555.84,
+        "energy_to_mass_ratio_jg": 35111.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14179,7 +14179,7 @@
             "z": -5613.636
         },
         "potential_kinetic_energy_mj": 27615.11,
-        "energy_to_mass_ratio_jg": 55230.23,
+        "energy_to_mass_ratio_jg": 110460.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14227,7 +14227,7 @@
             "z": -3788.425
         },
         "potential_kinetic_energy_mj": 23148.66,
-        "energy_to_mass_ratio_jg": 46297.31,
+        "energy_to_mass_ratio_jg": 92594.63,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14275,7 +14275,7 @@
             "z": 1297.927
         },
         "potential_kinetic_energy_mj": 27602.22,
-        "energy_to_mass_ratio_jg": 55204.43,
+        "energy_to_mass_ratio_jg": 110408.87,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14323,7 +14323,7 @@
             "z": 4506.712
         },
         "potential_kinetic_energy_mj": 25243.35,
-        "energy_to_mass_ratio_jg": 50486.71,
+        "energy_to_mass_ratio_jg": 100973.42,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14371,7 +14371,7 @@
             "z": -5378.068
         },
         "potential_kinetic_energy_mj": 20924.62,
-        "energy_to_mass_ratio_jg": 41849.24,
+        "energy_to_mass_ratio_jg": 83698.48,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14419,7 +14419,7 @@
             "z": 943.839
         },
         "potential_kinetic_energy_mj": 16585.75,
-        "energy_to_mass_ratio_jg": 33171.5,
+        "energy_to_mass_ratio_jg": 66342.99,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14467,7 +14467,7 @@
             "z": -6471.678
         },
         "potential_kinetic_energy_mj": 24682.02,
-        "energy_to_mass_ratio_jg": 49364.03,
+        "energy_to_mass_ratio_jg": 98728.06,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14515,7 +14515,7 @@
             "z": -5975.431
         },
         "potential_kinetic_energy_mj": 26901.26,
-        "energy_to_mass_ratio_jg": 53802.53,
+        "energy_to_mass_ratio_jg": 107605.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14563,7 +14563,7 @@
             "z": 5643.883
         },
         "potential_kinetic_energy_mj": 79.2,
-        "energy_to_mass_ratio_jg": 52796.68,
+        "energy_to_mass_ratio_jg": 105593.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -14611,7 +14611,7 @@
             "z": -4110.018
         },
         "potential_kinetic_energy_mj": 83.5,
-        "energy_to_mass_ratio_jg": 55669.6,
+        "energy_to_mass_ratio_jg": 111339.21,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -14659,7 +14659,7 @@
             "z": 4190.219
         },
         "potential_kinetic_energy_mj": 7024.44,
-        "energy_to_mass_ratio_jg": 14048.87,
+        "energy_to_mass_ratio_jg": 28097.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14707,7 +14707,7 @@
             "z": -4456.865
         },
         "potential_kinetic_energy_mj": 12945.42,
-        "energy_to_mass_ratio_jg": 25890.84,
+        "energy_to_mass_ratio_jg": 51781.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14755,7 +14755,7 @@
             "z": -6115.926
         },
         "potential_kinetic_energy_mj": 26987.77,
-        "energy_to_mass_ratio_jg": 53975.55,
+        "energy_to_mass_ratio_jg": 107951.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14803,7 +14803,7 @@
             "z": -456.556
         },
         "potential_kinetic_energy_mj": 27242.82,
-        "energy_to_mass_ratio_jg": 54485.64,
+        "energy_to_mass_ratio_jg": 108971.28,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14851,7 +14851,7 @@
             "z": 3903.966
         },
         "potential_kinetic_energy_mj": 4599.14,
-        "energy_to_mass_ratio_jg": 9198.28,
+        "energy_to_mass_ratio_jg": 18396.56,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14899,7 +14899,7 @@
             "z": 4210.096
         },
         "potential_kinetic_energy_mj": 11252.66,
-        "energy_to_mass_ratio_jg": 22505.32,
+        "energy_to_mass_ratio_jg": 45010.65,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14947,7 +14947,7 @@
             "z": 3895.265
         },
         "potential_kinetic_energy_mj": 7376.8,
-        "energy_to_mass_ratio_jg": 14753.59,
+        "energy_to_mass_ratio_jg": 29507.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -14995,7 +14995,7 @@
             "z": 6744.92
         },
         "potential_kinetic_energy_mj": 43.78,
-        "energy_to_mass_ratio_jg": 87.55,
+        "energy_to_mass_ratio_jg": 87.81,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -15043,7 +15043,7 @@
             "z": 6604.329
         },
         "potential_kinetic_energy_mj": 143.38,
-        "energy_to_mass_ratio_jg": 286.77,
+        "energy_to_mass_ratio_jg": 287.63,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -15091,7 +15091,7 @@
             "z": 4088.473
         },
         "potential_kinetic_energy_mj": 25863.86,
-        "energy_to_mass_ratio_jg": 51727.72,
+        "energy_to_mass_ratio_jg": 103455.44,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15139,7 +15139,7 @@
             "z": 941.437
         },
         "potential_kinetic_energy_mj": 6206.48,
-        "energy_to_mass_ratio_jg": 12412.96,
+        "energy_to_mass_ratio_jg": 24825.92,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15187,7 +15187,7 @@
             "z": -2549.462
         },
         "potential_kinetic_energy_mj": 28527.63,
-        "energy_to_mass_ratio_jg": 57055.27,
+        "energy_to_mass_ratio_jg": 114110.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15235,7 +15235,7 @@
             "z": -1276.866
         },
         "potential_kinetic_energy_mj": 23877.99,
-        "energy_to_mass_ratio_jg": 47755.97,
+        "energy_to_mass_ratio_jg": 95511.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15283,7 +15283,7 @@
             "z": -3474.336
         },
         "potential_kinetic_energy_mj": 8719.92,
-        "energy_to_mass_ratio_jg": 17439.84,
+        "energy_to_mass_ratio_jg": 34879.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15331,7 +15331,7 @@
             "z": 3935.687
         },
         "potential_kinetic_energy_mj": 23022.64,
-        "energy_to_mass_ratio_jg": 46045.27,
+        "energy_to_mass_ratio_jg": 92090.54,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15379,7 +15379,7 @@
             "z": -4741.691
         },
         "potential_kinetic_energy_mj": 27964.65,
-        "energy_to_mass_ratio_jg": 55929.31,
+        "energy_to_mass_ratio_jg": 111858.62,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15427,7 +15427,7 @@
             "z": -5342.927
         },
         "potential_kinetic_energy_mj": 17759.3,
-        "energy_to_mass_ratio_jg": 35518.61,
+        "energy_to_mass_ratio_jg": 71037.22,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15475,7 +15475,7 @@
             "z": 1373.835
         },
         "potential_kinetic_energy_mj": 25547.43,
-        "energy_to_mass_ratio_jg": 51094.85,
+        "energy_to_mass_ratio_jg": 102189.71,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15523,7 +15523,7 @@
             "z": -2758.19
         },
         "potential_kinetic_energy_mj": 24811.62,
-        "energy_to_mass_ratio_jg": 49623.24,
+        "energy_to_mass_ratio_jg": 99246.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15571,7 +15571,7 @@
             "z": 2490.309
         },
         "potential_kinetic_energy_mj": 25034.87,
-        "energy_to_mass_ratio_jg": 50069.75,
+        "energy_to_mass_ratio_jg": 100139.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15619,7 +15619,7 @@
             "z": -6791.648
         },
         "potential_kinetic_energy_mj": 28872.69,
-        "energy_to_mass_ratio_jg": 57745.38,
+        "energy_to_mass_ratio_jg": 115490.75,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15667,7 +15667,7 @@
             "z": 7047.497
         },
         "potential_kinetic_energy_mj": 38.89,
-        "energy_to_mass_ratio_jg": 25925.64,
+        "energy_to_mass_ratio_jg": 51851.27,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -15715,7 +15715,7 @@
             "z": -964.11
         },
         "potential_kinetic_energy_mj": 27023.76,
-        "energy_to_mass_ratio_jg": 54047.53,
+        "energy_to_mass_ratio_jg": 108095.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15763,7 +15763,7 @@
             "z": 1020.025
         },
         "potential_kinetic_energy_mj": 28828.54,
-        "energy_to_mass_ratio_jg": 57657.07,
+        "energy_to_mass_ratio_jg": 115314.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15811,7 +15811,7 @@
             "z": 3161.79
         },
         "potential_kinetic_energy_mj": 5189.54,
-        "energy_to_mass_ratio_jg": 10379.08,
+        "energy_to_mass_ratio_jg": 20758.15,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15859,7 +15859,7 @@
             "z": 3969.254
         },
         "potential_kinetic_energy_mj": 10338.8,
-        "energy_to_mass_ratio_jg": 20677.61,
+        "energy_to_mass_ratio_jg": 41355.22,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -15907,7 +15907,7 @@
             "z": 6883.798
         },
         "potential_kinetic_energy_mj": 55.21,
-        "energy_to_mass_ratio_jg": 36806.29,
+        "energy_to_mass_ratio_jg": 73612.58,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -15955,7 +15955,7 @@
             "z": -3825.181
         },
         "potential_kinetic_energy_mj": 6189.61,
-        "energy_to_mass_ratio_jg": 12379.23,
+        "energy_to_mass_ratio_jg": 24758.46,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16003,7 +16003,7 @@
             "z": 6428.655
         },
         "potential_kinetic_energy_mj": 25069.56,
-        "energy_to_mass_ratio_jg": 50139.12,
+        "energy_to_mass_ratio_jg": 100278.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16051,7 +16051,7 @@
             "z": 4677.582
         },
         "potential_kinetic_energy_mj": 24837.27,
-        "energy_to_mass_ratio_jg": 49674.55,
+        "energy_to_mass_ratio_jg": 99349.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16099,7 +16099,7 @@
             "z": 3431.127
         },
         "potential_kinetic_energy_mj": 26466.83,
-        "energy_to_mass_ratio_jg": 52933.67,
+        "energy_to_mass_ratio_jg": 105867.34,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16147,7 +16147,7 @@
             "z": 3663.117
         },
         "potential_kinetic_energy_mj": 144.25,
-        "energy_to_mass_ratio_jg": 288.49,
+        "energy_to_mass_ratio_jg": 289.36,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -16195,7 +16195,7 @@
             "z": -5347.462
         },
         "potential_kinetic_energy_mj": 166.15,
-        "energy_to_mass_ratio_jg": 332.31,
+        "energy_to_mass_ratio_jg": 333.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -16243,7 +16243,7 @@
             "z": 2919.273
         },
         "potential_kinetic_energy_mj": 26758.89,
-        "energy_to_mass_ratio_jg": 53517.77,
+        "energy_to_mass_ratio_jg": 107035.55,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16291,7 +16291,7 @@
             "z": 6424.657
         },
         "potential_kinetic_energy_mj": 18791.2,
-        "energy_to_mass_ratio_jg": 37582.4,
+        "energy_to_mass_ratio_jg": 75164.8,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16339,7 +16339,7 @@
             "z": 5321.379
         },
         "potential_kinetic_energy_mj": 82.4,
-        "energy_to_mass_ratio_jg": 54931.92,
+        "energy_to_mass_ratio_jg": 109863.83,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -16387,7 +16387,7 @@
             "z": 2794.307
         },
         "potential_kinetic_energy_mj": 24816.85,
-        "energy_to_mass_ratio_jg": 49633.71,
+        "energy_to_mass_ratio_jg": 99267.42,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16435,7 +16435,7 @@
             "z": -4282.307
         },
         "potential_kinetic_energy_mj": 7223.53,
-        "energy_to_mass_ratio_jg": 14447.07,
+        "energy_to_mass_ratio_jg": 28894.13,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16483,7 +16483,7 @@
             "z": 3891.669
         },
         "potential_kinetic_energy_mj": 1397.09,
-        "energy_to_mass_ratio_jg": 2794.18,
+        "energy_to_mass_ratio_jg": 5588.36,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16531,7 +16531,7 @@
             "z": 1241.316
         },
         "potential_kinetic_energy_mj": 5788.86,
-        "energy_to_mass_ratio_jg": 11577.73,
+        "energy_to_mass_ratio_jg": 23155.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16579,7 +16579,7 @@
             "z": -6249.779
         },
         "potential_kinetic_energy_mj": 26290.77,
-        "energy_to_mass_ratio_jg": 52581.54,
+        "energy_to_mass_ratio_jg": 105163.09,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16627,7 +16627,7 @@
             "z": 6797.756
         },
         "potential_kinetic_energy_mj": 74.45,
-        "energy_to_mass_ratio_jg": 49634.07,
+        "energy_to_mass_ratio_jg": 99268.14,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -16675,7 +16675,7 @@
             "z": -4394.578
         },
         "potential_kinetic_energy_mj": 25356.79,
-        "energy_to_mass_ratio_jg": 50713.58,
+        "energy_to_mass_ratio_jg": 101427.17,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16723,7 +16723,7 @@
             "z": -4261.16
         },
         "potential_kinetic_energy_mj": 11559.3,
-        "energy_to_mass_ratio_jg": 23118.6,
+        "energy_to_mass_ratio_jg": 46237.2,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16771,7 +16771,7 @@
             "z": 2095.736
         },
         "potential_kinetic_energy_mj": 2246.67,
-        "energy_to_mass_ratio_jg": 4493.34,
+        "energy_to_mass_ratio_jg": 8986.68,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16819,7 +16819,7 @@
             "z": 6779.175
         },
         "potential_kinetic_energy_mj": 10525.89,
-        "energy_to_mass_ratio_jg": 21051.79,
+        "energy_to_mass_ratio_jg": 42103.58,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16867,7 +16867,7 @@
             "z": 6670.9
         },
         "potential_kinetic_energy_mj": 18377.5,
-        "energy_to_mass_ratio_jg": 36755.0,
+        "energy_to_mass_ratio_jg": 73510.0,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -16915,7 +16915,7 @@
             "z": -5669.97
         },
         "potential_kinetic_energy_mj": 21.34,
-        "energy_to_mass_ratio_jg": 42.68,
+        "energy_to_mass_ratio_jg": 42.81,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -16963,7 +16963,7 @@
             "z": 5426.526
         },
         "potential_kinetic_energy_mj": 27932.09,
-        "energy_to_mass_ratio_jg": 55864.17,
+        "energy_to_mass_ratio_jg": 111728.35,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17011,7 +17011,7 @@
             "z": 5324.561
         },
         "potential_kinetic_energy_mj": 229.09,
-        "energy_to_mass_ratio_jg": 458.18,
+        "energy_to_mass_ratio_jg": 916.36,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17059,7 +17059,7 @@
             "z": 6362.083
         },
         "potential_kinetic_energy_mj": 21.05,
-        "energy_to_mass_ratio_jg": 14036.2,
+        "energy_to_mass_ratio_jg": 28072.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -17107,7 +17107,7 @@
             "z": 4837.275
         },
         "potential_kinetic_energy_mj": 28201.6,
-        "energy_to_mass_ratio_jg": 56403.2,
+        "energy_to_mass_ratio_jg": 112806.41,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17155,7 +17155,7 @@
             "z": -4174.796
         },
         "potential_kinetic_energy_mj": 22232.28,
-        "energy_to_mass_ratio_jg": 44464.55,
+        "energy_to_mass_ratio_jg": 88929.11,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17203,7 +17203,7 @@
             "z": 3383.641
         },
         "potential_kinetic_energy_mj": 84.93,
-        "energy_to_mass_ratio_jg": 56616.89,
+        "energy_to_mass_ratio_jg": 113233.77,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -17251,7 +17251,7 @@
             "z": 6992.649
         },
         "potential_kinetic_energy_mj": 50.38,
-        "energy_to_mass_ratio_jg": 100.75,
+        "energy_to_mass_ratio_jg": 101.05,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -17299,7 +17299,7 @@
             "z": -6543.497
         },
         "potential_kinetic_energy_mj": 81.77,
-        "energy_to_mass_ratio_jg": 54514.47,
+        "energy_to_mass_ratio_jg": 109028.94,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 1.5,
@@ -17347,7 +17347,7 @@
             "z": 6803.847
         },
         "potential_kinetic_energy_mj": 2211.87,
-        "energy_to_mass_ratio_jg": 4423.75,
+        "energy_to_mass_ratio_jg": 8847.49,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17395,7 +17395,7 @@
             "z": -936.445
         },
         "potential_kinetic_energy_mj": 25653.9,
-        "energy_to_mass_ratio_jg": 51307.81,
+        "energy_to_mass_ratio_jg": 102615.62,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17443,7 +17443,7 @@
             "z": 5287.468
         },
         "potential_kinetic_energy_mj": 12749.54,
-        "energy_to_mass_ratio_jg": 25499.09,
+        "energy_to_mass_ratio_jg": 50998.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17491,7 +17491,7 @@
             "z": -4245.498
         },
         "potential_kinetic_energy_mj": 25584.85,
-        "energy_to_mass_ratio_jg": 51169.69,
+        "energy_to_mass_ratio_jg": 102339.39,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17539,7 +17539,7 @@
             "z": -3922.346
         },
         "potential_kinetic_energy_mj": 9941.85,
-        "energy_to_mass_ratio_jg": 19883.71,
+        "energy_to_mass_ratio_jg": 39767.41,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17587,7 +17587,7 @@
             "z": -1585.882
         },
         "potential_kinetic_energy_mj": 6306.86,
-        "energy_to_mass_ratio_jg": 12613.73,
+        "energy_to_mass_ratio_jg": 25227.45,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17635,7 +17635,7 @@
             "z": 7376.948
         },
         "potential_kinetic_energy_mj": 26262.33,
-        "energy_to_mass_ratio_jg": 52524.65,
+        "energy_to_mass_ratio_jg": 105049.3,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17683,7 +17683,7 @@
             "z": 5434.774
         },
         "potential_kinetic_energy_mj": 15781.06,
-        "energy_to_mass_ratio_jg": 31562.12,
+        "energy_to_mass_ratio_jg": 63124.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17731,7 +17731,7 @@
             "z": -2793.212
         },
         "potential_kinetic_energy_mj": 4998.96,
-        "energy_to_mass_ratio_jg": 9997.93,
+        "energy_to_mass_ratio_jg": 19995.86,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17779,7 +17779,7 @@
             "z": -4655.48
         },
         "potential_kinetic_energy_mj": 15560.54,
-        "energy_to_mass_ratio_jg": 31121.08,
+        "energy_to_mass_ratio_jg": 62242.16,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17827,7 +17827,7 @@
             "z": -4046.149
         },
         "potential_kinetic_energy_mj": 53.14,
-        "energy_to_mass_ratio_jg": 106.29,
+        "energy_to_mass_ratio_jg": 106.61,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -17875,7 +17875,7 @@
             "z": -5163.521
         },
         "potential_kinetic_energy_mj": 28132.02,
-        "energy_to_mass_ratio_jg": 56264.04,
+        "energy_to_mass_ratio_jg": 112528.08,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17923,7 +17923,7 @@
             "z": -3408.228
         },
         "potential_kinetic_energy_mj": 8558.83,
-        "energy_to_mass_ratio_jg": 17117.66,
+        "energy_to_mass_ratio_jg": 34235.32,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -17971,7 +17971,7 @@
             "z": -3856.269
         },
         "potential_kinetic_energy_mj": 2753.14,
-        "energy_to_mass_ratio_jg": 5506.28,
+        "energy_to_mass_ratio_jg": 11012.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18019,7 +18019,7 @@
             "z": 4267.703
         },
         "potential_kinetic_energy_mj": 25627.01,
-        "energy_to_mass_ratio_jg": 51254.01,
+        "energy_to_mass_ratio_jg": 102508.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18067,7 +18067,7 @@
             "z": 4672.849
         },
         "potential_kinetic_energy_mj": 17109.48,
-        "energy_to_mass_ratio_jg": 34218.96,
+        "energy_to_mass_ratio_jg": 68437.91,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18115,7 +18115,7 @@
             "z": 2288.324
         },
         "potential_kinetic_energy_mj": 26945.89,
-        "energy_to_mass_ratio_jg": 53891.78,
+        "energy_to_mass_ratio_jg": 107783.57,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18163,7 +18163,7 @@
             "z": -6823.622
         },
         "potential_kinetic_energy_mj": 333.88,
-        "energy_to_mass_ratio_jg": 667.75,
+        "energy_to_mass_ratio_jg": 1335.5,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18211,7 +18211,7 @@
             "z": -5437.675
         },
         "potential_kinetic_energy_mj": 27739.38,
-        "energy_to_mass_ratio_jg": 55478.75,
+        "energy_to_mass_ratio_jg": 110957.51,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18259,7 +18259,7 @@
             "z": -5476.972
         },
         "potential_kinetic_energy_mj": 17869.24,
-        "energy_to_mass_ratio_jg": 35738.47,
+        "energy_to_mass_ratio_jg": 71476.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18307,7 +18307,7 @@
             "z": 5470.547
         },
         "potential_kinetic_energy_mj": 17348.75,
-        "energy_to_mass_ratio_jg": 34697.49,
+        "energy_to_mass_ratio_jg": 69394.99,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18355,7 +18355,7 @@
             "z": -5442.703
         },
         "potential_kinetic_energy_mj": 15688.98,
-        "energy_to_mass_ratio_jg": 31377.95,
+        "energy_to_mass_ratio_jg": 62755.91,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18403,7 +18403,7 @@
             "z": -5260.672
         },
         "potential_kinetic_energy_mj": 27801.68,
-        "energy_to_mass_ratio_jg": 55603.37,
+        "energy_to_mass_ratio_jg": 111206.74,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18451,7 +18451,7 @@
             "z": 4807.289
         },
         "potential_kinetic_energy_mj": 28195.57,
-        "energy_to_mass_ratio_jg": 56391.14,
+        "energy_to_mass_ratio_jg": 112782.29,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18499,7 +18499,7 @@
             "z": -3758.08
         },
         "potential_kinetic_energy_mj": 3544.81,
-        "energy_to_mass_ratio_jg": 7089.63,
+        "energy_to_mass_ratio_jg": 14179.25,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18547,7 +18547,7 @@
             "z": 2168.364
         },
         "potential_kinetic_energy_mj": 169.01,
-        "energy_to_mass_ratio_jg": 338.02,
+        "energy_to_mass_ratio_jg": 339.03,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -18595,7 +18595,7 @@
             "z": 810.311
         },
         "potential_kinetic_energy_mj": 6010.36,
-        "energy_to_mass_ratio_jg": 12020.71,
+        "energy_to_mass_ratio_jg": 24041.43,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18643,7 +18643,7 @@
             "z": -5920.203
         },
         "potential_kinetic_energy_mj": 110.64,
-        "energy_to_mass_ratio_jg": 221.29,
+        "energy_to_mass_ratio_jg": 221.95,
         "would_be_catastrophic": true,
         "mass_kg_1": 1.5,
         "mass_kg_2": 500.0,
@@ -18691,7 +18691,7 @@
             "z": 5830.913
         },
         "potential_kinetic_energy_mj": 27595.45,
-        "energy_to_mass_ratio_jg": 55190.91,
+        "energy_to_mass_ratio_jg": 110381.81,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18739,7 +18739,7 @@
             "z": -4556.103
         },
         "potential_kinetic_energy_mj": 7971.7,
-        "energy_to_mass_ratio_jg": 15943.4,
+        "energy_to_mass_ratio_jg": 31886.79,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18787,7 +18787,7 @@
             "z": -5093.894
         },
         "potential_kinetic_energy_mj": 4170.03,
-        "energy_to_mass_ratio_jg": 8340.05,
+        "energy_to_mass_ratio_jg": 16680.1,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18835,7 +18835,7 @@
             "z": 6756.014
         },
         "potential_kinetic_energy_mj": 8498.03,
-        "energy_to_mass_ratio_jg": 16996.06,
+        "energy_to_mass_ratio_jg": 33992.12,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18883,7 +18883,7 @@
             "z": 6149.567
         },
         "potential_kinetic_energy_mj": 26545.46,
-        "energy_to_mass_ratio_jg": 53090.93,
+        "energy_to_mass_ratio_jg": 106181.85,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
@@ -18931,7 +18931,7 @@
             "z": -4669.766
         },
         "potential_kinetic_energy_mj": 17914.05,
-        "energy_to_mass_ratio_jg": 35828.09,
+        "energy_to_mass_ratio_jg": 71656.18,
         "would_be_catastrophic": true,
         "mass_kg_1": 500.0,
         "mass_kg_2": 500.0,
