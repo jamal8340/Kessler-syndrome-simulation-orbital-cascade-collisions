@@ -15,6 +15,27 @@ uv run python -m kessler_sim.demo approaches --duration 10m --top 10
 
 `--plot` saves a figure to `results/figures/cloud_<scenario>.png` (or the given path).
 
+## Server for Unity
+
+```bash
+uv run python -m kessler_sim.server --scenario catalogue          # ws://127.0.0.1:8765
+uv run python -m kessler_sim.server --scenario iridium_cosmos_2009 --play --speed 600
+
+# test client (another terminal), no Unity needed:
+uv run python -m kessler_sim.client info          # session info and first state message
+uv run python -m kessler_sim.client watch         # play 5 s, count state messages (~20/s)
+uv run python -m kessler_sim.client demo          # closest approach -> collide -> seek across it
+```
+
+The message protocol is described in `../TRANSPORT_ARCHITECTURE.md` (in the parent `sims/` folder).
+
+| Module | What it does |
+|---|---|
+| `server.py` | WebSocket server: streaming loop, commands, background jobs |
+| `protocol.py` | Message encoding (JSON without infinity/NaN, binary state messages) |
+| `earth.py` | Earth's rotation angle (Greenwich sidereal angle, as SGP4) |
+| `client.py` | Command-line test client; also used by the tests |
+
 ## Modules
 
 | Module | What it does |

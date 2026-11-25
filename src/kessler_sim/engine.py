@@ -10,7 +10,7 @@ happened after t (their fragments are removed and their parents come back).
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import numpy as np
 
@@ -30,6 +30,25 @@ class Snapshot:
     v_kms: np.ndarray      # (n, 3)
 
 
+@dataclass
+class CatalogueChanges:
+    """What changed in the object table since the last ``take_changes()``.
+
+    Apply in this order: remove ``removed``, update the remaining ``updated`` objects
+    (their lifespan changed), then append ``added`` in order. IDs can be reused after a
+    rewrite of history, so the same ID may appear in ``removed`` and ``added``.
+    """
+
+    removed: list[int] = field(default_factory=list)
+    updated: list[int] = field(default_factory=list)
+    added: list[int] = field(default_factory=list)
+    removed_events: list[int] = field(default_factory=list)
+    added_events: list[int] = field(default_factory=list)
+
+    def __bool__(self):
+        return bool(self.removed or self.updated or self.added or self.removed_events or self.added_events)
+
+
 class Simulation:
     def __init__(self, table: ObjectTable | None = None, epoch_jd: float = 2451545.0,
                  config: BreakupConfig | None = None, name: str = ""):
@@ -39,6 +58,11 @@ class Simulation:
         self.name = name
         self.clock = Clock()
         self.events: list[BreakupEvent] = []
+        self._removed: list[int] = []
+        self._added: list[int] = []
+        self._updated: set[int] = set()
+        self._removed_events: list[int] = []
+        self._added_events: list[int] = []
 
     @classmethod
     def from_catalogue(cls, config: BreakupConfig | None = None, name="catalogue", **load_kwargs):
@@ -98,6 +122,30 @@ class Simulation:
         }
         return info
 
+    # -- change tracking (for the server) ----------------------------------------
+
+    def _record_removed(self, ids):
+        for i in ids:
+            if i in self._added:
+                self._added.remove(i)       # never announced: just forget it
+            else:
+                self._removed.append(i)
+            self._updated.discard(i)
+
+    def take_changes(self) -> CatalogueChanges:
+        added = set(self._added)
+        removed_only = set(self._removed) - added
+        changes = CatalogueChanges(
+            removed=list(self._removed),
+            updated=[i for i in sorted(self._updated) if i not in added and i not in removed_only],
+            added=list(self._added),
+            removed_events=list(self._removed_events),
+            added_events=list(self._added_events),
+        )
+        self._removed, self._added, self._updated = [], [], set()
+        self._removed_events, self._added_events = [], []
+        return changes
+
     # -- events ------------------------------------------------------------------
 
     def truncate_after(self, t: float) -> list[BreakupEvent]:
@@ -105,11 +153,17 @@ class Simulation:
         removed = []
         while self.events and self.events[-1].t > t:
             ev = self.events.pop()
-            created = [self.table.row(i) for i in ev.created_ids if self.table.has(i)]
+            created_ids = [i for i in ev.created_ids if self.table.has(i)]
             parents = [self.table.row(ev.id_a), self.table.row(ev.id_b)]
             self.table.revive(parents)
-            if created:
-                self.table.remove_rows(created)
+            self._updated.update((ev.id_a, ev.id_b))
+            if created_ids:
+                self.table.remove_rows([self.table.row(i) for i in created_ids])
+                self._record_removed(created_ids)
+            if ev.event_id in self._added_events:
+                self._added_events.remove(ev.event_id)
+            else:
+                self._removed_events.append(ev.event_id)
             removed.append(ev)
         return removed
 
@@ -125,6 +179,9 @@ class Simulation:
         self.truncate_after(t)
         event = apply_breakup(self.table, len(self.events), id_a, id_b, t, self.config, params)
         self.events.append(event)
+        self._added.extend(event.created_ids)
+        self._updated.update((event.id_a, event.id_b))
+        self._added_events.append(event.event_id)
         return event
 
     def collide_approach(self, approach: dict, params: BreakupParams | None = None) -> BreakupEvent:
