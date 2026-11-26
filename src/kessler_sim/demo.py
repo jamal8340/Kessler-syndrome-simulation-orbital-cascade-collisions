@@ -96,7 +96,7 @@ def plot_clouds(sim, offsets, path: Path):
         ax_pos.set_xlabel("x [km]")
         ax_pos.set_ylabel("y [km]")
 
-        el = tb.elements.take(rows)
+        el = tb.elements_at(ev.t, rows)
         per = orbits.period(el) / 60.0
         c = [colours.get(origin.get(int(i)), "k") for i in tb.ids[rows]]
         ax_gab.scatter(per, orbits.apogee_radius(el) - orbits.R_MEAN, s=3, c=c, marker="^", label="apogee")

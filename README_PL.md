@@ -24,6 +24,21 @@ uv sync          # opcjonalnie: instaluje wszystko z góry
 
 Wszystkie poniższe polecenia uruchamia się w folderze tego repozytorium.
 
+## Długoterminowy opór atmosferyczny (F1, eksperymentalny)
+
+Opcjonalny model oporu uśrednionego po orbicie zachowuje historię orbit i momenty re-entry. Nie jest włączony w istniejącym serwerze live; przeznaczono go dla przyszłego trybu wsadowego kaskady. Uruchom dwa fragmenty referencyjne lub pełny katalog bez kolizji:
+
+```bash
+uv run python -m kessler_sim.drag_demo --years 50
+uv run python -m kessler_sim.drag_demo --scenario catalogue --years 10
+uv run python -m kessler_sim.drag_demo --scenario catalogue --years 10 --no-stationkeeping
+uv run pytest tests/test_drag.py tests/test_stationkeeping.py -q
+```
+
+Domyślnie nieuszkodzone aktywne satelity idealnie kompensują opór (stała półoś wielka i mimośród); odłamki, śmieci i pozostałości po kolizjach pozostają pasywne. Użyj `--no-stationkeeping` do porównania z pierwotnym modelem pasywnym. To założenie bezterminowego działania, a nie model rzeczywistych czasów misji.
+
+Założenia, API Pythona i ograniczenia opisano w `docs/ATMOSPHERIC_DRAG.md`.
+
 ## Szybki start z Unity
 
 ```bash

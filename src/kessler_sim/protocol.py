@@ -142,9 +142,9 @@ def error(reason: str, request_id=None) -> dict:
 def state_positions(sim: Simulation, t: float) -> np.ndarray:
     """(N, 3) float32 positions of every catalogue entry at t, NaN where it does not exist."""
     tb = sim.table
-    r, _ = tb.states(t)
-    r = r.astype(np.float32)
-    r[~tb.alive_mask(t)] = np.nan
+    rows = tb.alive_rows(t)
+    r = np.full((len(tb), 3), np.nan, dtype=np.float32)
+    r[rows], _ = tb.states(t, rows)
     return r
 
 

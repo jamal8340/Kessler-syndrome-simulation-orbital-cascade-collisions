@@ -24,6 +24,21 @@ uv sync          # optional: installs everything up front
 
 All commands below are run from this repository's folder.
 
+## Long-term drag (F1, experimental)
+
+The optional orbit-averaged drag model preserves orbital history and re-entry times. It is not enabled in the existing live server; it is intended for the future cascade batch runner. Run the two reference fragments or the full catalogue without collisions:
+
+```bash
+uv run python -m kessler_sim.drag_demo --years 50
+uv run python -m kessler_sim.drag_demo --scenario catalogue --years 10
+uv run python -m kessler_sim.drag_demo --scenario catalogue --years 10 --no-stationkeeping
+uv run pytest tests/test_drag.py tests/test_stationkeeping.py -q
+```
+
+By default, intact active satellites ideally compensate drag (constant orbital size and eccentricity); fragments, debris and remnants remain passive. Use `--no-stationkeeping` for the original all-passive comparison. This assumes indefinite operation, not realistic mission lifetimes.
+
+See `docs/ATMOSPHERIC_DRAG.md` for assumptions, the Python API, and limitations.
+
 ## Quick start with Unity
 
 ```bash

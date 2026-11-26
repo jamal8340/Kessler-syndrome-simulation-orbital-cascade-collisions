@@ -15,15 +15,14 @@ def cloud_stats(sim, event_id: int, t: float) -> dict:
     if not len(rows):
         return {"event_id": event_id, "t": t, "n_alive": 0}
     r, _ = tb.states(t, rows)
-    el = tb.elements.take(rows)
+    el = tb.elements_at(t, rows)
 
     radius = np.linalg.norm(r, axis=1)
     centre = r.mean(axis=0)
     centre_dir = centre / np.linalg.norm(centre) if np.linalg.norm(centre) > 0 else np.array([1.0, 0, 0])
     angle = np.degrees(np.arccos(np.clip((r / radius[:, None]) @ centre_dir, -1.0, 1.0)))
 
-    raan_dot, _, _ = orbits.secular_rates(el)
-    raan_now = np.mod(el.raan + raan_dot * (t - tb.t_ref[rows]), orbits.TWO_PI)
+    raan_now = np.mod(el.raan, orbits.TWO_PI)
 
     per_parent = {}
     ev = sim.events[event_id]

@@ -88,6 +88,18 @@ def secular_rates(el: Elements):
     return raan_dot, argp_dot, m_dot
 
 
+def rebase(el: Elements, dt) -> Elements:
+    """Same mean orbit at a new reference time (including the current ndot phase)."""
+    dt = np.broadcast_to(np.asarray(dt, dtype=float), el.a.shape)
+    raan_dot, argp_dot, m_dot = secular_rates(el)
+    # ndot is retained; callers evaluate at dt=0 or explicitly replace the old model.
+    return Elements(el.a.copy(), el.e.copy(), el.i.copy(),
+                    np.mod(el.raan + raan_dot * dt, TWO_PI),
+                    np.mod(el.argp + argp_dot * dt, TWO_PI),
+                    np.mod(el.m + m_dot * dt + 0.5 * el.ndot * dt**2, TWO_PI),
+                    el.ndot.copy())
+
+
 def solve_kepler(m, e, iterations=12):
     """Eccentric anomaly E from mean anomaly M (vectorised Newton iteration)."""
     m = np.mod(m, TWO_PI)

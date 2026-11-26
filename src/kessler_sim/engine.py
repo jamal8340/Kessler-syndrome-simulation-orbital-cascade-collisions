@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from . import orbits, screening
+from . import drag, orbits, screening
 from .breakup import BreakupConfig, BreakupEvent, BreakupParams, apply_breakup
 from .catalogue import jd_to_datetime, load_catalogue
 from .clock import Clock
@@ -58,6 +58,10 @@ class Simulation:
         self.name = name
         self.clock = Clock()
         self.events: list[BreakupEvent] = []
+        self.drag_config: drag.DragConfig | None = None
+        self.drag_start: float | None = None
+        self.drag_time: float | None = None
+        self.reentries: dict[int, float] = {}  # drag re-entries only, not immediate breakup losses
         self._removed: list[int] = []
         self._added: list[int] = []
         self._updated: set[int] = set()
@@ -97,7 +101,7 @@ class Simulation:
         t = self.clock.t if t is None else float(t)
         tb = self.table
         row = tb.row(object_id)
-        el = tb.elements.take([row])
+        el = tb.elements_at(t, [row])
         (r,), (v,) = tb.states(t, [row])
         alive = tb.is_alive(row, t)
         info = {
@@ -146,10 +150,122 @@ class Simulation:
         self._removed_events, self._added_events = [], []
         return changes
 
+    # -- optional long-term drag -------------------------------------------------
+
+    def enable_drag(self, config: drag.DragConfig | None = None, *, t: float = 0.) -> None:
+        """Enable drag after any preloaded breakups; existing scenarios remain unchanged.
+
+        The batch runner must advance drag before sampling collisions at a later time.
+        Seeking is read-only; it never runs physics or modifies the recorded history.
+        """
+        t = float(t)
+        if not np.isfinite(t) or (self.events and t < self.events[-1].t):
+            raise ValueError("drag must start at or after the last preloaded breakup")
+        if self.drag_config is not None:
+            raise ValueError("drag is already enabled")
+        config = config or drag.DragConfig(reentry_altitude_km=self.config.reentry_altitude_km)
+        if config.reentry_altitude_km != self.config.reentry_altitude_km:
+            raise ValueError("drag and breakup re-entry thresholds must match")
+        # Validate physical inputs before mutating the simulation.
+        rows = self.table.alive_rows(t)
+        drag.area_to_mass(self.table.am_m2_per_kg[rows], self.table.radius_m[rows], self.table.mass_kg[rows])
+        self.drag_config, self.drag_start, self.drag_time = config, t, t
+        self.advance_drag(t)
+
+    def _record_reentries(self, rows, times):
+        tb = self.table
+        times = np.broadcast_to(times, (len(rows),))
+        if len(rows):
+            tb.destroy(rows, times)
+            for row, time in zip(rows, times):
+                oid = int(tb.ids[row])
+                self.reentries[oid] = float(time)
+                self._updated.add(oid)
+
+    def advance_drag(self, t: float) -> list[tuple[int, float]]:
+        """Generate/commit drag history through t, independently of collision sampling cadence.
+
+        Adaptive segments may predict beyond t; predicted re-entry is not committed
+        until its time is reached. Return newly committed (ID, time) pairs in time order.
+        """
+        t = float(t)
+        cfg = self.drag_config
+        if cfg is None or self.drag_time is None:
+            raise ValueError("drag is not enabled")
+        if not np.isfinite(t) or t < self.drag_time:
+            raise ValueError("drag time must advance monotonically; truncate history first")
+        tb = self.table
+        before = set(self.reentries)
+        threshold = orbits.R_MEAN + cfg.reentry_altitude_km
+        rows = np.flatnonzero((tb.t_created <= t) & (tb.t_destroyed > self.drag_time))
+        # Include scheduled births inside this interval, and new collision fragments.
+        new = rows[~np.isfinite(tb.orbit_history.latest[rows, drag.START])]
+        starts = np.maximum(tb.t_created[new], self.drag_time)
+        for start in np.unique(starts):
+            born = new[starts == start]
+            el = tb.elements_at(start, born)
+            peri = orbits.perigee_radius(el)
+            valid = np.isfinite(el.a) & (el.a > 0) & (el.e >= 0) & (el.e < 1)
+            if not valid.all():
+                raise ValueError("drag requires bound, valid mean orbits")
+            reentry = peri <= threshold
+            self._record_reentries(born[reentry], start)
+            # Only intact active objects are assumed to maintain their orbit.
+            # A non-catastrophic remnant may retain category=active, but is passive.
+            maintained = (cfg.stationkeeping & ~reentry &
+                          (tb.category[born] == "active") & (tb.parent_event[born] == -1))
+            if maintained.any():
+                tb.orbit_history.append(tb.ids, born[maintained],
+                                        drag.maintained_segments(el.take(maintained), start))
+            use = ~reentry & ~maintained & (peri <= orbits.R_MEAN + cfg.max_perigee_altitude_km)
+            if use.any():
+                selected = born[use]
+                am = drag.area_to_mass(tb.am_m2_per_kg[selected], tb.radius_m[selected], tb.mass_kg[selected])
+                # Rebase at the start and replace catalogue ndot, never apply both models.
+                segments = drag.plan_segments(el.take(use), start, am, cfg)
+                tb.orbit_history.append(tb.ids, selected, segments)
+        # Each iteration advances only objects whose own segment has expired.
+        # Other objects retain their current segment even if collision ticks are frequent.
+        while True:
+            latest = tb.orbit_history.latest
+            due = rows[(latest[rows, drag.END] <= t) & (tb.t_destroyed[rows] > self.drag_time)]
+            if not len(due):
+                break
+            ends = latest[due, drag.END].copy()
+            el = drag.segment_elements(latest[due], ends)
+            reentry = orbits.perigee_radius(el) <= threshold + 1e-8
+            self._record_reentries(due[reentry], ends[reentry])
+            # Remove re-entered rows from the work list to avoid processing them again.
+            rows = rows[~np.isin(rows, due[reentry])] if reentry.any() else rows
+            keep = ~reentry
+            if keep.any():
+                selected = due[keep]
+                am = drag.area_to_mass(tb.am_m2_per_kg[selected], tb.radius_m[selected], tb.mass_kg[selected])
+                segments = drag.plan_segments(el.take(keep), ends[keep], am, cfg)
+                tb.orbit_history.append(tb.ids, selected, segments)
+        self.drag_time = t
+        return sorted(((oid, time) for oid, time in self.reentries.items() if oid not in before),
+                      key=lambda item: (item[1], item[0]))
+
     # -- events ------------------------------------------------------------------
 
     def truncate_after(self, t: float) -> list[BreakupEvent]:
-        """Remove every breakup after ``t`` (newest first) and restore its parents."""
+        """Discard future drag/re-entries and breakups; restore their parents."""
+        t = float(t)
+        if not np.isfinite(t):
+            raise ValueError("history time must be finite")
+        if self.drag_time is not None and t < self.drag_time:
+            self.table.orbit_history.truncate_after(self.table.ids, t)
+            for oid, time in list(self.reentries.items()):
+                if time > t:
+                    row = self.table.row(oid)
+                    self.table.revive([row])
+                    self._updated.add(oid)
+                    del self.reentries[oid]
+            if t < self.drag_start:
+                self.drag_config = self.drag_start = self.drag_time = None
+            else:
+                self.drag_time = t
         removed = []
         while self.events and self.events[-1].t > t:
             ev = self.events.pop()
@@ -170,6 +286,10 @@ class Simulation:
     def trigger_breakup(self, id_a: int, id_b: int, t: float | None = None,
                         params: BreakupParams | None = None) -> BreakupEvent:
         t = self.clock.t if t is None else float(t)
+        if not np.isfinite(t):
+            raise ValueError("breakup time must be finite")
+        if self.drag_time is not None and t > self.drag_time:
+            raise ValueError("advance drag to the breakup time before triggering a collision")
         # validate before rewriting history, so an invalid request never discards events
         if int(id_a) == int(id_b):
             raise ValueError("an object cannot collide with itself")

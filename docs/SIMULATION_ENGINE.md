@@ -115,3 +115,9 @@ See also the comparison with real debris in `VALIDATION.md` (fragment kicks too 
 - Masses and sizes of catalogue objects are per-category estimates.
 - No drag on fragments other than the re-entry cut-off; no Moon/Sun perturbations.
 - See also the known limitation recorded by the `xfail` test in `tests/test_fragmentation.py`.
+
+## Optional long-term drag (F1)
+
+The original propagation and scenario defaults described above are unchanged. For the experimental opt-in orbit-averaged drag, adaptive history segments, and re-entry support used by the future cascade, see [ATMOSPHERIC_DRAG.md](ATMOSPHERIC_DRAG.md).
+
+The opt-in F1 model assumes ideal drag compensation for intact active satellites by default (`DragConfig.stationkeeping=True`). Disable this setting for the passive control experiment. Legacy scenarios and the live server remain unchanged.

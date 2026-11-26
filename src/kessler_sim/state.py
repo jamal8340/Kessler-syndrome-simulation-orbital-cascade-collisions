@@ -10,7 +10,8 @@ from __future__ import annotations
 
 import numpy as np
 
-from . import orbits
+from . import drag, orbits
+from .orbit_history import OrbitHistory
 
 CONSTELLATION_PREFIXES = ("STARLINK", "ONEWEB", "IRIDIUM", "FLOCK")
 
@@ -47,6 +48,7 @@ class ObjectTable:
         self.parent_event = np.empty(0, dtype=np.int64)
         self.parent_ids = np.empty(0, dtype=object)  # tuple of parent IDs ( () for catalogue )
         self._row_of: dict[int, int] = {}
+        self.orbit_history = OrbitHistory()
         self.version = 0                          # bumped on every structural change
 
     _COLUMNS = ("ids", "names", "category", "constellation", "mass_kg", "radius_m", "am_m2_per_kg",
@@ -100,6 +102,7 @@ class ObjectTable:
         self.parent_ids = np.concatenate([self.parent_ids, col(tuple(parent_ids), object)])
         rows = np.arange(start, start + n)
         self._row_of.update(zip(ids.tolist(), rows.tolist()))
+        self.orbit_history.add(n)
         self.version += 1
         return rows
 
@@ -107,6 +110,7 @@ class ObjectTable:
         """Delete rows entirely (used when history is rewritten)."""
         keep = np.ones(len(self.ids), dtype=bool)
         keep[np.asarray(rows, dtype=np.int64)] = False
+        self.orbit_history.remove(self.ids, keep)
         for name in self._COLUMNS:
             setattr(self, name, getattr(self, name)[keep])
         self.elements = self.elements.take(keep)
@@ -141,10 +145,24 @@ class ObjectTable:
     def is_alive(self, row: int, t: float) -> bool:
         return bool(self.t_created[row] <= t < self.t_destroyed[row])
 
+    def elements_at(self, t: float, rows=None):
+        """Mean elements at t, including any valid drag segment (angles at t)."""
+        rows = np.arange(len(self.ids)) if rows is None else np.asarray(rows, dtype=np.int64)
+        el = orbits.rebase(self.elements.take(rows), t - self.t_ref[rows])
+        segments = self.orbit_history.at(self.ids, rows, t)
+        use = np.isfinite(segments[:, drag.START])
+        if use.any():
+            current = drag.segment_elements(segments[use], t)
+            for field in orbits.Elements.FIELDS:
+                getattr(el, field)[use] = getattr(current, field)
+        return el
+
     def states(self, t: float, rows=None):
         """Position and velocity (n, 3) [km, km/s] of the given rows at time t."""
         if rows is None:
             rows = np.arange(len(self.ids))
         rows = np.asarray(rows, dtype=np.int64)
-        el = self.elements.take(rows)
-        return orbits.elements_to_state(el, t - self.t_ref[rows])
+        if not np.isfinite(self.orbit_history.latest[rows, drag.START]).any():
+            el = self.elements.take(rows)
+            return orbits.elements_to_state(el, t - self.t_ref[rows])
+        return orbits.elements_to_state(self.elements_at(t, rows), 0.)

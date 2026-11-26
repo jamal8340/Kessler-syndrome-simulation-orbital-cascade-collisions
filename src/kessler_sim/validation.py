@@ -116,7 +116,7 @@ def simulated_debris(sim, event, parent_id: int) -> Population:
     """Orbits of the simulated fragments of one parent, right after the collision."""
     ids = event.fragment_ids[event.fragment_origin_ids == parent_id]
     rows = [sim.table.row(i) for i in ids]
-    el = sim.table.elements.take(rows)
+    el = sim.table.elements_at(event.t, rows)
     return _population("simulated", el.a, el.e, el.i, f"{sim.utc_at(event.t):%Y-%m-%d %H:%M} UTC")
 
 
